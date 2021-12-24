@@ -1,0 +1,74 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="container">
+          <h3 class="mb-2">{{'dashboard.postbox.Meine' | translate}}</h3>
+          <a class="text-primary" routerLink="/dashboard/Postbox" type="button">
+            <i class="fa fa-chevron-left"></i> {{'dashboard.postbox.Zur' | translate}}Zur
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-md-8">
+        <div class="container" style="background-color: #f3f3f3">
+          <div class="p-4">
+            <p class="p mt-1 mb-1">
+              <i class="fa fa-envelope"></i> {{'dashboard.postbox.Ihre' | translate}}
+            </p>
+            <h5 class="h5 mt-1 mb-1">{{'dashboard.postbox.Nachricht' | translate}}</h5>
+            <form>
+              <div class="input-group mt-4">
+                <textarea class="form-control textarea" placeholder="Geben Sie hier Ihre Nachricht ein"
+                  rows="8"></textarea>
+              </div>
+              <div class="mt-1">
+                <table class="table no-border border-bottom" style="width: 80%">
+                  <tr>
+                    <td>File 1</td>
+                    <td class="text-end">{{'dashboard.postbox.size' | translate}}</td>
+                    <td>
+                      <button class="btn btn-sm btn-just-icon">
+                        <mat-icon>{{'dashboard.postbox.close' | translate}}</mat-icon>
+                      </button>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
+              <div class="m-0">
+                <label class="attatchment" for="formFileSm" style="cursor: pointer">
+                  <i class="fa fa-paperclip"></i>
+                  {{'dashboard.postbox.Datei' | translate}}
+                </label>
+                <input [hidden]="true" class="form-control form-control-sm" id="formFileSm" type="file" />
+                <p class="text-muted mt-3">
+                  {{'dashboard.postbox.Formate' | translate}}
+                </p>
+              </div>
+              <button class="btn btn-orange text-white mt-1" disabled="true" type="submit">
+                {{'dashboard.postbox.Senden' | translate}}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-none d-sm-block d-xs-block d-md-block no-padding">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="h4" style="margin: 0">{{'dashboard.postbox.Kundenservice' | translate}}</h4>
+          </div>
+          <div class="card-body">
+            <p><i class="fa fa-phone"> </i><strong>{{'dashboard.postbox.phone' | translate}}</strong></p>
+            <p>{{'dashboard.postbox.time' | translate}}</p>
+            <div>{{'dashboard.postbox.ZinsUnion' | translate}}</div>
+            <div>{{'dashboard.postbox.address1' | translate}}</div>
+            <div>{{'dashboard.postbox.address2' | translate}}</div>
+            <div>{{'dashboard.postbox.address3' | translate}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

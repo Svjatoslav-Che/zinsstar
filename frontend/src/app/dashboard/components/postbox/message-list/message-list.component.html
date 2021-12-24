@@ -1,0 +1,9 @@
+<div *ngIf="messages&&messages.length;else noMessages;">
+  <app-message-item #messageList *ngFor="let msg of messages" [message]="msg"></app-message-item>
+
+</div>
+<ng-template #noMessages>
+  <section>
+    {{'dashboard.postbox.Ordner' | translate}}
+  </section>
+</ng-template>

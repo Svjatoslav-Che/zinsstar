@@ -1,0 +1,30 @@
+export enum Jobs {
+  employee = 'Angestellter',
+  worker = 'Arbeiter',
+  trainee = 'Auszubildender',
+  official = 'Beamter',
+  freelancer = 'Freiberufler',
+  managing_partner = 'Geschäftsführender Gesellschafter',
+  housewife = 'Hausfrau',
+  houseman = 'Hausmann',
+  executive = 'Leitender Angestellter',
+  unemployed = 'Ohne Beschäftigung',
+  pensioner = 'Pensionär',
+  retiree = 'Rentner',
+  pupil = 'Schüler',
+  other = 'Sonstige Privatpersonen',
+  self_employed = 'Sonstiger Selbstständiger',
+  student = 'Student',
+}
+
+export enum AcademicPosition {
+  empty = '',
+  Dr = 'Dr',
+  DrDr = 'DrDr',
+  DrMed = 'DrMed',
+  None = 'None',
+  Prof = 'Prof',
+  ProfDr = 'ProfDr',
+  ProfDrDr = 'ProfDrDr',
+  ProfDrMed = 'ProfDrMed',
+}

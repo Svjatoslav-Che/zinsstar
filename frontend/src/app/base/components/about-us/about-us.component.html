@@ -1,0 +1,113 @@
+<div class="container py-4">
+  <h2 class="h1 text-center">
+    {{"about.title" | translate}}
+  </h2>
+  <div class="row">
+    <div *ngFor="let staff of employees" class="team-member text-center col-md-3 col-sm-4 col-xs-12 mx-auto m-1">
+      <img [src]="'assets/employees/' + staff.image" class="member-image img-circle" />
+      <p class="member-name">{{ staff.name }}</p>
+
+      <p class="member-position">{{ staff.position }}</p>
+
+      <div class="member-social">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="bg-light">
+  <div class="container py-4">
+    <h2 class="h1 text-center">{{"about.starke" | translate}}</h2>
+    <div class="row">
+      <div class="col-md-8 col-xs-12 mx-auto">
+        <p>
+          {{"about.bei" | translate}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-sm-4 col-xs-12 text-center mx-auto">
+        <img alt="" class="text-center" src="assets/img/starke-partner-vanguard_logo_300-e1568207203230.png"
+          width="180" />
+      </div>
+      <div class="col-sm-8 col-xs-12">
+        <div>
+          <p class="text-start">
+            <strong>{{"about.unser" | translate}}</strong>
+          </p>
+          <p>
+            {{"about.mit" | translate}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-sm-4 col-xs-12 text-center mx-auto">
+        <img alt="" src="assets/img/starke-partner-bnpparibas_ip_cs-e1568207186977.png" width="180" />
+      </div>
+      <div class="col-sm-8 col-xs-12">
+        <div>
+          <p><strong>{{"about.deptobank" | translate}}</strong></p>
+          <p>
+            {{"about.deptobank_die" | translate}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container py-4">
+  <h2 class="h1 text-center">{{"about.partnerbanken" | translate}}</h2>
+  <div class="row">
+    <div *ngFor="let partner of partners" class="col-xs-12 col-md-4 col-sm-6 col-lg-3 p-0">
+      <div class="m-0 p-0 border text-center mx-auto partnet-image">
+        <img [alt]="partner.alt" [src]="partner.src" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="bg-light py-4">
+  <div class="container">
+    <h2 class="h1 text-center p-3">{{"about.auszeichnungen" | translate}}</h2>
+    <div class="row">
+      <div class="col-md-4 col-xs-12 text-center">
+        <img alt="Top Service" class="m-3" src="assets/img/top_service-siegel.jpg" />
+        <p class="h5 text-center">{{"about.gut" | translate}}</p>
+        <div class="text-center">
+          <p class="p-2">
+            {{"about.wurde" | translate}}
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 col-xs-12 text-center mx-auto">
+        <img alt="" class="m-3" src="assets/img/siegel.jpg" />
+        <p class="h5 text-center">{{"about.kritische" | translate}}</p>
+        <div class="text-center">
+          <p class="p-2">
+            {{"about.kunden" | translate}}
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 col-xs-12 text-center mx-auto">
+        <img alt="" class="m-3" src="assets/img/ntv.jpg" />
+        <p class="h5 text-center">{{"about.ntv" | translate}}</p>
+        <div class="text-center p-2">
+          <p>
+            {{"about.unabh" | translate}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

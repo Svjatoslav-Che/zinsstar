@@ -1,0 +1,11 @@
+.attatchment {
+  &:hover {
+    color: orange;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.wrapper {
+  height: 70vh !important;
+}

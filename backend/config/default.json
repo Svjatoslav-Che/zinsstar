@@ -1,0 +1,52 @@
+{
+  "application": {
+    "env": "dev",
+    "port": 3000,
+    "jwt": {
+      "secret": "somerandomstring",
+      "verification": "somerandomstring",
+      "emailExpiration": "JWT_EMAIL_EXPIRATION_TIME",
+      "expiresIn": "7 days",
+      "adminExpiresIn": "365 days"
+    },
+    "domain": "http://localhost:4200",
+    "apiUrl": "http://localhost:3000/api"
+  },
+  "db": {
+    "mysql": {
+      "synchronize": true,
+      "logging": true,
+      "database": "zinsunion",
+      "port": "3306",
+      "host": "127.0.0.1",
+      "username": "root",
+      "password": ""
+    }
+  },
+  "mail": {
+    "url": "https://zinsunion.com",
+    "host": "smtp.mail-zinsunion.com",
+    "port": "587",
+    "user": "service@mail-zinsunion.com",
+    "password": "t21:Amqs@o:A",
+    "from": "service@mail-zinsunion.com",
+    "confirmation": "https://zinsunion.com/auth/confirm",
+    "contact": {
+      "phone": {
+        "number": "+4991114897934",
+        "href": "tel:+4991114897934",
+        "template": "0911-14897934"
+      },
+      "email": {
+        "service": "service@mail-zinsunion.com",
+        "href": "mailto:service@mail-zinsunion.com"
+      },
+      "company": {
+        "city": "Kiel",
+        "country": "Deutschland",
+        "zip": "24103",
+        "street": "Klopstockstraße 17"
+      }
+    }
+  }
+}

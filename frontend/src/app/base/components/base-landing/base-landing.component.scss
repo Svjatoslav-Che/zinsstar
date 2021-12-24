@@ -1,0 +1,18 @@
+.menu-icon img {
+  width: 100px;
+  height: 100px;
+}
+
+.logo {
+  width: 150px;
+}
+::ng-deep .grw-net-widget {
+  color: black;
+
+  .branding[style] {
+    position: absolute;
+    left: -10000px;
+    display: none !important;
+  }
+
+}

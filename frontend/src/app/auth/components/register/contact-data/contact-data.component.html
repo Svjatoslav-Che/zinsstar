@@ -1,0 +1,97 @@
+<form [formGroup]="formGroup">
+  <div class="container mx-auto">
+    <div class="row mt-2">
+      <label class="col-sm-12 col-md-4 text-start">{{"register.contact.mobilfunknummer" | translate}}</label>
+      <div class="col-sm-12 col-md-2 text-start p-0">
+        <mat-form-field appearance="outline" style="width: 100%;">
+          <mat-label> {{"register.contact.land" | translate}}</mat-label>
+          <mat-select [(ngModel)]="mask" [ngModelOptions]="{standalone:true}" [value]="mask">
+            <mat-option *ngFor="let mask of masks" [value]="mask">
+              <img class="img-container list" src="assets/img/flag/{{mask.flag}}.png"/> {{mask.country}} ({{mask.prefix}})
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-12 col-md-6 text-start p-0">
+        <mat-form-field appearance="outline" class="mx-3" style="width: 100%;">
+          <mat-label> {{"register.contact.mobilfunknummer" | translate}}</mat-label>
+          <input formControlName="phone_number" matInput required type="text">
+        </mat-form-field>
+        <mat-error *ngIf="showError(phoneNumber)">
+          <div>{{"register.contact.mobilfunknummer_land" | translate}}</div>
+        </mat-error>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <label class="col-sm-12 col-md-4 text-start text-sm-start">{{"register.contact.strabe" | translate}}</label>
+      <div class="col-sm-12 col-md-5 text-start p-0">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label> Straße</mat-label>
+          <input autocomplete="off" formControlName="street" matInput required type="text" />
+          <mat-error *ngIf="showError(houseNumber)">
+            <div>
+              {{"register.contact.strabe_bitte" | translate}}
+            </div>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-12 col-md-3 ps-md-1 ps-sm-0">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label> {{"register.contact.haus" | translate}}</mat-label>
+          <input autocomplete="off" formControlName="house_number" matInput required type="text" />
+          <mat-error *ngIf="showError(street)">
+            <div>
+              {{"register.contact.haus_bitte" | translate}}
+            </div>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <label class="col-sm-12 col-md-4 text-start text-sm-start">{{"register.contact.plz" | translate}}</label>
+      <div class="col-sm-12 col-md-3 text-start p-0">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label>PLZ</mat-label>
+          <input autocomplete="off" formControlName="postal_code" matInput type="number" value="" />
+
+          <mat-error *ngIf="showError(postalCode)">
+            {{"register.contact.plz_bitte" | translate}}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-12 col-md-5 ps-md-1 ps-sm-0">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label> Ort</mat-label>
+          <input autocomplete="off" formControlName="town" matInput type="text" />
+          <mat-error *ngIf="showError(town)">
+
+            {{"register.contact.sie_bitte" | translate}}
+
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <label class="col-sm-12 col-md-4 text-start text-sm-start">{{"register.contact.land" | translate}}</label>
+      <div class="col-sm-12 col-md-8 p-0">
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label>{{"register.contact.land" | translate}}</mat-label>
+
+          <mat-select [value]="defaultCountry.code">
+            <mat-option *ngFor="let country of preferredCountries" [value]="country.code">
+              {{country.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button (click)="onSubmit()" class="btn btn-primary" matStepperNext type="submit">
+          {{"register.contact.weiter" | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+
+</form>

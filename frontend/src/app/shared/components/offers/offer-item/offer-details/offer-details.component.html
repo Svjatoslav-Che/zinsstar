@@ -1,0 +1,141 @@
+<div class="container">
+  <div class="offer-details__main">
+    <div>
+      <h4 class="offer-details__header">
+        <i class="fa fa-percent"></i>
+        <span class="offer-details__header__title"> {{'offers.details.Zinsinformation' | translate}} </span>
+      </h4>
+
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">
+          {{'offers.details.effektiv' | translate}}
+        </div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div id="interest-effective">
+            {{ offer ? offer.interest_rate : "" }} {{'offers.details.pa' | translate}}
+          </div>
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">
+          {{'offers.details.nominal' | translate}}
+        </div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div id="interest-nominal">
+            {{ offer ? offer.interest_rate : "" }}&nbsp;{{'offers.details.pa' | translate}}
+          </div>
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">{{'offers.details.Zinseszins' | translate}}</div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div data-testid="compounding">{{'offers.details.Nein' | translate}}</div>
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">{{'offers.details.Laufzeit' | translate}}</div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div>{{ offer ? monthYear( (offer.duration)) : "" }}</div>
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">{{'offers.details.Verf' | translate}}</div>
+        <div class="offer-details__detailRow__detailRowValue">
+          {{'offers.details.Jederzeit' | translate}}
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">{{'offers.details.Zinsgutschrift' | translate}}</div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div data-testid="interestBooking">{{zinsgutschrift}}</div>
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">{{'offers.details.Zinsauszahlung' | translate}}</div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div data-testid="interestPayment">{{'offers.details.Ende' | translate}}</div>
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">{{'offers.details.erungen' | translate}}</div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div data-testid="interestTypeForFlexgeld">
+            {{'offers.details.Fester' | translate}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h4 class="offer-details__header">
+        <i class="fa fa-archive"> </i>
+        {{'offers.details.Geldanlage' | translate}}
+      </h4>
+
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">
+          {{'offers.details.Einlagensicherung' | translate}}
+        </div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div data-testid="depositGuarantee">{{bank ? bank.insurance_name : ''}}</div>
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">{{'offers.details.wah' | translate}}</div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div>{{ offer ? offer.currency : "" }}</div>
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">
+          {{'offers.details.Mindest' | translate}}
+        </div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div class="min-max-amount-info">
+            {{
+            offer
+            ? offer.min_deposit === -1
+            ? "0,00"
+            : (offer.min_deposit|currencyFormat)
+            : 0
+            }}
+            –
+            {{ offer ? (offer.max_deposit|currencyFormat) : 0 }}
+
+          </div>
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">{{'offers.details.Kosten' | translate}}</div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div data-testid="costs">{{'offers.details.Keine' | translate}}</div>
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">{{'offers.details.Verl' | translate}}</div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div>
+            {{'offers.details.Eine' | translate}}
+          </div>
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">{{'offers.details.Quellensteuer' | translate}}</div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div>
+            {{country ? country.tax_description : ''}}
+          </div>
+        </div>
+      </div>
+      <div class="offer-details__detailRow">
+        <div class="offer-details__detailRow__detailRowKey">
+          {{'offers.details.Einzureichende' | translate}}
+        </div>
+        <div class="offer-details__detailRow__detailRowValue">
+          <div data-testid="additionalDocuments">
+            {{'offers.details.Online' | translate}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button [routerLink]="'/'">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span [routerLink]="'/admin/users'" class="menu-item"> <mat-icon>contact_mail</mat-icon> Users </span>
+  <span [routerLink]="'/admin/banks'" class="menu-item"> <mat-icon>account_balance</mat-icon> Banks </span>
+  <div class="logout" (click)="logout()"><span class="material-icons">logout</span> Logout</div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

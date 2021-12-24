@@ -1,0 +1,73 @@
+.base-top {
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+.card {
+  max-height: 150px !important;
+  min-height: 150px !important;
+
+  .card-body {
+    padding: auto 0 !important;
+  }
+}
+
+.badge {
+  cursor: pointer;
+
+  span {
+    width: 100%;
+    background: #1bad2b;
+  }
+}
+
+.text-header {
+  font-weight: 800;
+  line-height: 1.5;
+  max-width: 83.33333333% !important;
+  margin: 0 auto 40px;
+}
+
+.cards-container {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #404040;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.card-badge {
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  color: #ffffff;
+  padding: 2px 10px;
+}
+
+@media screen and (min-width: 800px) {
+  .base-top {
+    background: url(../../../../assets/img/de-at-cards-widget-campaign.jpg);
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .base-top {
+    background: url(../../../../assets/img/bg/gradient-background-v2.svg);
+  }
+}
+
+@media screen and (max-width: 766px) {
+  .card {
+    min-height: 70px !important;
+    max-height: 100px !important;
+
+    .card-footer {
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row mt-2">
+    <div *ngIf="!isOvernight" class="col-6 text-end">
+      <mat-form-field appearance="outline" style="width: 40%">
+        <mat-label>{{'offers.filter.Laufzeit' | translate}}</mat-label>
+        <mat-select [(value)]="duration">
+          <mat-option *ngFor="let item of filterOptions" [value]="item">{{ item.title }} ({{ getCount(item) }})
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div [ngClass]="amountClass" class="col-6 mx-auto text-start">
+      <form [formGroup]="formGroup">
+        <mat-form-field appearance="outline">
+          <mat-label>{{'offers.filter.Anlagebetrag' | translate}}</mat-label>
+          <input formControlName="amount" matInput placeholder="Min. 1€"
+                 value="{{ amount | currency: 'EUR':'symbol':'1.0-0'  }}"/>
+          <mat-error> this is error</mat-error>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="filter-container">
+  <div (click)="switchOrder(sort.Percent)" class="sort-button text-muted" role="button">
+    {{'offers.filter.Zinssatz' | translate}}
+    <i [ngClass]="getIconText(sort.Percent)" class="fa"></i>
+  </div>
+  <div (click)="switchOrder(sort.Duration)" class="btn sort-button text-muted text-start" role="button">
+    {{'offers.filter.Laufzeit' | translate}}
+    <i [ngClass]="getIconText(sort.Duration)" class="fa"></i>
+  </div>
+  <div (click)="switchOrder(sort.Bank)" class="sort-button text-muted" role="button">
+    {{'offers.filter.Bank' | translate}}
+    <i [ngClass]="getIconText(sort.Bank)" class="fa"></i>
+  </div>
+  <div (click)="switchOrder(sort.Land)" class="sort-button text-muted" role="button">
+    {{'offers.filter.Land' | translate}}
+    <i [ngClass]="getIconText(sort.Land)" class="fa"></i>
+  </div>
+  <div class="sort-button text-muted" role="button">
+    {{'offers.filter.plus' | translate}}
+  </div>
+  <div class="sort-button text-muted" role="button"></div>
+</div>

@@ -1,0 +1,10 @@
+<div class="container p-0 border-bottom border-top">
+  <div class=" mb-2 mt-2 pt-3 pb-3" id="message">
+    <a [routerLink]="'/dashboard/Postbox/Message/{{message}}'" class="text-primary">
+      <fa-icon *ngIf="!seen" [icon]="faEnvelope"></fa-icon>
+      <fa-icon *ngIf="seen" [icon]="faEnvelopeOpen"></fa-icon>
+      <span class="m-1 my-auto">16.04.21, 23:05</span>
+      <p class="m1 my-auto">{{'dashboard.postbox.Aktualisierte' | translate}}</p>
+    </a>
+  </div>
+</div>

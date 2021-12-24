@@ -1,0 +1,210 @@
+.footer-imprint-trust {
+  text-align: right;
+  line-height: 1;
+}
+
+.footer-imprint .imprint-menu-copyright {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-main-links [id*="nav_menu"] {
+  -ms-flex-preferred-size: 25%;
+  flex-basis: 25%;
+  padding: 0 15px;
+}
+
+ul.contacts {
+  li {
+    fa-icon {
+      margin: 15px;
+    }
+
+    a {
+      text-decoration: none !important;
+
+      span {
+        &:hover {
+          color: orange !important;
+          text-decoration: underline !important;
+        }
+      }
+    }
+  }
+}
+
+.footer-main-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-main-links ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-main-links ul li a {
+  color: #404040;
+  position: relative;
+}
+
+.footer-main-links ul li a:hover {
+  color: #ec5512;
+}
+
+.footer-imprint {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #929292;
+  font-size: 14px;
+  padding: 20px 0;
+  border-top: 1px solid #d7d7d7;
+}
+
+.footer-imprint .imprint-menu-copyright {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-imprint .imprint-menu-copyright nav ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-imprint .imprint-menu-copyright nav ul li:first-child a {
+  padding-left: 0;
+}
+
+.footer-imprint .imprint-menu-copyright nav ul li:last-child a {
+  padding-right: 0;
+}
+
+.footer-imprint .imprint-menu-copyright nav ul a {
+  color: #404040;
+  padding: 0 10px;
+}
+
+.footer-imprint .imprint-menu-copyright nav ul a:hover {
+  color: #f26e0d;
+}
+
+.footer-imprint .imprint-menu-copyright .copyright-message {
+  margin-left: 20px;
+}
+
+.footer-imprint .footer-imprint-trust {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.footer-imprint .footer-imprint-trust a {
+  font-size: 0;
+}
+
+.footer-imprint .footer-imprint-trust .trust-seal:not(:first-child) {
+  margin-left: 10px;
+}
+
+.footer-imprint .imprint-menu-copyright nav ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+//
+.footer-imprint-trust img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  max-height: 50px;
+}
+
+@media (max-width: 575px) {
+  .footer-main-links [id*="nav_menu"] {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+    padding: 0;
+  }
+  .footer-main-links [id*="nav_menu"]:not(:first-child) {
+    margin-top: 30px;
+  }
+  .footer-imprint .imprint-menu-copyright .copyright-message {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .footer-imprint .imprint-menu-copyright {
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .footer-imprint .imprint-menu-copyright .copyright-message {
+    margin: 0;
+  }
+  .footer-imprint .imprint-menu-copyright {
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer-main-links [id*="nav_menu"]:first-child {
+    padding-left: 0;
+  }
+  .footer-main-links [id*="nav_menu"]:last-child {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .footer-main-links [id*="nav_menu"] {
+    -ms-flex-preferred-size: 50%;
+    flex-basis: 50%;
+  }
+  .footer-main-links [id*="nav_menu"]:nth-child(odd) {
+    padding-left: 0;
+  }
+  .footer-main-links [id*="nav_menu"]:nth-child(even) {
+    padding-right: 0;
+  }
+  .footer-main-links [id*="nav_menu"]:nth-child(n + 3) {
+    margin-top: 30px;
+  }
+  .footer-imprint {
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .footer-imprint .imprint-menu-copyright {
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .footer-imprint .imprint-menu-copyright nav ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-imprint .footer-imprint-trust {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-imprint .imprint-menu-copyright nav ul {
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}

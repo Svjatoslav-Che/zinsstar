@@ -1,0 +1,38 @@
+<div class="container border m-0 my-2 ">
+  <div class="row">
+    <div class="col-lg-2 col-md-3 col-sm-3 border-end my-auto p-0">
+      <a class="btn btn-link text-primary" routerLink="/bank/{{ bank.permalink }}">
+        {{ bank.name }}
+      </a>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-3 my-auto border-end">
+      <div *ngIf="country">
+        {{ country ? country.name : "" }}
+      </div>
+    </div>
+    <div class="col-lg-2 col-md-3 col-sm-3 my-auto border-end p-0">
+      <span>{{'banks.snp' | translate}}</span><br>
+      <mat-icon [matTooltip]="tooltipData" matTooltipPosition="above">
+        {{'banks.contact' | translate}}
+      </mat-icon>
+
+      <span *ngIf="country">{{
+        country.credit_rating ? country.credit_rating : ""
+        }}</span>
+    </div>
+    <div class="col-lg-6 col-md-3 col-sm-3 my-auto">
+      <div>
+        <img [alt]="bank.name" [src]="'assets/banks/'+bank.logo" class=" img-fluid"/>
+      </div>
+      <div class="d-none d-lg-block">
+        <p [innerHTML]="bank.description" class="bank-description"></p>
+      </div>
+      <div class="d-block d-sm-none">
+        <a routerLink="/bank/{{ bank.permalink }}">
+          <span>{{'banks.mehr' | translate}}</span>
+          <i class="fa fa-chevron-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

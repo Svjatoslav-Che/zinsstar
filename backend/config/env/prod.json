@@ -1,0 +1,51 @@
+{
+  "application": {
+    "env": "@@MODE",
+    "port": "@@SERVER_PORT",
+    "jwt": {
+      "secret": "@@JWT_SECRET",
+      "verification": "@@JWT_VERIFICATION_TOKEN_SECRET",
+      "emailExpiration": "@@JWT_EMAIL_EXPIRATION_TIME",
+      "expiresIn": "@@JWT_TIMEOUT"
+    },
+    "domain": "https://zinsunion.com",
+    "apiUrl": "https://zinsunion.com/api"
+  },
+  "db": {
+    "mysql": {
+      "synchronize": true,
+      "logging": false,
+      "database": "@@DB_NAME",
+      "port": "@@DB_PORT",
+      "host": "@@DB_HOST",
+      "username": "@@DB_USER",
+      "password": "@@DB_PASS"
+    }
+  },
+  "mail": {
+    "url": "@@BASE_URL",
+    "host": "@@MAIL_HOST",
+    "port": "@@MAIL_PORT",
+    "user": "@@MAIL_USER",
+    "password": "@@MAIL_PASSWORD",
+    "from": "@@MAIL_FROM",
+    "confirmation": "@@EMAIL_CONFIRMATION_URL",
+    "contact": {
+      "phone": {
+        "number": "@@CONTACT_PHONE",
+        "href": "@@CONTACT_PHONE_HREF",
+        "template": "@@CONTACT_PHONE_TEMPLATE"
+      },
+      "email": {
+        "service": "@@EMAIL_SERVICE",
+        "href": "@@EMAIL_SERVICE_HREF"
+      },
+      "company": {
+        "city": "@@COMPANY_CITY",
+        "country": "@@COMPANY_COUNTRY",
+        "zip": "@@COMPANY_ZIP",
+        "street": "@@COMPANY_STREET"
+      }
+    }
+  }
+}

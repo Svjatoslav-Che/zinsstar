@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/dashboard">
+      <img alt="" src="assets/logo.png" width="150px" />
+    </a>
+    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+      class="navbar-toggler border-0 text-muted" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
+      type="button">
+      Menu<span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-xl-flex d-md-flex d-none"></ul>
+
+        <div class="d-xl-none d-md-none d-flex p-0">
+          <div class="container">
+            <div class="row border-bottom">
+              <div class="col">
+                <a class="nav-link" routerLink="/dashboard/Mynav_bar">{{'dashboard.nav_bar.Anlagen' | translate}}</a>
+              </div>
+            </div>
+            <div class="row border-bottom">
+              <div class="col">
+                <a class="nav-link" routerLink="/dashboard/Products">{{'dashboard.nav_bar.Angebote' | translate}}</a>
+              </div>
+            </div>
+
+            <div class="row border-bottom">
+              <div class="col">
+                <a class="nav-link" routerLink="/dashboard/Postbox">{{'dashboard.nav_bar.Postbox' | translate}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-xl-flex d-md-flex d-none">
+        <span>{{'dashboard.nav_bar.Willkommen' | translate}}, {{user ? user.first_name : ''}} !</span>
+      </div>
+
+      <form class="d-flex flex-column justify-content-center p-1 m-1">
+        <a (click)="logout()" class="btn btn-outline-secondary m-2 mt-0 mb-0">
+          <span> {{'dashboard.nav_bar.Abmelden' | translate}} </span>
+        </a>
+      </form>
+    </div>
+  </div>
+</nav>

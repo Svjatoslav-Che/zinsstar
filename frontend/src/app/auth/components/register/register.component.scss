@@ -1,0 +1,28 @@
+.m-container {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #404040;
+  box-sizing: border-box;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  max-width: 100%;
+  background-image: radial-gradient(
+      circle at 50% 50%,
+      rgba(31, 130, 178, 0.75),
+      #004b8c
+  );
+}
+
+mat-card {
+  max-width: 850px !important;
+}
+
+::ng-deep {
+  .mat-form-field-label {
+    overflow: visible !important;
+  }
+}

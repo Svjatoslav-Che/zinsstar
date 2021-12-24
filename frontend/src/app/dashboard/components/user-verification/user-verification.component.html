@@ -1,0 +1,33 @@
+<!--  FIXME Check what to do with this  -->
+<div class="m-2">
+  <div class="text-center border-bottom mb-4">
+    <h4 class="fs-5 fw-light pt-1">{{'dashboard.user_verification.Ihrer' | translate}}</h4>
+    <circle-progress [animationDuration]="300" [animation]="true" [imageWidth]="80" [innerStrokeWidth]="8"
+      [outerStrokeWidth]="16" [percent]="percent" [radius]="100"></circle-progress>
+  </div>
+  <p class="text-primary"><strong>{{'dashboard.user_verification.Weitere' | translate}}:</strong></p>
+  <div class="mOl">
+    <p *ngIf="!verified">
+      {{'dashboard.user_verification.Bitte' | translate}}
+      <button class="btn btn-primary btn-sm" routerLink="/dashboard/Identification" type="button">
+        {{'dashboard.user_verification.Identifikation' | translate}}
+      </button>
+    </p>
+    <p>
+      {{'dashboard.user_verification.Sie' | translate}}
+      <button class="btn btn-outline-primary btn-sm" routerLink="/dashboard/Products" type="button">
+        {{'dashboard.user_verification.Angebot' | translate}}
+      </button>
+    </p>
+    <p>
+      {{'dashboard.user_verification.NACH' | translate}}
+      (<strong>{{'dashboard.user_verification.Verrechnungskonto' | translate}}</strong>).
+    </p>
+    <p class="text-primary">
+      {{'dashboard.user_verification.Anschlie' | translate}}
+      <strong>{{'dashboard.user_verification.weitere' | translate}}</strong>
+      {{'dashboard.user_verification.Onlinebanking' | translate}}
+    </p>
+  </div>
+
+</div>

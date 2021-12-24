@@ -1,0 +1,118 @@
+// .bank-container {
+//     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//     font-size: 15px;
+//     line-height: 1.5;
+//     color: #404040;
+//     box-sizing: border-box;
+//     position: relative;
+//     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+//     background: #ffffff;
+//     border: 1px solid #d7d7d7;
+//     padding: 10px;
+//     margin: 0 0 20px;
+//     &__logo-wrapper {
+//         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//         font-size: 15px;
+//         line-height: 1.5;
+//         color: #404040;
+//         box-sizing: border-box;
+//         position: relative;
+//         padding-left: 10px;
+//         padding-right: 10px;
+//         border-left: 1px solid #d7d7d7;
+//         min-height: 110px;
+//         float: left;
+//         width: 50%;
+//     }
+//     &__item-inner {
+//         font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//         font-size: 15px;
+//         line-height: 1.5;
+//         color: #404040;
+//         box-sizing: border-box;
+//         position: relative;
+//         padding-left: 10px;
+//         padding-right: 10px;
+//         min-height: 135px;
+//         padding-top: 20px;
+//         padding-bottom: 20px;
+//         border-left: 1px solid #d7d7d7;
+//         float: left;
+//         width: 16.66666667%;
+//     }
+// }
+
+// .bank-item {
+//     font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//     font-size: 15px;
+//     line-height: 1.5;
+//     color: #404040;
+//     box-sizing: border-box;
+//     position: relative;
+//     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.25);
+//     background: #ffffff;
+//     border: 1px solid #d7d7d7;
+//     padding: 10px;
+//     margin: 0 0 20px;
+//     &__row {
+//         font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+//         font-size: 15px;
+//         line-height: 1.5;
+//         color: #404040;
+//         padding: 15px 18px;
+//         display: flex;
+//         flex-wrap: wrap;
+//         position: relative;
+//     }
+//     &__col {
+//         flex-grow: 1;
+//         flex-basis: 0;
+//         padding: 0 7px;
+//         min-height: 50px;
+//         font-size: 15px;
+//         &:not(.bank-item__col_noborder) {
+//             border-end: 1px solid #d7d7d7;
+//         }
+//         &__title {
+//         }
+//         &_rate {
+//             color: #1bad2b;
+//             display: flex;
+//             align-items: center;
+//             flex-wrap: wrap;
+//         }
+
+//         &_image {
+//             display: flex;
+
+//             img {
+//                 align-self: center;
+//                 display: inline-block;
+//                 vertical-align: middle;
+//                 max-height: 45px;
+//                 max-width: 100%;
+//             }
+//         }
+//     }
+//     &__tooltip {
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         height: 15px;
+//         color: #929292;
+//         font-size: 15px;
+//         flex-wrap: nowrap;
+//         svg {
+//             width: 15px;
+//             height: 15px;
+//         }
+//     }
+// }
+
+.bank-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}

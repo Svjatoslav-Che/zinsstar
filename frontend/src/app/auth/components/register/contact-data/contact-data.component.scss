@@ -1,0 +1,24 @@
+/* Chrome, Safari, Edge, Opera */
+input[matInput]::-webkit-outer-spin-button,
+input[matInput]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[matInput][type="number"] {
+  -moz-appearance: textfield;
+}
+
+ngx-intl-tel-input {
+  width: 100% !important;
+
+  input {
+    width: 100% !important;
+  }
+}
+.img-container {
+  vertical-align: inherit;
+  width: 20px;
+  margin: 0 3px -2px 5px;
+}

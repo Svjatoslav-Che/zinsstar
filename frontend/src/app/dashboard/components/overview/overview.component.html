@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-lg-8 col-md-12 col-sm-12 d-lg-flex d-md-flex d-none">
+      <div class="menu">
+        <ul>
+          <li routerLinkActive="active">
+            <a class="nav-link" routerLink="/dashboard/MyInvestments">{{'dashboard.overview.Meine' | translate}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a class="nav-link" routerLink="/dashboard/Products">{{'dashboard.overview.Angebote' | translate}}</a>
+          </li>
+          <li routerLinkActive="active">
+            <a class="nav-link" routerLink="/dashboard/Personal">{{'dashboard.overview.personal' | translate}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12">
+      <table class="table table-striped " style="width: 100%">
+        <tbody>
+          <tr>
+            <td>{{'dashboard.overview.Konto' | translate}}</td>
+            <td class="text-end" *ngIf="user">{{'dashboard.overview.EUR' | translate}} {{user.availableBalance}}</td>
+          </tr>
+          <tr>
+            <td>{{'dashboard.overview.Betrag' | translate}}</td>
+            <td class="text-end" *ngIf="user">{{'dashboard.overview.EUR' | translate}} {{user.totalBalance}}</td>
+          </tr>
+<!--          <tr>-->
+<!--            <td class="text-danger" [ngClass]="color">-->
+<!--              <span *ngIf="!verified">{{'dashboard.overview.ausstehend' | translate}}</span>-->
+
+<!--              <span *ngIf="verified" class="fw-bold text-success">{{'dashboard.overview.Account' | translate}}</span>-->
+<!--            </td>-->
+<!--            <td class="text-end">-->
+<!--              <a *ngIf="!verified" routerLink="/dashboard/Identification" class="p-0 text-decoration-none"-->
+<!--                style="color:#156cc4">-->
+<!--                {{'dashboard.overview.Mehr' | translate}}-->
+<!--              </a>-->
+<!--            </td>-->
+<!--          </tr>-->
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

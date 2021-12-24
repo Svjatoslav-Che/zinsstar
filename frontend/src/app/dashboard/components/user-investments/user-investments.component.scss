@@ -1,0 +1,48 @@
+@import "../../../../assets/scss/zinsunion/variables";
+
+.numeral {
+  font-size: 30px;
+  color: $primary;
+}
+
+.p {
+  color: $primary;
+}
+
+.icon-hover {
+  color: $primary;
+
+  &:hover {
+    color: $orange;
+  }
+}
+.investment_chart {
+  height:400px;
+  width: 1300px;
+
+  @media screen and (max-width: $breake-point-1) {
+    width: 1300px;
+  }
+  @media screen and (max-width: $breake-point-3) {
+    width: 1100px;
+  }
+  @media screen and (max-width: $breake-point-4) {
+    width: 950px;
+  }
+  @media screen and (max-width: $breake-point-5) {
+    width: 930px;
+  }
+  @media screen and (max-width: $breake-point-8) {
+    width: 700px;
+  }
+  @media screen and (max-width: $breake-point-10) {
+    width: 520px;
+  }
+  @media screen and (max-width: $breake-point-15) {
+    width: 430px;
+  }
+  @media screen and (max-width: $breake-point-17) {
+    width: 330px;
+  }
+
+}

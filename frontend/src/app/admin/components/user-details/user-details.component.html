@@ -1,0 +1,273 @@
+<div class="details" *ngIf="user">
+  <div class="docs">
+
+    <p><span>Full name:</span> {{user.first_name}} {{user.last_name}}</p>
+    <p><span>Registered:</span> {{formatDate(user.created)}} </p>
+
+    <div *ngIf="!user.docs.passportName && !user.docs.selfieName && !user.docs.idCardName">
+      <div class="image-container">
+        There are no user documents
+      </div>
+    </div>
+
+    <mat-tab-group dynamicHeight headerPosition="below">
+      <mat-tab label="ID" *ngIf="user.docs.idCardName" >
+        <div class="img__wrap">
+          <img class="image-container" [src]="getImageUrl(user.phone, user.docs.idCardName)">
+
+          <a class="img__description_layer" target="_blank" [download]="user.docs.idCardName" [href]="getImageUrl(user.phone,user.docs.idCardName)">
+            <p class="img__description">DOWNLOAD</p>
+          </a>
+        </div>
+      </mat-tab>
+      <mat-tab label="Selfie" *ngIf="user.docs.selfieName" class="image-click">
+        <div class="img__wrap">
+          <img class="image-container" [src]="getImageUrl(user.phone, user.docs.selfieName)">
+
+          <a class="img__description_layer" target="_blank" download="filename" [href]="getImageUrl(user.phone, user.docs.selfieName)">
+            <p class="img__description">DOWNLOAD</p>
+          </a>
+        </div>
+
+      </mat-tab>
+      <mat-tab label="Passport" *ngIf="user.docs.passportName" class="image-click">
+        <div class="img__wrap">
+          <img class="image-container" [src]="getImageUrl(user.phone, user.docs.passportName)">
+
+          <a class="img__description_layer" target="_blank" download="filename" [href]="getImageUrl(user.phone, user.docs.passportName)">
+            <p class="img__description">DOWNLOAD</p>
+          </a>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+
+  <div class="profile">
+    <h1>Balance</h1>
+    <mat-divider></mat-divider>
+    <div class="forms">
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Total balance (Konto)</mat-label>
+          <input [(ngModel)]="user.availableBalance" name="available_balance" matInput placeholder="0.0">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Available balance (Verfügbarer Betrag)</mat-label>
+          <input [(ngModel)]="user.totalBalance" name="total_balance" matInput placeholder="0.0">
+        </mat-form-field>
+      </form>
+    </div>
+
+
+    <h1>Profile</h1>
+    <mat-divider></mat-divider>
+
+    <div class="forms">
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>First name</mat-label>
+          <input [(ngModel)]="user.first_name" type="name" name="first_name" matInput placeholder="Ex. John">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Last name</mat-label>
+          <input [(ngModel)]="user.last_name" type="name" name="last_name" matInput placeholder="Ex. Johnson">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Birthdate</mat-label>
+          <input [(ngModel)]="user.dob" type="name" name="dob" matInput>
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Gender</mat-label>
+          <input [(ngModel)]="user.gender" type="name" name="gender" matInput placeholder="Herr">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Social status</mat-label>
+          <input [(ngModel)]="user.social_status" type="name" name="social_status" matInput placeholder="verheiratet">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Nationality (first)</mat-label>
+          <input [(ngModel)]="user.nationality" type="name" name="nationality" matInput placeholder="DEU">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Nationality (second)</mat-label>
+          <input [(ngModel)]="user.nationality2" type="name" name="nationality2" matInput>
+        </mat-form-field>
+      </form>
+
+
+      <h1>Contact</h1>
+      <mat-divider class="separator"></mat-divider>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Phone</mat-label>
+          <input [(ngModel)]="user.phone" type="name" name="phone" matInput placeholder="+49...">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input [(ngModel)]="user.email" type="name" name="email" matInput placeholder="john@gmail.com">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Country</mat-label>
+          <input [(ngModel)]="user.country" type="name" name="country" matInput placeholder="DEU">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>City</mat-label>
+          <input [(ngModel)]="user.city" type="name" name="city" matInput placeholder="Berlin">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Zip</mat-label>
+          <input [(ngModel)]="user.zip" type="name" name="zip" matInput placeholder="23234">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Street</mat-label>
+          <input [(ngModel)]="user.street" type="name" name="street" matInput placeholder="Dilshofer Str. 23">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>US Citizen</mat-label>
+          <input [(ngModel)]="user.us_citizen" type="name" name="us_citizen" matInput placeholder="false">
+        </mat-form-field>
+      </form>
+
+      <button mat-flat-button color="primary" class="save-button" (click)="save()">UPDATE USER</button>
+
+
+      <h1>Bank details</h1>
+      <mat-divider class="separator"></mat-divider>
+
+      <form class="form-content bank">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Account name</mat-label>
+          <input [(ngModel)]="user.acc_holder" type="name" name="acc_holder" matInput>
+        </mat-form-field>
+      </form>
+
+      <form class="form-content bank">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>IBan</mat-label>
+          <input [(ngModel)]="user.iban" type="name" name="iban" matInput>
+        </mat-form-field>
+      </form>
+
+      <form class="form-content bank">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>BIC</mat-label>
+          <input [(ngModel)]="user.bic" type="name" name="bic" matInput>
+        </mat-form-field>
+      </form>
+
+      <form class="form-content bank">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Reference Code</mat-label>
+          <input [(ngModel)]="user.referenceCode" type="name" name="referenceCode" matInput>
+        </mat-form-field>
+      </form>
+
+      <button mat-flat-button color="primary" class="save-bank-button" (click)="save()">UPDATE</button>
+
+
+    </div>
+
+    <div class="offers-title">
+      <h1>Investments</h1>
+      <mat-divider class="separator"></mat-divider>
+
+      <table mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8">
+
+        <ng-container matColumnDef="id">
+          <th mat-sort-header mat-header-cell *matHeaderCellDef class="text-primary">
+            Id
+          </th>
+          <td mat-cell *matCellDef="let offer">{{offer.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="bank">
+          <th mat-sort-header mat-header-cell *matHeaderCellDef class="text-primary">
+            Bank
+          </th>
+          <td mat-cell *matCellDef="let offer">{{offer.offer.bank.name}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="amount">
+          <th mat-sort-header mat-header-cell *matHeaderCellDef class="text-primary">
+            Amount
+          </th>
+          <td mat-cell *matCellDef="let offer">{{ offer.amount }} {{ offer.offer.currency }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-sort-header mat-header-cell *matHeaderCellDef class="text-primary">
+            Status
+          </th>
+          <td mat-cell *matCellDef="let offer">
+            <mat-form-field appearance="fill" class="offer-form">
+              <mat-label>Offer status</mat-label>
+
+              <mat-select [(ngModel)]="offer.status" (selectionChange)="changeClient($event.value)">
+                <mat-option *ngFor="let status of userOfferStatusList" [value]="status">
+                  {{status}}
+                </mat-option>
+              </mat-select>
+
+            </mat-form-field>
+            <button mat-flat-button color="primary" class="offer-button" (click)="updateOfferStatus(offer.id, offer.status)">SET</button>
+
+          </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef class="text-primary">
+            Date
+          </th>
+          <td mat-cell *matCellDef="let offer">{{formatDate(offer.created_at)}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="offerColumnHeaders"></tr>
+        <tr mat-row *matRowDef="let row; columns: offerColumnHeaders"></tr>
+      </table>
+    </div>
+
+  </div>
+</div>

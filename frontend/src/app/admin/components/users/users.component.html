@@ -1,0 +1,98 @@
+<div class="d-flex flex-column p-2 pt-5">
+  <div class="d-flex justify-content-evenly">
+
+    <mat-checkbox class="align-self-center" [(ngModel)]="hasInvestments" color="primary"> Investments</mat-checkbox>
+
+    <mat-form-field appearance="fill">
+      <mat-label>ID Status</mat-label>
+      <mat-select [(ngModel)]="idStatus" [value]="idStatus">
+        <mat-option [value]="docStatus.NA">NA</mat-option>
+        <mat-option [value]="docStatus.VERIFIED">Verified</mat-option>
+        <mat-option [value]="docStatus.PENDING">Pending</mat-option>
+        <mat-option [value]="docStatus.DECLINED">Declined</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <!-- User  Column -->
+    <ng-container matColumnDef="Name">
+      <th mat-header-cell *matHeaderCellDef class="text-primary">
+        Name
+      </th>
+      <td mat-cell *matCellDef="let user">{{ user.first_name }} {{ user.last_name }}</td>
+    </ng-container>
+
+    <!-- title Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-primary">
+        Email
+      </th>
+      <td mat-cell *matCellDef="let user"><span [ngClass]="getVerifiedColor(user.isEmailConfirmed)">{{ user.email}}</span>
+      </td>
+    </ng-container>
+
+    <!-- title Column -->
+    <ng-container matColumnDef="phone">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-primary">
+        Phone
+      </th>
+      <td mat-cell *matCellDef="let user"><span [ngClass]="getVerifiedColor(user.verified)">{{ user.phone }}</span>
+      </td>
+    </ng-container>
+
+    <!-- title Column -->
+    <ng-container matColumnDef="created">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-primary">
+        Registered
+      </th>
+      <td mat-cell *matCellDef="let user"><span>{{ formatDate(user.created) }}</span>
+      </td>
+    </ng-container>
+
+    <!-- title Column -->
+    <ng-container matColumnDef="offers" class="text-center">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef class="text-primary text-center">
+        Requests
+      </th>
+      <td class="td10  text-center" mat-cell *matCellDef="let user"> {{user.offers.length}}
+      </td>
+    </ng-container>
+    <!-- title Column -->
+    <ng-container matColumnDef="Documents" class="text-center">
+      <th mat-header-cell *matHeaderCellDef class="text-primary text-center">
+        Documents
+      </th>
+      <td mat-cell *matCellDef="let user" class="td30">
+        <div class="text-center">
+          <a [ngClass]="getColor(user.docs.idStatus)"  *ngIf="!displayDoc(user.docs.idStatus)" target="_blank" [href]="getImageUrl(user.phone, user.docs.idCardName)">Front |</a>
+          <a [ngClass]="getColor(user.docs.passportStatus)"  *ngIf="!displayDoc(user.docs.passportStatus)" target="_blank" [href]="getImageUrl(user.phone, user.docs.passportName)">Back |</a>
+          <a [ngClass]="getColor(user.docs.selfieStatus)"  *ngIf="!displayDoc(user.docs.selfieStatus)" target="_blank" [href]="getImageUrl(user.phone, user.docs.selfieName)">Selfie</a>
+
+
+<!--          <p [ngClass]="getColor(user.docs.passportStatus)" [routerLink]="['/admin/doc']"-->
+<!--            *ngIf="!displayDoc(user.docs.passportStatus)" [queryParams]="{ id: user.id,doc:doc.PASSPORT }"-->
+<!--            queryParamsHandling="merge">Back |</p>-->
+
+<!--          <p [ngClass]="getColor(user.docs.selfieStatus)" [routerLink]="['/admin/doc']"-->
+<!--            *ngIf="!displayDoc(user.docs.selfieStatus)" [queryParams]="{ id: user.id,doc:doc.SELFIE }"-->
+<!--            queryParamsHandling="merge">Selfie</p>-->
+        </div>
+
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef class="text-primary center">
+        Action
+      </th>
+      <td mat-cell *matCellDef="let user" class="td10">
+        <a [routerLink]="['/admin/user']" [queryParams]="{ id: user.id }" queryParamsHandling="merge">View</a>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator #paginator [pageSize]="50" [length]="userList.length" [pageSizeOptions]="[5,10,25, 50, 100]" showFirstLastButtons>
+  </mat-paginator>
+</div>

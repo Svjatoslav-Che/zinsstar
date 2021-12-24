@@ -1,0 +1,220 @@
+<mat-card class="p-0 mt-3 mb-2">
+  <mat-card-header class="p-1">
+    <div class="container">
+      <div class="row">
+        <div class="p-md-2 p-sm-1 col-lg-2">
+          <img
+            [alt]="bank ? bank.name : ''"
+            [src]="logo"
+            class="offer-bank-logo"
+            height="40"
+            width="80"/>
+        </div>
+        <div class="p-md-2 p-sm-1 col-lg-4 my-auto">
+          <div>
+            <span>{{ offer ? offer.interest_rate : 0 }}&nbsp;{{'dashboard.investments.PA' | translate}}</span>
+            <span class="ms-1 me-1">|</span
+            >{{ offer ? offer.duration : 0 }} {{'dashboard.investments.Monate' | translate}}
+          </div>
+        </div>
+        <div class="p-md-2 p-sm-1 col-lg-3">
+          <ngb-progressbar
+            [showValue]="true"
+            [value]="0"
+            textType="white"
+            type="dark"
+          ></ngb-progressbar>
+          {{'dashboard.products.Laufzeit' | translate}}
+        </div>
+        <div class="p-md-2 p-sm-1 col-lg-3 text-end text-muted">
+          {{ investment ? (investment.amount | currencyFormat) : 0 }}
+        </div>
+      </div>
+    </div>
+  </mat-card-header>
+  <mat-card-content class="ps-5 pe-5 pt-2 pb-2" style="background: #e8f0f9">
+    <!--    When user is not verified  -->
+    <div *ngIf="!userVerified">
+      <p>{{'dashboard.investments.Antrag' | translate}}</p>
+      <!-- TODO dissapear when user is verified  -->
+      <p>
+        {{'dashboard.investments.Verifizierung' | translate}}
+      </p>
+    </div>
+    <div *ngIf="userVerified">
+      <p *ngIf="investment.status === status.PENDING">
+        {{'dashboard.investments.Zahlungseingang' | translate}}
+      </p>
+    </div>
+  </mat-card-content>
+  <mat-card-footer class="m-0 bg-light">
+    <button
+      (click)="details = !details"
+      [ngClass]="{ 'active-details': details }"
+      class="btn text-primary icon-hover">
+      {{'dashboard.investments.Details' | translate}}
+    </button>
+    <div *ngIf="details" class="container bg-white">
+      <div class="row ms-3 me-3 mt-3 border-bottom">
+        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.investments.Bank' | translate}}</div>
+        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">
+          {{ bank ? bank.name : "" }}
+        </div>
+      </div>
+      <div class="row ms-3 me-3 border-bottom">
+        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.investments.Land' | translate}}</div>
+        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">
+          {{ country ? country.name : "" }}
+        </div>
+      </div>
+      <div class="row ms-3 me-3 border-bottom">
+        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.products.Zinssatz' | translate}}</div>
+        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">
+          {{ offer ? offer.interest_rate : 0.0 }} {{'dashboard.investments.PA' | translate}}
+        </div>
+      </div>
+      <div class="row ms-3 me-3 border-bottom" *ngIf="!offer.is_overnight">
+        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.products.LaufzeitSolo' | translate}}</div>
+        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">
+          {{ offer ? offer.duration : 0 }} {{'dashboard.investments.Monate' | translate}}
+        </div>
+      </div>
+
+
+      <div class="row ms-3 me-3 border-bottom">
+        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.products.Zinstyp' | translate}}</div>
+        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">{{'dashboard.investments.Fester' | translate}}</div>
+      </div>
+
+
+      <div class="row ms-3 me-3 border-bottom">
+        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.products.Mindestbetrag' | translate}}</div>
+        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">
+          {{ offer.min_deposit === -1 ? 5000 : offer.min_deposit | currencyFormat}}
+          {{ offer ? offer.currency : "EUR" }}
+        </div>
+      </div>
+
+      <div class="row ms-3 me-3 border-bottom">
+        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.products.Maximalbetrag' | translate}}</div>
+        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">
+          {{ offer.max_deposit | currencyFormat }}
+          {{ offer.currency }}
+        </div>
+      </div>
+      <div class="row ms-3 me-3 border-bottom">
+        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.products.Zinszahlung' | translate}}</div>
+        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">
+          {{'dashboard.products.Laufzeit' | translate}}
+        </div>
+      </div>
+
+
+<!--      <div class="row ms-3 me-3 border-bottom">-->
+<!--        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.investments.hrung' | translate}}</div>-->
+<!--        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">-->
+<!--          {{ offer ? offer.currency : "" }} {{'dashboard.investments.eur' | translate}}-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="row ms-3 me-3 border-bottom">-->
+<!--        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.investments.Anlagebetrag' | translate}}</div>-->
+<!--        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">{{investment.amount|currencyFormat}}</div>-->
+<!--      </div>-->
+      <div class="row ms-3 me-3 border-bottom">
+        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.investments.Kosten' | translate}}</div>
+        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">{{'dashboard.investments.Keine' | translate}}</div>
+      </div>
+      <div class="row ms-3 me-3 border-bottom">
+        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.investments.barkeit' | translate}}</div>
+        <div class="col-sm-8">
+          <div class="row">
+            <div class="col-8 mt-2 mb-2 ps-4 pe-4">
+              {{'dashboard.investments.vorzeitige' | translate}}
+            </div>
+            <div class="col-4" *ngIf="investment.status === status.PENDING">
+              <button
+                (click)="openVerticallyCentered(revokeModal)"
+                class="btn text-primary">
+                <small>{{'dashboard.investments.AntragZUR' | translate}}</small>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row ms-3 me-3 border-bottom">
+        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.products.Anlage' | translate}}</div>
+        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">
+          {{ offer.currency }}
+        </div>
+      </div>
+
+
+      <div class="row ms-3 me-3 border-bottom">
+        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">
+          {{'dashboard.investments.Einlagensicherung' | translate}}
+        </div>
+        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">
+          {{ bank.insurance_description }}
+        </div>
+      </div>
+<!--      <div class="row ms-3 me-3 border-bottom">-->
+<!--        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.FDA.Festgeldnummer' | translate}}</div>-->
+<!--        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">{{'dashboard.investments.FDA' | translate}}</div>-->
+<!--      </div>-->
+<!--      <div class="row ms-3 me-3">-->
+<!--        <div class="col-sm-4 mt-2 mb-2 ps-4 pe-4 fw-bold">{{'dashboard.investments.Weitere' | translate}}</div>-->
+<!--        <div class="col-sm-8 mt-2 mb-2 ps-4 pe-4">...</div>-->
+<!--      </div>-->
+    </div>
+  </mat-card-footer>
+</mat-card>
+<ng-template #revokeModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title fs-3 fw-bold my-auto">{{'dashboard.investments.AntragZUR' | translate}}</h4>
+    <button
+      (click)="modal.dismiss('Cross click')"
+      aria-label="Close"
+      class="close"
+      type="button"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div *ngIf="!revokeRequest">
+      <div class="row">
+        <div class="col">
+          {{'dashboard.investments.einer' | translate}}
+          {{ bank ? bank.name : "" }} {{'dashboard.investments.ist' | translate}}
+        </div>
+      </div>
+      <div class="container p-2">
+        <div class="row border-bottom border-top">
+          <div class="col-4 p-1">{{'dashboard.investments.Bank' | translate}}</div>
+          <div class="col-6 p-1">
+            {{ bank ? bank.name : "" }}
+          </div>
+        </div>
+        <div class="row border-bottom">
+          <div class="col-4 p-1">{{'dashboard.investments.Land' | translate}}</div>
+          <div class="col-6 p-1">
+            {{ country ? country.name : "" }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="revokeRequest" class="container text-center">
+      <mat-spinner class="mx-auto text-center"></mat-spinner>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button (click)="revoke()" class="btn btn-orange text-white" type="button">
+      {{'dashboard.investments.AntragZUR' | translate}}
+    </button>
+  </div>
+</ng-template>

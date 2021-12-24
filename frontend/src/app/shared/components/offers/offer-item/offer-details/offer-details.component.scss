@@ -1,0 +1,59 @@
+.offer-details {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #404040;
+  box-sizing: border-box;
+  padding: 0 25px;
+  position: relative;
+  width: 100%;
+
+  &__header {
+    box-sizing: border-box;
+    margin-top: 11px;
+    margin-bottom: 11px;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 400;
+
+    &__title {
+      font-size: 20px;
+      line-height: 26px;
+      font-weight: 400;
+      box-sizing: border-box;
+    }
+  }
+
+  &__main {
+    padding: 0 25px;
+    position: relative;
+    width: 100%;
+  }
+
+  &__detailRow {
+    display: flex;
+    padding: 14px 0;
+    border-top: 1px solid #d7d7d7;
+    width: 75%;
+
+    p {
+      margin: 0;
+    }
+
+    &__detailRowKey {
+      font-weight: 600;
+      flex-basis: 30%;
+      font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #404040;
+      -webkit-font-smoothing: antialiased;
+      box-sizing: border-box;
+    }
+
+    &__detailRowValue {
+      flex-basis: 70%;
+      padding-left: 10px;
+    }
+  }
+}

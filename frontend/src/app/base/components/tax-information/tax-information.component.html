@@ -1,0 +1,595 @@
+<div class="bg-gradient-grey">
+  <div class="container py-2">
+    <h1 class="text-center">{{ "tax_information.Steuerinformationen" | translate }}</h1>
+    <div class="row">
+      <div class="col-md-8 col-xs-12 text-center mx-auto">
+        <p>
+          {{ "tax_information.Wir" | translate }}
+        </p>
+        <p>
+          <strong>
+            {{ "tax_information.Bitte" | translate }}
+          </strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-2">
+    <h2 class="h1 text-center"
+        id="informationen-zur-steuerlichen-behandlung-von-tages-und-festgeldern-einlagengeschaeft">
+      {{ "tax_information.Informationen" | translate }}
+    </h2>
+    <div class="container py-2">
+      <div class="row mt-5">
+        <div class="col-md-3 col-sm-12">
+
+          <ul #nav="ngbNav" class="nav-pills" ngbNav orientation="vertical" style="min-width: 300px">
+            <li ngbNavItem>
+              <a ngbNavLink> {{ "tax_information.Unterlagen" | translate }} </a>
+              <ng-template ngbNavContent>
+                <div class="me-1 ms-1 border border-4 px-3">
+                  <h1 class="fw-normal">{{ "tax_information.Dokumente" | translate }}</h1>
+                  <p>
+                    {{ "tax_information.Unsere" | translate }}
+                  </p>
+                </div>
+              </ng-template>
+            </li>
+            <li ngbNavItem>
+              <a ngbNavLink> {{ "tax_information.Besteuerung" | translate }} </a>
+              <ng-template ngbNavContent>
+                <div class="me-1 ms-1 border border-4 px-3">
+                  <h1 class="fw-normal">
+                    {{ "tax_information.Harmonisierte" | translate }}
+                  </h1>
+                  <p>
+                    {{ "tax_information.BesteuerungDie" | translate }}
+                  </p>
+                </div>
+              </ng-template>
+            </li>
+            <li ngbNavItem>
+              <a ngbNavLink> {{ "tax_information.Steuerpflicht" | translate }}</a>
+              <ng-template ngbNavContent>
+                <div class="me-1 ms-1 border border-4 px-3">
+                  <h1 class="fw-normal">{{ "tax_information.Steuerpflicht" | translate }}</h1>
+                  <p>
+                    {{ "tax_information.Kunden" | translate }}
+                  </p>
+                </div>
+              </ng-template>
+            </li>
+            <li ngbNavItem>
+              <a ngbNavLink> {{ "tax_information.Grundfreibetr" | translate }} </a>
+              <ng-template ngbNavContent>
+                <div class="me-1 ms-1 border border-4 px-3">
+                  <h1 class="fw-normal">{{ "tax_information.Grundfreibetr" | translate }}</h1>
+                  <div>
+                    {{ "tax_information.gelten" | translate }}
+                  </div>
+                </div>
+              </ng-template>
+            </li>
+            <li ngbNavItem>
+              <a ngbNavLink> {{ "tax_information.Quellensteuer" | translate }} </a>
+              <ng-template ngbNavContent>
+                <div class="me-1 ms-1 border border-4 px-3">
+                  <h1 class="fw-normal">{{ "tax_information.Beratungsausschluss" | translate }}</h1>
+                  <p>
+                    {{ "tax_information.beachten" | translate }}
+                  </p>
+                  <p>
+                    {{ "tax_information.Korrektur" | translate }}
+                  </p>
+                  <p>
+                    {{ "tax_information.Bundeszentralamt" | translate }}
+                    <a
+                      href="https://www.bzst.de/DE/Service/SteuerlichesInfocenter/steuerlichesinfocenter_node.html">https://www.bzst.de/DE/Service/SteuerlichesInfocenter/steuerlichesinfocenter_node.html</a>.
+                  </p>
+                </div>
+              </ng-template>
+            </li>
+            <li ngbNavItem>
+              <a ngbNavLink></a>
+              <ng-template ngbNavContent>
+                <div class="me-1 ms-1 border border-4 px-3">
+                  <h1 class="fw-normal">{{ "tax_information.Beratungsausschluss" | translate }}</h1>
+                  <p>
+                    {{ "tax_information.beachten" | translate }}
+                  </p>
+                  <p>
+                    {{ "tax_information.Korrektur" | translate }}
+                  </p>
+                  <p>
+                    {{ "tax_information.Bundeszentralamt" | translate }}
+                    <a
+                      href="https://www.bzst.de/DE/Service/SteuerlichesInfocenter/steuerlichesinfocenter_node.html">https://www.bzst.de/DE/Service/SteuerlichesInfocenter/steuerlichesinfocenter_node.html</a>.
+                  </p>
+                </div>
+              </ng-template>
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-md-9 col-sm-12">
+          <div [ngbNavOutlet]="nav" class="ms-4"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-2">
+    <h2
+      class="h1 text-center"
+      id="einzureichende-unterlagen-bei-partnerbanken-fuer-kunden-mit-steueransaessigkeit-in-deutschland-einlagengeschaeft">
+      {{ "tax_information.Einzureichende" | translate }}
+    </h2>
+    <div class="row">
+      <div class="col-md-8 col-xs-12 text-center mx-auto">
+        <p>
+          {{ "tax_information.stellt" | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-2">
+    <div class="row">
+      <div class="col-md-3 col-sm-12">
+        <ul #nav2="ngbNav" class="nav-pills" ngbNav orientation="vertical">
+          <li *ngFor="let item of countries" ngbNavItem>
+            <a ngbNavLink>{{ item.country }}</a>
+            <ng-template ngbNavContent>
+              <div [innerHtml]="item.content"></div>
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-9 col-sm-12 ">
+        <div [ngbNavOutlet]="nav2" class="ms-4"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-2">
+    <h2 class="h1 text-center" id="quellensteuern-in-der-eu-im-gesamtueberblick-einlagengeschaeft">
+      {{ "tax_information.Quellensteuern" | translate }}
+    </h2>
+    <div class="row pt-5">
+      <div class="col-md-8 col-xs-12 mx-auto">
+        <p>
+          {{ "tax_information.Mitgliedstaaten" | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-2">
+    <div class="row">
+      <div class="col-md-8 col-centered container py-2">
+        <div class="responsive">
+          <table class="table table-striped text-center">
+            <thead class="thead-dark">
+            <tr>
+              <th scope="col">{{ "tax_information.EULand" | translate }}</th>
+              <th scope="col">{{ "tax_information.QuellensteuerTitle" | translate }}</th>
+              <th scope="col">{{ "tax_information.Reduzierte" | translate }}</th>
+              <th scope="col">{{ "tax_information.Davon" | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{{ "tax_information.Belgien" | translate }}</td>
+              <td>30 %</td>
+              <td>0 %</td>
+              <td>0 %</td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Bulgarien" | translate }}</b>
+              </td>
+              <td>
+                <b>10 %</b>
+              </td>
+              <td>
+                <b>5 %</b>
+              </td>
+              <td>
+                <b>5 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ "tax_information.Danemark" | translate }}</td>
+              <td>0 %</td>
+              <td>0 %</td>
+              <td>0 %</td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Estland" | translate }}</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ "tax_information.XXXXX" | translate }}</td>
+              <td>0 %</td>
+              <td>0 %</td>
+              <td>0 %</td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.XXXXX" | translate }}</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Griechenland" | translate }}</b>
+              </td>
+              <td>
+                <b>15 %</b>
+              </td>
+              <td>
+                <b>10 %</b>
+              </td>
+              <td>
+                <b>10 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Gro" | translate }}</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Irland" | translate }}</b>
+              </td>
+              <td>
+                <b>37 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Italien" | translate }}</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Kroatien" | translate }}</b>
+              </td>
+              <td>
+                <b>12 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Lettland" | translate }}</b>
+              </td>
+              <td>
+                <b>20 %</b>
+              </td>
+              <td>
+                <b>10 %</b>
+              </td>
+              <td>
+                <b>10 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Litauen" | translate }}</b>
+              </td>
+              <td>
+                <b>15 %</b>
+              </td>
+              <td>
+                <b>10 %</b>
+              </td>
+              <td>
+                <b>10 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Luxemburg" | translate }}</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Malta" | translate }}</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Niederlande" | translate }}</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Osterreich" | translate }}</b>
+              </td>
+              <td>
+                <b>25 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Polen" | translate }}</b>
+              </td>
+              <td>
+                <b>19 %</b>
+              </td>
+              <td>
+                <b>5 %</b>
+              </td>
+              <td>
+                <b>5 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Portugal" | translate }}</b>
+              </td>
+              <td>
+                <b>28 %</b>
+              </td>
+              <td>
+                <b>15 %</b>
+              </td>
+              <td>
+                <b>15 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ "tax_information.Rum" | translate }}</td>
+              <td>16 %</td>
+              <td>3 %</td>
+              <td>3 %</td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Schweden" | translate }}</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Slowakei" | translate }}</b>
+              </td>
+              <td>
+                <b>19 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ "tax_information.Slowenien" | translate }}</td>
+              <td>5 %</td>
+              <td>5 %</td>
+              <td>5 %</td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Spanien" | translate }}</b>
+              </td>
+              <td>
+                <b>19 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Tschechien" | translate }}</b>
+              </td>
+              <td>
+                <b>15 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            <tr>
+              <td>{{ "tax_information.Ungarn" | translate }}</td>
+              <td>0 %</td>
+              <td>0 %</td>
+              <td>0 %</td>
+            </tr>
+            <tr>
+              <td>
+                <b>{{ "tax_information.Zypern" | translate }}</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+              <td>
+                <b>0 %</b>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-3">
+    <div class="row">
+      <div class="col-md-8 col-xs-12 text-start mx-auto">
+        <p class="p">
+          {{ "tax_information.gedruckten" | translate }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-3">
+    <h2 class="h1 text-center pt-3 pb-3"
+        id="informationen-zur-steuerlichen-behandlung-der-ZinsUnion-invest-portfolios-anlagengeschaeft">
+      {{ "tax_information.InformationenAnlagen" | translate }}
+    </h2>
+    <div class="row">
+      <div class="col-md-4 col-sm-12">
+        <ul #nav5="ngbNav" class="nav-pills" ngbNav orientation="vertical">
+          <li ngbNavItem>
+            <a ngbNavLink>{{ "tax_information.Unterlagen" | translate }}</a>
+            <ng-template ngbNavContent>
+              <div>
+                <h4>{{ "tax_information.UnterlagenZins" | translate }}</h4>
+                <p>
+                  {{ "tax_information.Depotbank" | translate }}
+                </p>
+                <p>
+                  {{ "tax_information.Jahressteuerbescheinigung" | translate }}
+                </p>
+              </div>
+            </ng-template>
+          </li>
+          <li ngbNavItem>
+            <a ngbNavLink>Grundfreibeträge </a>
+            <ng-template ngbNavContent>
+              <div>
+                <h4>{{ "tax_information.Grundfreibetre" | translate }}</h4>
+                <p>
+                  {{ "tax_information.geltenDuet" | translate }}
+                </p>
+              </div>
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-8 col-sm-12 tab-content vertical">
+        <div [ngbNavOutlet]="nav5" class="ms-4"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-3">
+    <h3 class="container py-2 h3 text-center"
+        id="informationen-zur-steuerlichen-behandlung-der-altersvorsorge-produkte-ZinsUnion-pension-gmbh">
+      {{ "tax_information.InformationenZur" | translate }} <br/>
+      {{ "tax_information.Altersvorsorge" | translate }}
+    </h3>
+    <div class="row py-3">
+      <div class="col-md-4 col-sm-12">
+        <ul #nav3="ngbNav" class="nav-pills" ngbNav orientation="vertical">
+          <li ngbNavItem>
+            <a ngbNavLink>{{ "tax_information.Unterlagen" | translate }} </a>
+            <ng-template ngbNavContent>
+              <h4>{{ "tax_information.UnterlagenFur" | translate }}</h4>
+              <p>
+                {{ "tax_information.Ihre" | translate }}
+              </p>
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-8 col-sm-12 tab-content vertical">
+        <div [ngbNavOutlet]="nav3" class="ms-4"></div>
+      </div>
+    </div>
+  </div>
+</div>

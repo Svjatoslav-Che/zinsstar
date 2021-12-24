@@ -1,0 +1,45 @@
+<mat-toolbar class="p-0">
+  <mat-toolbar-row class="p-0">
+    <div class="container ps-5 pe-5">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid p-1">
+          <a class="navbar-brand" routerLink="/">
+            <img alt="" src="assets/logo.png" width="150px"/>
+          </a>
+        </div>
+        <a class="btn btn-outline-primary-light m-2 my-0" routerLink="/auth/login">{{"register.mein" | translate}}</a>
+      </nav>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="container m-container pt-5 pb-5">
+  <app-email-data *ngIf="phase === Phase.EMAIL"></app-email-data>
+  <div class="row">
+    <div class="col-12 col-xs-12 mx-auto text-center">
+      <mat-card [hidden]="phase === Phase.EMAIL" class="mx-auto">
+        <mat-stepper #stepper *ngIf="phase === Phase.DATA" labelPosition="bottom" linear>
+          <mat-step [stepControl]="personalFormGroup">
+            <ng-template matStepLabel>{{"register.pers" | translate}}</ng-template>
+            <form [formGroup]="personalFormGroup">
+              <app-personal-data [formGroup]="personalFormGroup"></app-personal-data>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="contactFormGroup">
+            <ng-template matStepLabel>{{"register.kont" | translate}}</ng-template>
+            <form [formGroup]="contactFormGroup">
+              <app-contact-data [formGroup]="contactFormGroup"></app-contact-data>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="additionalFormGroup">
+            <ng-template matStepLabel>{{"register.weitere" | translate}}</ng-template>
+            <form [formGroup]="additionalFormGroup">
+              <app-additional-data [formGroup]="additionalFormGroup"></app-additional-data>
+            </form>
+          </mat-step>
+        </mat-stepper>
+        <app-password *ngIf="phase === Phase.PASSWORD"></app-password>
+      </mat-card>
+    </div>
+  </div>
+</div>

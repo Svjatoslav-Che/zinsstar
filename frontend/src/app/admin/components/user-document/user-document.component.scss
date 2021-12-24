@@ -1,0 +1,73 @@
+.reason-input {
+  margin-top: 20px;
+
+  .form {
+    width: 80%;
+  }
+}
+
+.image-td {
+  width: 20%;
+}
+.reason-td {
+  width: 30%;
+  text-align: center;
+}
+.status-td {
+  width: 20%;
+}
+.image-container {
+  width: 300px;
+  margin: 10px 0;
+}
+
+.button-container {
+  margin-left: 10px;
+}
+
+.img__wrap {
+  position: relative;
+}
+.img__description_layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(36, 62, 206, 0.6);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s;
+}
+
+.img__wrap:hover .img__description_layer {
+  visibility: visible;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.img__description {
+  transition: .2s;
+  transform: translateY(1em);
+}
+
+.img__wrap:hover .img__description {
+  transform: translateY(0);
+}
+
+.image-container {
+  text-align: center;
+  width: 200px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.image-click {
+  position: relative;
+}

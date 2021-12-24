@@ -1,0 +1,29 @@
+@import "../../../../assets/scss/zinsunion/variables";
+
+.bg-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 275px;
+  width: 100% !important;
+  padding: 50px;
+  background-image: url("../../../../assets/img/bg/empty_dashboard.png");
+}
+
+small {
+  text-decoration: none !important;
+}
+
+.btn-link {
+  &:hover {
+    color: $orange !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .bg-image {
+    padding: 0;
+    height: auto;
+    background-image: none !important;
+    margin-bottom: 30px;
+  }
+}

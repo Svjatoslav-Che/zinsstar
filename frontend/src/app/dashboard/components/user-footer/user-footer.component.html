@@ -1,0 +1,27 @@
+<div class="container p-0">
+  <div class="row border-bottom pt-1 pb-1 ps-0 pe-0">
+    <div class="col-xs-12">
+      <div class="container p-0">
+        <h3 class="mb-2">{{'dashboard.footer.Haben' | translate}}</h3>
+        <p>
+          <i class="fa fa-phone"></i> {{ contacts.customer.template }} {{'dashboard.footer.time' | translate}}
+        </p>
+        <a class="text-muted" routerLink="dashboard/Postbox/new">
+          <i class="fa fa-envelope"></i>
+          {{'dashboard.footer.Nachricht' | translate}}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="links">
+    <ul class="list-inline">
+      <li class="list-inline-item ps-0"><a class="fs-6 copyright" routerLink="/dashboard/about/imprint">{{'dashboard.footer.Impressum' | translate}}</a>
+      </li>
+      <li class="list-inline-item"><a class="fs-6 copyright" routerLink="/dashboard/about/privacy">{{'dashboard.footer.Datenschutz' | translate}}</a></li>
+      <li class="list-inline-item"><a class="fs-6 copyright" routerLink="/dashboard/about/security">{{'dashboard.footer.Sicherheit' | translate}}</a>
+      </li>
+      <li class="list-inline-item"><a class="fs-6 copyright" routerLink="/dashboard/about/terms">{{'dashboard.footer.AGB' | translate}}</a></li>
+    </ul>
+  </div>
+</div>

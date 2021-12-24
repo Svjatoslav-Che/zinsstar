@@ -1,0 +1,12 @@
+@import "../../../../assets/scss/zinsunion/variables.scss";
+.rotate {
+    max-height: 100px !important;
+    max-width: 100px !important;
+    animation: mymove 1s infinite;
+    border-radius: 50%;
+}
+@keyframes mymove {
+    100% {
+        transform: rotate(360deg);
+    }
+}

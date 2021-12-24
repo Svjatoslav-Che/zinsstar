@@ -1,0 +1,53 @@
+<div class="content mt-5">
+  <mat-card class="m-5 mx-auto" style="padding-top: 0; padding-left: 0; padding-right: 0; max-width: 60%">
+    <mat-card-title class="py-4 text-center">
+      {{'register.email.willkommen' | translate}}
+    </mat-card-title>
+
+    <mat-card-content>
+      <div class="container mt-3">
+        <form (ngSubmit)="onSubmit()" [formGroup]="emailForm">
+          <div class="row">
+            <div class="col-8 text-start mx-auto">
+              <mat-form-field appearance="outline" style="width: 100%">
+                <mat-label> {{"register.email.email" | translate}}</mat-label>
+                <input (change)="checkExist()" autocomplete="off" formControlName="email" matInput type="email"/>
+
+                <mat-hint *ngIf="!emailExistInDB">
+                  {{"register.email.ich" | translate}} <a routerLink="/about/security" target="_blank">{{"register.email.datenschutzbestimmungen" | translate}}</a> {{"register.email.der" | translate}}
+                </mat-hint>
+              </mat-form-field>
+              <div *ngIf="emailExistInDB" class="text-danger">
+                {{"register.email.address" | translate}}
+              </div>
+              <div *ngIf="blacklisted" class="text-danger">
+                {{"register.email.blacklist" | translate}}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-8 mx-auto mt-3">
+              <mat-checkbox class="text-start text-wrap" color="primary">
+                {{"register.email.verpassen" | translate}}
+              </mat-checkbox>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center">
+              <button [disabled]="!emailForm.valid || emailExistInDB || blacklisted" class="btn btn-orange text-white mt-2" type="submit">
+                <span *ngIf="loadingProgress" [aria-hidden]="!loadingProgress" class="spinner-grow spinner-grow-sm" role="status"></span>
+                {{"register.email.registrieren" | translate}}
+              </button>
+            </div>
+          </div>
+          <div class="row mt-1 mb-5">
+            <div class="col text-center text-muted">
+              <fa-icon [icon]="faLockOpen"></fa-icon>
+              {{"register.email.ihre" | translate}}
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

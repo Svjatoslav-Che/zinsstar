@@ -1,0 +1,13 @@
+.questionTitle {
+  * {
+    &:hover {
+      color: orangered !important;
+      cursor: pointer;
+
+      fa-icon {
+        color: orangered !important;
+        fill: orangered !important;
+      }
+    }
+  }
+}

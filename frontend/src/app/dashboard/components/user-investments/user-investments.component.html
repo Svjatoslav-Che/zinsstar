@@ -1,0 +1,54 @@
+<div class="mt-4">
+  <div class="container">
+
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+      <mat-button-toggle value="bold" (click)="changeCartType(chartType.WEEKLY)">Weekly</mat-button-toggle>
+      <mat-button-toggle value="italic" (click)="changeCartType(chartType.MONTHLY)">Monthly</mat-button-toggle>
+<!--      <mat-button-toggle value="underline" (click)="changeCartType(chartType.YEARLY)">Yearly</mat-button-toggle>-->
+    </mat-button-toggle-group>
+    <div id="chart_investments" class="investment_chart" ></div>
+
+
+    <div [ngClass]="{ 'h-100': !progress }" class="row">
+      <div *ngIf="userOffers && userOffers.length > 0" [ngClass]="{ 'col-md-12': !progress }" class="col-md-9">
+        <mat-tab-group>
+          <mat-tab label="Festgeld">
+            <investment-template *ngIf="applicationFilter(filter.PENDING).length"
+              [applications]="applicationFilter(filter.PENDING)" [title]="'Ausstehende Anträge'"
+              [type]="filter.PENDING">
+            </investment-template>
+            <investment-template *ngIf="applicationFilter(filter.IN_PROGRESS).length"
+              [applications]="applicationFilter(filter.IN_PROGRESS)" [title]="'Aktive Investments'"
+              [type]="filter.IN_PROGRESS">
+            </investment-template>
+            <investment-template *ngIf="applicationFilter(filter.RECEIVED).length"
+              [applications]="applicationFilter(filter.RECEIVED)" [title]="'Abgeschlossene Investments'"
+              [type]="filter.RECEIVED"></investment-template>
+            <investment-template *ngIf="applicationFilter(filter.CANCELED).length"
+              [applications]="applicationFilter(filter.CANCELED)" [title]="'Stornierte Investments'"
+              [type]="filter.CANCELED">
+            </investment-template>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
+
+      <div *ngIf="userOffers && userOffers.length === 0" class="col-md-9">
+        <h3 class="fs-2">{{'dashboard.investments.Sie' | translate}}:</h3>
+        <h3 class="fs-3 mt-5">{{'dashboard.investments.Sparen' | translate}}</h3>
+        <p class="mt-3">
+          {{'dashboard.investments.Sie' | translate}}
+        </p>
+        <button (click)="goTo('festgeld')" class="btn btn-orange text-white m-1">
+          {{'dashboard.investments.Festgeld' | translate}}
+        </button>
+        <button (click)="goTo('tagesgeld')" class="btn btn-orange text-white m-1">
+          {{'dashboard.investments.Tagesgeld' | translate}}
+        </button>
+      </div>
+
+      <div *ngIf="!progress" class="col-md-3" style="background-color: #e8f0f9">
+        <app-user-verification></app-user-verification>
+      </div>
+    </div>
+  </div>
+</div>

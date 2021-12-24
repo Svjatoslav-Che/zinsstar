@@ -1,0 +1,129 @@
+.bank-archive-filter-cnt {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.bank-archive-filter-cnt span {
+  margin-right: 13px;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.bank-archive-filter-cnt mat-select {
+  width: auto;
+  min-width: 180px;
+}
+
+@media (max-width: 479px) {
+  .bank-archive-item-title {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+  }
+  .bank-archive-item-country {
+    position: relative;
+    float: left;
+    width: 50%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .bank-archive-item-logo {
+    position: relative;
+    float: left;
+    width: 50%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .bank-archive-filter-cnt {
+    display: block;
+  }
+  .bank-archive-filter-cnt span {
+    display: block;
+    margin: 0 0 8px;
+  }
+}
+
+@media (max-width: 991px) {
+  .bank-archive-filter-cnt {
+    margin-bottom: 25px;
+  }
+  .banks-archive-content {
+    background: #ffffff;
+    border-top: 1px solid #d7d7d7;
+  }
+  .banks-archive-content .container {
+    padding: 0;
+  }
+  .banks-archive-item-wrapper {
+    border-bottom: 1px solid #d7d7d7;
+  }
+  .banks-archive-item-inner {
+    padding: 10px 40px 10px 0;
+  }
+  .banks-archive-item-inner:before,
+  .banks-archive-item-inner:after {
+    content: " ";
+    display: table;
+  }
+  .banks-archive-item-inner:after {
+    clear: both;
+  }
+  .banks-archive-item-inner:before,
+  .banks-archive-item-inner:after {
+    content: " ";
+    display: table;
+  }
+  .banks-archive-item-inner:after {
+    clear: both;
+  }
+  .bank-archive-item-logo {
+    border-left: 1px solid #d7d7d7;
+  }
+  .bank-archive-item-description {
+    display: none;
+  }
+  .bank-archive-item-cta {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    margin-top: -20px;
+  }
+  .bank-archive-item-cta a {
+    color: #ec5512;
+    font-size: 35px;
+  }
+  .bank-archive-item-cta a:hover {
+    text-decoration: none;
+  }
+  .bank-archive-item-cta a span {
+    display: none;
+  }
+  .bank-archive-item-cta a em {
+    display: block;
+  }
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}

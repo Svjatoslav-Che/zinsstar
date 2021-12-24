@@ -1,0 +1,111 @@
+<section>
+  <div style="
+      --bg-desktop: url(assets/img/gradient-background-v2.svg);
+      --bg-tablet: url(assets/img/gradient-background-v2.svg);
+      --bg-mobile: url(assets/img/gradient-background-v2.svg);
+      background-image: url(assets/img/bg/welcomebonus-background.jpg),
+        url(assets/img/background-dark.svg);
+    ">
+    <div class="container text-white text-start py-5">
+      <h1 class="fs-2 display-4 fw-bold">
+        <span>{{ "welcome_bonus.Jetzt" | translate }}</span><br />
+        <br />
+        <span>{{ "welcome_bonus.Willkommens" | translate }}</span>
+      </h1>
+      <p class="fs-6">
+        {{ "welcome_bonus.Exklusiv" | translate }}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="d-flex flex-column">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-8">
+            <p>
+              {{ "welcome_bonus.Willkommen" | translate }}
+            </p>
+            <p>
+              {{ "welcome_bonus.hohe" | translate }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="d-flex flex-column justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <table class="table table-light">
+            <thead>
+              <tr>
+                <th>{{ "welcome_bonus.Anlagebetrag" | translate }}</th>
+                <th>{{ "welcome_bonus.Willkommenspr" | translate }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ "welcome_bonus.5000bis" | translate }}</td>
+                <td>
+                  <strong> {{ "welcome_bonus.25eur" | translate }}</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>{{ "welcome_bonus.10bis" | translate }}</td>
+                <td>
+                  <strong> {{ "welcome_bonus.50eur" | translate }}</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>{{ "welcome_bonus.40kbis" | translate }}</td>
+                <td>
+                  <strong> {{ "welcome_bonus.75eur" | translate }}</strong>
+                </td>
+              </tr>
+              <tr>
+                <td>{{ "welcome_bonus.ab75k" | translate }}</td>
+                <td>
+                  <strong> {{ "welcome_bonus.270eur" | translate }}</strong>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container mx-auto">
+    <div class="row">
+      <div class="col-md-8 col-xs-12 mx-auto">
+        <div>
+          <p>
+            {{ "welcome_bonus.die" | translate }}<strong>
+            {{ "welcome_bonus.Stichwort" | translate }}</strong><a [href]="emails.service.href" target="_blank">{{emails.service.template}}</a>.
+            {{ "welcome_bonus.Fest" | translate }}
+          </p>
+          <p>
+            {{ "welcome_bonus.Tagesgeld" | translate }}
+          </p>
+          <p>
+            {{ "welcome_bonus.innerhalb" | translate }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <a class="btn btn-primary btn-lg" routerLink="/festgeld/" target="_self">
+        {{ "welcome_bonus.Festgeld" | translate }}
+      </a>
+    </div>
+  </div>
+</section>

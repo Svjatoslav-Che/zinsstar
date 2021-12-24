@@ -1,0 +1,25 @@
+<div class="bg-gradient-grey">
+  <div class="pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <h1 class="h1 text-center">
+            {{'banks.erfahren' | translate}}
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <app-bank-filter (filterBy)="filter($event)"></app-bank-filter>
+        </div>
+      </div>
+
+      <app-bank-item
+        *ngFor="let bank of banks"
+        [bank]="bank"
+        [country]="getBankCountry(bank)"
+        style="width: 100%">
+      </app-bank-item>
+    </div>
+  </div>
+</div>

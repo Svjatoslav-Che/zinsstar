@@ -1,0 +1,105 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "~@angular/material" as mat;
+
+// Plus imports for other components in your app.
+.mat-checkbox-layout {
+  white-space: normal !important;
+}
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$zinsunion-primary: mat.define-palette(mat.$indigo-palette);
+$zinsunion-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$zinsunion-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$zinsunion-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $zinsunion-primary,
+      accent: $zinsunion-accent,
+      warn: $zinsunion-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($zinsunion-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+@import "assets/scss/zinsunion";
+
+html,
+body {
+  height: 100%;
+}
+
+* {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.header {
+  min-height: 30% !important;
+  --bg-desktop: url(assets/img/bg/gradient-background-v2.svg);
+  --bg-tablet: url(assets/img/bg/gradient-background-v2.svg);
+  --bg-mobile: url(assets/img/bg/gradient-background-v2.svg);
+  background-image: url(assets/img/bg/gradient-background-v2.svg);
+  vertical-align: middle !important;
+}
+
+.bg-gradient-grey {
+  background: #ffffff url(assets/img/background.svg) no-repeat;
+  background-size: auto;
+}
+
+.ul-check-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding-left: 1.3em;
+  }
+
+  li :before {
+    /* FontAwesome Unicode */
+    content: "\f00c";
+    font-family: FontAwesome;
+    display: inline-block;
+    /* same as padding-left set on li */
+    margin-left: -1.3em;
+    /* same as padding-left set on li */
+    width: 1.3em;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+}
+// Fixed the height of input to prevent cuts
+mat-form-field {
+  .mat-input-element {
+    height: 18px !important;
+    overflow: visible !important;
+  }
+}
+::ng-deep {
+  .mat-form-field-label {
+    overflow: visible !important;
+  }
+}

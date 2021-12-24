@@ -1,0 +1,19 @@
+@import "../../../../../assets/scss/zinsunion/variables";
+
+.icon-hover {
+  color: $primary;
+
+  &:hover {
+    color: $orange !important;
+  }
+}
+
+.active-details {
+  border-bottom: 2px solid $primary;
+}
+
+.mat-card:not([class*="mat-elevation-z"]) {
+  border: 1px solid #d7d7d7;
+
+  box-shadow: 0 3px 2px -2px rgb(0 0 0 / 20%);
+}

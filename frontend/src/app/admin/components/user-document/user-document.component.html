@@ -1,0 +1,76 @@
+<div class="d-flex flex-column p-2 pt-5">
+
+  <table  mat-table [dataSource]="dataSource" matSort  class="mat-elevation-z8">
+    <ng-container style="width: 5% !important;" matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef class="text-primary">
+        Type
+      </th>
+      <td mat-cell *matCellDef="let doc">{{doc.type}}</td>
+    </ng-container>
+
+    <ng-container style="width: 5% !important;" matColumnDef="image" >
+      <th mat-header-cell *matHeaderCellDef class="text-primary" >
+        Image
+      </th>
+      <td mat-cell *matCellDef="let doc" class="image-td">
+        <div class="img__wrap">
+
+<!--          <pdf-viewer *ngIf="isPdf(doc.image)" [src]="getImageUrl(user.phone, doc.image)" [original-size]="false"></pdf-viewer>-->
+
+          <img *ngIf="!isPdf(doc.image)" class="image-container" [src]="getImageUrl(user.phone, doc.image)">
+          <object *ngIf="isPdf(doc.image)" [data]="getImageUrl(user.phone, doc.image) + '#toolbar=0&navpanes=0' | safeUrl" type="application/pdf" width="100%" height="600px"></object>
+
+          <a class="img__description_layer" target="_blank" (click)="download(getImageUrl(user.phone, doc.image), doc.image)">
+            <p class="img__description">DOWNLOAD</p>
+          </a>
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef class="text-primary" style="text-align: center">
+        Status
+      </th>
+      <td mat-cell *matCellDef="let doc" [ngClass]="getColor(doc.status)" class="status-td">
+
+        <div style="text-align: center" *ngIf="!['NA', 'PENDING'].includes(doc.status)">
+          {{doc.status}}
+        </div>
+
+        <div *ngIf="['NA', 'PENDING'].includes(doc.status)">
+          <button mat-flat-button color="primary" (click)="approve(doc.type)">APPROVE</button>
+          <button class="button-container" mat-flat-button color="accent" (click)="reject(doc.type, doc.reason)">DECLINE</button>
+        </div>
+      </td>
+
+    </ng-container>
+
+    <ng-container matColumnDef="reason">
+      <th mat-header-cell *matHeaderCellDef class="text-primary">
+        Reason
+      </th>
+      <td mat-cell *matCellDef="let doc" >
+
+        <div *ngIf="!['VERIFIED', 'NA'].includes(doc.status) && doc.reason">{{doc.reason}}</div>
+        <div *ngIf="['NA', 'PENDING'].includes(doc.status)" class="reason-input">
+          <form class="example-form">
+            <mat-form-field class="example-full-width form" appearance="fill">
+              <mat-label>Reason</mat-label>
+              <input [(ngModel)]="doc.reason" type="email" name="reason" matInput placeholder="Ex. bad image quality">
+            </mat-form-field>
+          </form>
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="uploadDate">
+      <th mat-header-cell *matHeaderCellDef class="text-primary">
+        Upload Date
+      </th>
+      <td mat-cell *matCellDef="let doc">{{formatDate(doc.uploadDate)}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

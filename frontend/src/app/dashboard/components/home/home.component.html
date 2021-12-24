@@ -1,0 +1,113 @@
+<div class='container'>
+  <div class='row' *ngIf="bankDetails && bankDetails.iban">
+    <!-- Information alert here ! -->
+    <ngb-alert (closed)='close(alert)' *ngFor='let alert of alerts' [dismissible]='false' [type]='alert.type'>
+      <div class='row'>
+        <div class='col-1 mx-auto my-auto text-center'>
+          <i-bs height='1.5rem' name='exclamationCircle' width='1.5rem'></i-bs>
+        </div>
+        <div class='col-11 my-auto'>
+          <p>
+            <strong>
+              {{'dashboard.home.uberw' | translate}} {{ alert.amount | currencyFormat }}{{'dashboard.home.EUR' | translate}}
+            </strong><br />
+            {{'dashboard.home.Ohne' | translate}}
+            <br />
+          </p>
+
+          <p>{{'dashboard.home.Kontoinhaber' | translate}}: {{bankDetails?bankDetails.accHolder:''}}</p>
+          <p>{{'dashboard.home.IBAN' | translate}}: {{ bankDetails ? bankDetails.iban : '' }}</p>
+          <p>{{'dashboard.home.xxxxx' | translate}}: {{ bankDetails ? bankDetails.bic : '' }}</p>
+        </div>
+      </div>
+    </ngb-alert>
+  </div>
+  <h3 class='fs-3 text-muted'>{{'dashboard.home.Meine' | translate}}</h3>
+  <div class='row p-3'>
+    <div class='col mt-5' class='p-0 bg-image'>
+      <div class='text-center my-auto' style='height: 100% !important'>
+        <h4 class='m-1 fw-lighter fs-4'>{{'dashboard.home.Erstes' | translate}}</h4>
+
+        <div class='mt-1 pt-4'>
+          <p>{{'dashboard.home.Sie' | translate}}</p>
+          <p>
+            {{'dashboard.home.Hinweis' | translate}}
+          </p>
+        </div>
+
+        <button class='btn btn-primary mt-5' routerLink='/dashboard/Products'>
+          {{'dashboard.home.Jetzt' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class='row pt-5'>
+    <div class='col-sm-12 col-lg-6 text-center border-end'>
+      <p class='tet-muted fw-lighter fs-6'>{{'dashboard.home.MeineFest' | translate}}</p>
+      <br />
+      <div>
+        <svg class='pie' height='100' viewBox='0 0 120 100' width='120'>
+          <g transform='translate(60,50)'>
+            <g>
+              <path class='paths'
+                d='M2.7554552980815448e-15,-45A45,45,0,1,1,-2.7554552980815448e-15,45A45,45,0,1,1,2.7554552980815448e-15,-45M-6.429395695523604e-15,-35A35,35,0,1,0,6.429395695523604e-15,35A35,35,0,1,0,-6.429395695523604e-15,-35Z'
+                id='undefined-section' style='fill: rgb(238, 238, 238)'></path>
+            </g>
+          </g>
+          <g display='none'></g>
+        </svg>
+        <br />
+
+
+        <button (click)="goTo(' festgeld')" class='btn text-primary mt-4 mb-4 btn-link'>
+          <fa-icon [icon]='faPlus'></fa-icon>
+          <small>{{'dashboard.home.Festgeld' | translate}}</small>
+        </button>
+      </div>
+    </div>
+    <div class='col-sm-12 col-lg-6 text-center'>
+      <p class='tet-muted'>{{'dashboard.home.Tagesgelder' | translate}}</p>
+      <br />
+      <svg class='pie' height='100' viewBox='0 0 120 100' width='120'>
+        <g transform='translate(60,50)'>
+          <g>
+            <path class='paths'
+              d='M2.7554552980815448e-15,-45A45,45,0,1,1,-2.7554552980815448e-15,45A45,45,0,1,1,2.7554552980815448e-15,-45M-6.429395695523604e-15,-35A35,35,0,1,0,6.429395695523604e-15,35A35,35,0,1,0,-6.429395695523604e-15,-35Z'
+              id='undefined-section' style='fill: rgb(238, 238, 238)'></path>
+          </g>
+        </g>
+        <g display='none'></g>
+      </svg>
+      <br />
+      <button (click)="goTo(' tagesgeld')" class='btn text-primary mt-4 mb-4 btn-link'>
+        <fa-icon [icon]='faPlus'></fa-icon>
+        <small>{{'dashboard.home.abschlie' | translate}}</small>
+      </button>
+    </div>
+  </div>
+
+  <div class='row ms-lg-5 pt-5 text-sm-start text-md-start'>
+    <div class='col-xs-12 col-md-12 col-lg-9 my-auto'>
+      <h3 class='fs-2 fw-lighter'>
+        {{'dashboard.home.empfehlen' | translate}}
+      </h3>
+      <div>
+        <p>
+          <fa-icon [icon]='faCheck' class='text-orange p-1'></fa-icon>
+          {{'dashboard.home.geworbenem' | translate}}
+        </p>
+        <p>
+          <fa-icon [icon]='faCheck' class='text-orange p-1'></fa-icon>
+          {{'dashboard.home.Ihnen' | translate}}
+        </p>
+      </div>
+      <div>
+        <button class='btn btn-orange text-white'>{{'dashboard.home.Kunden' | translate}}</button>
+      </div>
+    </div>
+    <div class='col-lg-3 d-none d-lg-block'>
+      <img alt='' src='assets/img/euro_50_bonus.svg' />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="bank-archive-filter-cnt example-container">
+  <mat-form-field appearance="outline">
+    <mat-label>{{'banks.filter' | translate}}</mat-label>
+    <mat-select (selectionChange)="searchValue()" [(value)]="filterBy">
+      <mat-option [value]="filter.NAME_A_Z">{{'banks.az' | translate}}</mat-option>
+      <mat-option [value]="filter.NAME_Z_A">{{'banks.za' | translate}}</mat-option>
+      <mat-option [value]="filter.COUNTRY_A_Z">{{'banks.laz' | translate}}</mat-option>
+      <mat-option [value]="filter.COUNTRY_Z_A">{{'banks.lza' | translate}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

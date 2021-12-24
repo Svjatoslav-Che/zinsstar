@@ -1,0 +1,15 @@
+<div class="container">
+  <app-offer-filter
+    (amount)="amountChanges($event)"
+    [festgeld]="isOvernight"
+    [place]='place'
+    [private]="private_"
+  ></app-offer-filter>
+
+  <app-offer-list
+    [amount]="amount"
+    [festgeld]="isOvernight"
+    [private]="private_"
+  ></app-offer-list>
+
+</div>

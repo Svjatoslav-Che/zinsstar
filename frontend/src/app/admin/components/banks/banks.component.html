@@ -1,0 +1,64 @@
+<div class="d-flex flex-column p-2 pt-5">
+
+  <table mat-table [dataSource]="bankDataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef class="text-primary">
+        ID
+      </th>
+      <td mat-cell *matCellDef="let bank">{{ bank.id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="logo">
+      <th mat-header-cell *matHeaderCellDef class="text-primary">
+        Logo
+      </th>
+      <td mat-cell *matCellDef="let bank" class="logo-container">
+
+        <img [alt]="bank.name" [src]="'assets/banks/' + bank.logo" />
+
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef class="text-primary">
+        Name
+      </th>
+      <td mat-cell *matCellDef="let bank">{{ bank.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="uid">
+      <th mat-header-cell *matHeaderCellDef class="text-primary">
+        uid
+      </th>
+      <td mat-cell *matCellDef="let bank">{{ bank.uid }}</td>
+    </ng-container>
+    <ng-container matColumnDef="code">
+      <th mat-header-cell *matHeaderCellDef class="text-primary">
+        country
+      </th>
+      <td mat-cell *matCellDef="let bank">{{ bank.country.country_code }}</td>
+    </ng-container>
+    <ng-container matColumnDef="insurance_name">
+      <th mat-header-cell *matHeaderCellDef class="text-primary">
+        insurance name
+      </th>
+      <td mat-cell *matCellDef="let bank">{{ bank.insurance_name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="offers">
+      <th mat-header-cell *matHeaderCellDef class="text-primary">
+        offers count
+      </th>
+      <td mat-cell *matCellDef="let bank">{{ bank.offers?.length || 0 }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef class="text-primary">
+        action
+      </th>
+      <td mat-cell *matCellDef="let bank">
+        <button mat-flat-button color="primary" class="save-bank-button" [routerLink]="['/admin/bank']" [queryParams]="{ id: bank.id }">VIEW</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

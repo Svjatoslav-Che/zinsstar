@@ -1,0 +1,43 @@
+@import "../../../../assets/scss/zinsunion/variables";
+
+.links {
+  ul {
+    li {
+      padding: 1rem;
+
+      a {
+        color: $primary;
+        font-size: large;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+}
+
+.copyright {
+  font-size: 14px !important;
+  color: #404040 !important;
+
+  &:hover {
+    color: $orange !important;
+  }
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}

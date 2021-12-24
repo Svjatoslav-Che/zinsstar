@@ -1,0 +1,191 @@
+<form (onSubmit)="onSubmit()" [formGroup]="formGroup">
+  <div class="container p-5">
+    <div class="row">
+      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.familienstand" | translate}} *</label>
+      <div class="col-sm-12 col-md-7 my-auto text-sm-start">
+        <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
+          <mat-label> {{"register.additional.familienstand" | translate}} *</mat-label>
+          <mat-select formControlName="social_status" value="">
+            <mat-option value="">{{"register.additional.bitte" | translate}} *</mat-option>
+            <mat-option *ngFor="let status of AllSocialStatus" [value]="status.code">
+              {{ status.title }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="showError(socialStatus)">
+            <div class="help-block">{{"register.additional.bitte_long" | translate}}</div>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row my-1">
+      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.bitte_beruf" | translate}} *</label>
+      <div class="col-sm-12 col-md-7 my-auto text-sm-start">
+        <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
+          <mat-select formControlName="profession" id="profession_code" required>
+            <mat-option value="">{{"register.additional.bitte_ausw" | translate}} *</mat-option>
+            <mat-option *ngFor="let profession of professions" [value]="profession.code">
+              {{ profession.title }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="showError(profession)">
+            <div class="help-block">{{"register.additional.bitte_beruf_long" | translate}}</div>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row my-1">
+      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.geburtsort" | translate}} *</label>
+      <div class="col-sm-12 col-md-7">
+        <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
+          <mat-label>{{"register.additional.geburtsort" | translate}}</mat-label>
+          <input autocomplete="off" formControlName="birth_place" matInput required type="text"/>
+          <mat-error *ngIf="showError(birthPlace)">
+            <div class="help-block">
+              {{"register.additional.gaben" | translate}}
+            </div>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row my-1">
+      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.geburtsland" | translate}}</label>
+      <div class="col-sm-12 col-md-7">
+        <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
+          <mat-select formControlName="birth_country" required>
+            <mat-option *ngFor="let c of countries" [value]="c.code">
+              {{ c.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="showError(birthCountry)">
+            <div class="help-block">{{"register.additional.bitte_geburtsland" | translate}}</div>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row my-1">
+      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.staatsange" | translate}}</label>
+      <div class="col-sm-12 col-md-7">
+        <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
+          <mat-select formControlName="nationality" required>
+            <mat-option *ngFor="let c of countries" [value]="c.code">{{
+              c.name
+              }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-error *ngIf="showError(nationality)">
+          <div class="help-block">
+            {{"register.additional.bitte_staatsan" | translate}}
+          </div>
+        </mat-error>
+      </div>
+    </div>
+
+    <div class="row my-1">
+      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.zweite" | translate}}</label>
+      <div class="col-sm-12 col-md-7 text-sm-start text-start">
+        <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
+          <mat-label> {{"register.additional.zweite" | translate}}</mat-label>
+          <mat-select formControlName="second_nationality">
+            <mat-option value="">
+              {{"register.additional.zweite_bitte" | translate}}
+            </mat-option>
+            <mat-option *ngFor="let c of countries" [value]="c.code">{{
+              c.name
+              }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="showError(nationality)">
+            <div class="help-block">
+              {{"register.additional.zweite_bitte_2" | translate}}
+            </div>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row my-1">
+      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.zweite_bitte_land" | translate}}</label>
+      <div class="col-sm-12 col-md-7 text-start">
+        <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
+          <mat-label> Land</mat-label>
+          <mat-select [value]="taxCountry[2].code" disabled formControlName="residency_country">
+            <mat-option [value]="taxCountry[2].code">{{
+              taxCountry[2].name
+              }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row my-1">
+      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.sind" | translate}}</label>
+      <div class="col-sm-12 col-md-7 text-start">
+        <mat-checkbox color="primary">
+          {{"register.additional.person" | translate}}
+          <fa-icon [icon]="faQuestionCircle" [matTooltip]="USAPerson" class="ms-1 me-1" matTooltipPosition="above">
+          </fa-icon>
+        </mat-checkbox>
+      </div>
+    </div>
+
+    <div class="row my-1">
+      <label class="col-sm-12 col-md-5 my-auto text-sm-start">
+        {{"register.additional.sie" | translate}} *</label>
+      <div class="col-sm-12 col-md-7 text-start">
+        <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
+          <mat-select formControlName="sie" value="" required>
+            <mat-option value="">{{"register.additional.sie_bitte" | translate}} *</mat-option>
+            <mat-option value="internet">
+              {{"register.additional.sie_bitte_google" | translate}}
+            </mat-option>
+            <mat-option value="poster">{{"register.additional.plakatwerbung" | translate}}</mat-option>
+            <mat-option value="tv">{{"register.additional.werbung" | translate}}</mat-option>
+            <mat-option value="recommendation">{{"register.additional.empfehlung" | translate}}</mat-option>
+            <mat-option value="radio">{{"register.additional.radio" | translate}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mt-3 mb-3">
+        <div class="text-wrap text-start text-capitalize">
+          <b>{{"register.additional.gesch" | translate}}</b>
+          <p>
+            {{"register.additional.gelten" | translate}}
+            <a rel="noopener noreferrer" routerLink="/about/terms" target="_blank">{{"register.additional.gesch" | translate}}</a> {{"register.additional.und" | translate}} <a
+            rel="noopener noreferrer" routerLink="/about/security" target="_blank">{{"register.additional.datenschutzbestimmungen" | translate}}</a>.
+
+            <br/>
+            {{"register.additional.handle" | translate}}
+          </p>
+          <b>{{"register.additional.verhaltnisse" | translate}}</b>
+          <p>
+            {{"register.additional.den" | translate}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center mb-2">
+        <div class="form-control-container">
+          <button (click)="onSubmit()" class="btn btn-orange text-white m-1" matStepperNext type="submit">
+            {{"register.additional.pin" | translate}}
+          </button>
+        </div>
+      </div>
+      <div class="col-md-12 text-center">
+        <div>
+          <em class="fa fa-lock ssl-lock"></em>
+          <span class="fw-normal fs-6">
+            {{"register.additional.ihre" | translate}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

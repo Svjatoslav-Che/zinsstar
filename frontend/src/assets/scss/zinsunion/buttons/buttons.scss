@@ -1,0 +1,21 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "~bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+@import "../variables";
+// 3. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// Create your own map
+$custom-colors: (
+  "orange": $orange,
+  "primary-dark": $primary-dark,
+  "primary-light": $primary-light,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);

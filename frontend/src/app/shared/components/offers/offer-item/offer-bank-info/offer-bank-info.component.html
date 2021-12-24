@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="bank-details">
+    <div class="bank-details__main">
+      <div>
+        <h4 class="bank-details__main__title">{{ bank ? bank.name : "" }}</h4>
+        <div class="bank-details_main_content" *ngIf="bank" [innerHTML]="bank.description |sanitizeHtml">
+
+        </div>
+      </div>
+      <div>
+        <h4 class="bank-details__main__title">{{'offers.uber' | translate}}</h4>
+        <p class="bank-details__main__content pb-5">
+          {{country ? country.description : ""}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

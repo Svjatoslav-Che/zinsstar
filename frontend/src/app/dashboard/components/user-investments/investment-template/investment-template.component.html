@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col p-3">
+      <fa-icon #icon (click)="expanded = !expanded" [icon]="expanded ? faMinusSquare : faPlusSquare"
+               class="text-start text-primary icon-hover" style="position: absolute">
+      </fa-icon>
+      <button (click)="expanded = !expanded" mat-button>
+        <h3 class="m-3 fs-3 fw-lighter">
+          {{ title }} ({{ applications.length }})
+        </h3>
+      </button>
+    </div>
+    <div class="col my-auto">
+      <h3 [ngClass]="color" class="fs-3 fw-lighter text-end ">
+        {{ totalInvestments | currencyFormat }}
+      </h3>
+    </div>
+  </div>
+  <div *ngIf="expanded" class="mt-3">
+    <app-investment *ngFor="let investment of applications" [investment]="investment"></app-investment>
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="offer-item">
+  <div class="offer-item__row">
+    <div class="offer-item__col offer-item__col_rate">
+      <div class="offer-item__number">
+        {{ offer ? replaceDot(offer.interest_rate) : "" }}
+        <div class="offer-item__suffix">
+          <div>%</div>
+          <div>p.a.</div>
+        </div>
+      </div>
+    </div>
+    <div class="offer-item__col">
+      <div *ngIf="!isOvernight">
+        <div>{{ offer ? monthYear(offer.duration) : "" }}</div>
+      </div>
+      <div *ngIf="isOvernight">
+        <p>{{'offers.item.Tagesgeld' | translate}}</p>
+      </div>
+    </div>
+    <div class="offer-item__col offer-item__col_image">
+      <img *ngIf="bank" [alt]="bank.name" [src]="'assets/banks/' + bank.logo" />
+    </div>
+    <div class="offer-item__col">
+      <div class="offer-item__currency">
+        <span>
+          {{ country ? country.name : "" }} ({{
+          country ? country.credit_rating : ""
+          }})</span>
+        <span [matTooltip]="offerCountryTT" class="offer-item__tooltip" matTooltipPosition="above">
+          <i class="fa fa-info-circle"></i>
+        </span>
+      </div>
+      <div>in {{ offer ? offer.currency : "" }}</div>
+    </div>
+    <div class="offer-item__col offer-item__col_noborder">
+      <div>
+        <div class="offer-item__bonus">
+          <span class="offer-item__price">+ {{ calculatedProfits | number }} &nbsp;€</span>
+          <span [matTooltip]="intrestTT" class="offer-item__tooltip" matTooltipPosition="above">
+            <i class="fa fa-info-circle"></i>
+          </span>
+        </div>
+        <div class="offer-item__bonus">
+          <span class="offer-item__price">+ {{ bonus }} {{'offers.item.pra' | translate}}&nbsp;€</span>
+          <span [matTooltip]="bonusTT" aria-label="Button that displays a tooltip when focused or hovered over"
+            class="offer-item__tooltip" matTooltipPosition="above">
+            <i class="fa fa-info-circle"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="offer-item__col offer-item__col_noborder text-end">
+      <button (click)="order()" class="offer-item__button" type="button">{{'offers.item.Jetzt' | translate}}</button>
+    </div>
+  </div>
+  <div class="offer-item__tabs">
+    <ul class="offer-item__ul" role="tablist">
+      <li (click)="selectTab(1)" [class.active]="selectedTab === 1" class="offer-item__ul__item">
+        <div class="offer-item__ul__item__content">{{'offers.item.Angebotsdetails' | translate}}</div>
+      </li>
+      <li (click)="selectTab(2)" [ngClass]="{ active: selectedTab === 2 }" class="offer-item__ul__item">
+        <div class="offer-item__ul__item__content">{{'offers.item.Bank' | translate}}</div>
+      </li>
+      <li (click)="selectTab(3)" [ngClass]="{ active: selectedTab === 3 }" class="offer-item__ul__item">
+        <div class="offer-item__ul__item__content">{{'offers.item.Einlagensicherung' | translate}}</div>
+      </li>
+    </ul>
+    <div [hidden]="selectedTab !== 1">
+      <app-offer-details [bank]="bank" [country]="country" [offer]="offer"></app-offer-details>
+    </div>
+    <div [hidden]="selectedTab !== 2">
+      <app-offer-bank-info [bank]="bank" [country]="country"></app-offer-bank-info>
+    </div>
+    <div [hidden]="selectedTab !== 3">
+      <app-offer-insurance [bank]="bank"></app-offer-insurance>
+    </div>
+  </div>
+</div>

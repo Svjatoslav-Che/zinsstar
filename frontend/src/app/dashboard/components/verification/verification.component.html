@@ -1,0 +1,63 @@
+<div class="bg-light">
+  <div class="container">
+    <div class="d-flex flex-column justify-content-center">
+      <h3 class="fs-4 fw-bold text-center">{{'dashboard.verification.Identifizierung' | translate}}</h3>
+      <div class="text-center m-1">
+        <img alt="" src="assets/icon/svg/user_lock.svg" />
+        <p class="text-center my-3">
+          {{'dashboard.verification.Nach' | translate}}
+          <br />
+        </p>
+        <p>
+          {{'dashboard.verification.Upload' | translate}} <br />
+          {{'dashboard.verification.Senden' | translate}}
+          <a [href]="emails.href">{{ emails.template }}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div >
+    <div class="container">
+      <div class="row p-1">
+        <div class="col-lg-6">
+          <mat-card>
+            <mat-card-content>
+              <div class="d-flex flex-column">
+                <app-single-document
+                  class="border-bottom"
+                  [image]="'assets/icon/kyc-id.svg'"
+                  [title]="'1- Ausweisdokument Vorderseite'"
+                  [reason]="passportReason"
+                  [doc]="docType.PASSPORT"
+                  [status]="passportStatus">
+                </app-single-document>
+                <app-single-document
+                  [image]="'assets/icon/kyc-id.svg'"
+                  [title]="'2- Ausweisdokument Rückseite'"
+                  [reason]="idCardReason"
+                  [doc]="docType.ID"
+                  [status]="idStatus">
+                </app-single-document>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="col-lg-6">
+          <mat-card>
+            <mat-card-content>
+              <div class="d-flex flex-column">
+                <app-single-document
+                  [image]="selfieDocImage"
+                  [title]="'3- Selfie mit Ausweis'"
+                  [doc]="docType.SELFIE"
+                  [reason]="selfieReason"
+                  [status]="selfieStatus">
+                </app-single-document>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

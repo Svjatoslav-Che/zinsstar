@@ -1,0 +1,9 @@
+<app-offer-item
+  *ngFor="let item of offers | async"
+  [amount]="amount"
+  [bank]="getBank(item)"
+  [country]="getCountry(item)"
+  [festgeld]="isOvernight"
+  [offer]="item"
+  [private]="private_"
+></app-offer-item>
