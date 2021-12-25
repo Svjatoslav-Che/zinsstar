@@ -1,3 +1,99 @@
+.main_frame {
+  height: 670px;
+  width: 100%;
+  background-image: url("../../../../assets/img/bg/Rectangle 1.jpg");
+  background-size: cover;
+  position: relative;
+
+  .content_container {
+    position: absolute;
+    top: 295px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .header_frame {
+      font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 70px;
+      letter-spacing: -1px;
+      line-height: 76px;
+      text-align: center;
+      width: 1110px;
+      color: #ffffff;
+    }
+
+    .description_frame {
+      font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      margin-top: 30px;
+      color: #ffffff;
+    }
+
+    .main_frame_button {
+      font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #ffffff;
+      width: 145px;
+      height: 52px;
+      background-color: #F08A5D;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 25px;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #ee662a;
+      }
+    }
+
+    .main_frame_caller {
+      font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      color: #ffffff;
+      margin-top: 25px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .mainframe_arrow {
+        width: 19px;
+        height: 7px;
+        background-image: url("../../../../assets/img/arrow_down.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin-top: 20px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: #ee662a;
+
+        .mainframe_arrow {
+          background-image: url("../../../../assets/img/arrow_down_hover.png");
+        }
+      }
+    }
+
+    .mainframe_arrow {
+      width: 19px;
+      height: 7px;
+      background-image: url("../../../../assets/img/arrow_down.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: 20px;
+    }
+  }
+}
+
 .base-top {
   background-size: 100% 100% !important;
   background-repeat: no-repeat !important;
