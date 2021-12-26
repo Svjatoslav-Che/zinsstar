@@ -79,6 +79,7 @@
 
         .mainframe_arrow {
           background-image: url("../../../../assets/img/arrow_down_hover.png");
+          background-size: cover;
         }
       }
     }
@@ -93,6 +94,717 @@
     }
   }
 }
+
+.deposits_info_frame {
+  width: 100%;
+  height: 815px;
+  position: relative;
+
+  .header_frame {
+    width: 780px;
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0px;
+    font-size: 40px;
+    line-height: 55px;
+    color: #262222;
+    position: absolute;
+    top: 100px;
+    left: calc(50% - 390px);
+    text-align: center;
+  }
+
+  .cards_container {
+    width: 1220px;
+    position: absolute;
+    top: 255px;
+    left: calc(50% - 610px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .arrow_left {
+      width: 13px;
+      height: 29px;
+      background-image: url("../../../../assets/img/arrow_left.png");
+      background-size: cover;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .arrow_right {
+      width: 13px;
+      height: 29px;
+      background-image: url("../../../../assets/img/arrow_left.png");
+      background-size: cover;
+      transform: rotate(180deg);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .card_info_frame {
+      position: relative;
+      width: 255px;
+      height: 329px;
+      border-radius: 15px;
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.06);
+
+      .button_deal {
+        position: absolute;
+        top: 170px;
+        left: calc(50% - 45px);
+        font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+        width: 90px;
+        height: 30px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        color: #F08A5D;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        border: 1px solid #F08A5D;
+        user-select: none;
+
+        &:hover {
+          cursor: pointer;
+          background: #ee662a;
+          border: 1px solid #ee662a;
+          color: #ffffff;
+        }
+      }
+
+      .card_logo {
+        position: absolute;
+        top: 30px;
+        left: calc(50% - 87px);
+        width: 175px;
+        height: 60px;
+        background-image: url("../../../../assets/img/blue_orange.png");
+        background-size: cover;
+      }
+
+      .card_info_text {
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        height: 150px;
+        display: flex;
+        padding: 0px 15px 0px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-evenly;
+
+        .stripe_info_text {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .left_head {
+            font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 19px;
+            color: #262222;
+          }
+
+          .right_head {
+            font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 22px;
+            color: #262222;
+          }
+        }
+      }
+    }
+  }
+
+  .offer_button {
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    position: absolute;
+    left: calc(50% - 100px);
+    top: 630px;
+    width: 200px;
+    height: 52px;
+    background: #F08A5D;
+    border-radius: 8px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+    &:hover {
+      cursor: pointer;
+      background: #ee662a;
+    }
+  }
+
+  .offer_button_description {
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    position: absolute;
+    top: 695px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #262222;
+    opacity: 0.4;
+  }
+}
+
+.three_steps_frame {
+  width: 100%;
+  height: 560px;
+  background: #F7F7F7;
+  position: relative;
+
+  .three_steps_header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 90px;
+
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #262222;
+  }
+
+  .three_steps_cards_container {
+    top: 180px;
+    position: absolute;
+    width: 1220px;
+    left: calc(50% - 610px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .card_single {
+      width: 300px;
+      height: 325px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .step_icon_1 {
+        width: 149px;
+        height: 160px;
+        background-image: url("../../../../assets/img/icon_1s.png");
+        background-size: cover;
+      }
+
+      .step_icon_2 {
+        width: 149px;
+        height: 160px;
+        background-image: url("../../../../assets/img/icon_2s.png");
+        background-size: cover;
+      }
+
+      .step_icon_3 {
+        width: 149px;
+        height: 160px;
+        background-image: url("../../../../assets/img/icon_3s.png");
+        background-size: cover;
+      }
+
+      .card_header {
+        font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+        width: 100%;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        color: #262222;
+        margin-top: 30px;
+      }
+
+      .card_content {
+        font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+        width: 100%;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        color: #262222;
+        margin-top: 30px;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.partners_info_frame {
+  width: 100%;
+  height: 315px;
+  position: relative;
+
+  .partners_info_header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 90px;
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #262222;
+  }
+
+  .partners_info_container {
+    width: 1220px;
+    position: absolute;
+    top: 195px;
+    left: calc(50% - 610px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .arrow_left {
+      width: 13px;
+      height: 29px;
+      background-image: url("../../../../assets/img/arrow_left.png");
+      background-size: cover;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .arrow_right {
+      width: 13px;
+      height: 29px;
+      background-image: url("../../../../assets/img/arrow_left.png");
+      background-size: cover;
+      transform: rotate(180deg);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.deposits_board_frame {
+  width: 100%;
+  height: 555px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .deposits_board_content_container {
+    width: 1220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .deposits_board_text_container {
+    width: 550px;
+    .deposit_board_header {
+      font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 40px;
+      color: #262222;
+    }
+  }
+  .deposit_board_text {
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    width: 100%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #262222;
+    margin-top: 30px;
+    opacity: 0.8;
+  }
+}
+
+.helpful_articles_frame {
+  width: 100%;
+  height: 745px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F7F7F7;
+
+  .helpful_articles_header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 90px;
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #262222;
+  }
+
+  .helpful_articles_cards_container {
+    width: 1220px;
+    top: 180px;
+    left: calc(100% - 610px);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 55px;
+
+    .helpful_articles_card {
+      width: 350px;
+      height: 462px;
+      border-radius: 20px;
+      background: #FFFFFF;
+      box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      .helpful_articles_card_image {
+        border-radius: 20px;
+        margin-top: 10px;
+      }
+
+      .helpful_articles_card_header {
+        font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        width: 300px;
+        margin-top: 20px;
+      }
+
+      .helpful_articles_card_content {
+        font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+        width: 300px;
+        font-size: 14px;
+        line-height: 19px;
+        margin-top: 20px;
+        opacity: 0.8;
+      }
+
+      a {
+        position: absolute;
+        right: 20px;
+        bottom: 30px;
+        color: #F08A5D;
+        user-select: none;
+
+        &:hover {
+          cursor: pointer;
+          color: #EE662A;
+        }
+      }
+    }
+  }
+}
+
+.why_articles_frame {
+  width: 100%;
+  height: 695px;
+  position: relative;
+
+  .why_articles_header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 90px;
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #262222;
+  }
+
+  .three_steps_cards_container {
+    top: 180px;
+    position: absolute;
+    width: 1220px;
+    left: calc(50% - 610px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .card_single {
+      width: 300px;
+      height: 325px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .step_icon_1 {
+        width: 141px;
+        height: 141px;
+        background-image: url("../../../../assets/img/why_icon_1.png");
+        background-size: cover;
+      }
+
+      .step_icon_2 {
+        width: 141px;
+        height: 141px;
+        background-image: url("../../../../assets/img/why_icon_2.png");
+        background-size: cover;
+      }
+
+      .step_icon_3 {
+        width: 141px;
+        height: 141px;
+        background-image: url("../../../../assets/img/why_icon_3.png");
+        background-size: cover;
+      }
+
+      .card_header {
+        font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+        width: 100%;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center;
+        color: #262222;
+        margin-top: 30px;
+      }
+
+      .card_content {
+        font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+        width: 100%;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: center;
+        color: #262222;
+        margin-top: 30px;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .offer_button {
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    position: absolute;
+    left: calc(50% - 100px);
+    top: 545px;
+    width: 200px;
+    height: 52px;
+    background: #F08A5D;
+    border-radius: 8px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+    &:hover {
+      cursor: pointer;
+      background: #ee662a;
+    }
+  }
+}
+
+.any_questions_frame {
+  width: 100%;
+  height: 415px;
+  position: relative;
+  background: #F7F7F7;
+
+  .stripes_top {
+    position: absolute;
+    width: 75px;
+    height: 48px;
+    left: calc(50% - 37px);
+    top: 0px;
+  }
+
+  .stripes_bottom {
+    position: absolute;
+    width: 75px;
+    height: 48px;
+    left: calc(50% - 37px);
+    bottom: 0px;
+  }
+
+  .any_questions_header {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 130px;
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #262222;
+  }
+
+  .any_questions_text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 190px;
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+  }
+
+  .any_questions_button {
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    position: absolute;
+    left: calc(50% - 145px);
+    top: 245px;
+    width: 290px;
+    height: 52px;
+    background: #F08A5D;
+    border-radius: 8px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+    &:hover {
+      cursor: pointer;
+      background: #ee662a;
+    }
+  }
+}
+
+.google_rev_frame {
+  width: 100%;
+  height: 480px;
+  position: relative;
+
+  .google_rev_header {
+    position: absolute;
+    width: 1220px;
+    top: 130px;
+    left: calc(50% - 610px);
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: #262222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .google_arrow_container {
+      display: flex;
+      flex-direction: row;
+      width: 65px;
+      justify-content: space-between;
+
+      .google_arrow_left {
+        width: 11px;
+        height: 20px;
+        background-image: url("../../../../assets/img/arrow_left.png");
+        background-size: contain;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .google_arrow_right {
+        width: 11px;
+        height: 20px;
+        background-image: url("../../../../assets/img/arrow_left.png");
+        background-size: contain;
+        transform: rotate(180deg);
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .google_content_container {
+    position: absolute;
+    width: 1220px;
+    top: 200px;
+    left: calc(50% - 610px);
+    display: flex;
+    justify-content: space-between;
+
+    .google_container {
+      width: 350px;
+      height: 120px;
+      display: flex;
+      flex-direction: row;
+
+      img {
+        width: 65px;
+        height: 65px;
+      }
+
+      .google_description_container {
+        margin-left: 15px;
+
+        .gdc_header {
+          font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 22px;
+          color: #262222;
+        }
+
+        .gdc_views {
+          font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 12px;
+          line-height: 16px;
+          color: #000000;
+          opacity: 0.6;
+          margin-top: 5px;
+        }
+
+        .gdc_callback {
+          font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 12px;
+          line-height: 16px;
+          color: #000000;
+          opacity: 0.6;
+          margin-top: 5px;
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 80px;
+            height: 16px;
+            margin-right: 10px;
+          }
+        }
+
+        .gdc_text {
+          margin-top: 10px;
+          font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 12px;
+          line-height: 16px;
+          color: #262222;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+//FUCK IT ALL
 
 .base-top {
   background-size: 100% 100% !important;
