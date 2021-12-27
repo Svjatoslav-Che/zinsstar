@@ -1,121 +1,245 @@
-<footer class="clearfix footer-large pt-5">
-  <div class="container my-2 py-2">
-    <div class="footer-main-links">
-      <div class="row">
-        <div class="col-sm-4 col-xs-12">
+<div class="footer_zin">
+  <div class="footer_zin_strip"></div>
 
-          <h1 class="fw-normal">
-            {{ "footer.company_and_team" | translate }}
-          </h1>
-
-          <ul class="menu">
-            <li *ngFor="let item of menuCol1">
-              <a [routerLink]="item.route">{{"footer." + item.title | translate}}</a>
-            </li>
-          </ul>
-
-
-        </div>
-        <div class="col-sm-4 col-xs-12">
-
-          <h1 class="fw-normal">
-            {{ "footer.private_customers" | translate }}
-          </h1>
-
-          <ul class="menu">
-            <li *ngFor="let item of menuCol2">
-              <a [routerLink]="item.route">{{"footer." + item.title | translate}}</a>
-            </li>
-          </ul>
-
-
-        </div>
-        <div class="col-sm-4 col-xs-12">
-
-          <h1 class="fw-normal">
-            {{ "footer.help_and_contacts" | translate }}
-          </h1>
-
-          <ul class="menu">
-            <li *ngFor="let m of menuCol3" [routerLink]="m.route">
-              <a [routerLink]="m.route">{{"footer." + m.title | translate}}</a>
-            </li>
-          </ul>
-
-        </div>
-      </div>
+  <div class="zinsstar_container">
+    <div class="top_logos">
+      <img class="zinsstar_logo" src="../../../../assets/img/zinsstar_logo.png"/>
+      <a class="insta_icon" href="https://www.instagram.com/zinsunionde/" target="_blank"></a>
     </div>
+  </div>
 
-    <div class="row contact-row">
-      <div class="col-xs-12 col-sm-8">
-        <p class="fw-bold fs-5">{{'shared_about.footer.Haben' | translate}}</p>
-        <ul class="list-unstyled contacts">
-          <li>
-            <a [href]="contacts.customer.href" class="text-secondary">
-              <fa-icon [icon]="faTelephone"></fa-icon>
-
-              <span>{{ contacts.customer.template }} </span>
-
-              <br class="d-block d-sm-none"/>
-              {{'shared_about.footer.date' | translate}}
-            </a>
-          </li>
-          <li>
-            <a [href]="emails.service.href" class="text-secondary" target="_blank">
-              <fa-icon [icon]="faEnvelope"></fa-icon>
-              <span>{{ emails.service.template }}</span>
-            </a>
-          </li>
-        </ul>
+  <div class="links_container">
+<!--    1111-->
+    <div class="links_container_orient">
+      <div class="links_header">
+        Member Contact Center Hours
       </div>
-      <div class="col-xs-12 col-sm-4">
-        <p class="text-end fw-normal fs-6">{{'shared_about.footer.Folgen' | translate}}</p>
-        <ul class="list-unstyled list-inline text-end">
-          <li class="list-inline-item btn">
-            <a href="https://www.instagram.com/zinsunionde/" target="_blank"><i class="fa fa-instagram"></i></a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-
-    <section class="pt-3">
-      <div class="footer-imprint border-top">
-        <div class="imprint-menu-copyright">
-          <nav class="clearfix">
-            <ul class="copyrights">
-              <li>
-                <a class="nav-main-link" routerLink="/about/imprint">
-                  {{"footer.imprint" | translate}}
-                </a>
-              </li>
-              <li>
-                <a class="nav-main-link" routerLink="/about/security">
-                  {{ "footer.data_protection" | translate }}
-                </a>
-              </li>
-              <li>
-                <a class="nav-main-link" routerLink="/about/privacy">
-                  {{ "footer.it_security" | translate }}
-                </a>
-              </li>
-              <li>
-                <a class="nav-main-link" routerLink="/about/terms">
-                  {{ "footer.terms_of_service" | translate }}</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <span class="px-3 mx-1 copyright">© 2021 Zinsunion</span>
-
-        <div class="footer-imprint-trust">
-          <div class="py-1">
-            <img class="img-fluid" src="assets/icon/footer/actnow_ghost.png"/>
-            <img class="img-fluid" src="assets/icon/footer/footer-trust-1.png"/>
-            <img class="img-fluid" src="assets/icon/footer/comodo_secure_seal.png"/>
+      <div class="time_block">
+        <img src="../../../../assets/img/time_icon.png"/>
+        <div>
+          <div class="time_header">
+            Monday-Friday
+          </div>
+          <div class="time_descriptor">
+            9:00 – 16:00 Uhr
           </div>
         </div>
       </div>
-    </section>
+      <a class="call_block" href="tel:091114897934">
+        <img src="../../../../assets/img/telephone-phone-svgrepo-com.png"/>
+        0911-14897934
+      </a>
+      <a class="call_block" href="mailto:service@mail-zinsunion.com">
+        <img src="../../../../assets/img/email-svgrepo-com.png"/>
+        service@mail-zinsunion.com
+      </a>
+    </div>
+<!--    2222-->
+    <div class="links_container_orient">
+      <div class="links_header">
+        Company & team
+      </div>
+      <div class="inner_link">
+        About us
+      </div>
+      <div class="inner_link_follow">
+        Welcome bonus
+      </div>
+    </div>
+<!--    3333-->
+    <div class="links_container_orient">
+      <div class="links_header">
+        Private customers
+      </div>
+      <div class="inner_link">
+        Fixed-term deposit comparison financial test
+      </div>
+      <div class="inner_link_follow">
+        Call money comparison financial test
+      </div>
+    </div>
+<!--    4444-->
+    <div class="links_container_orient">
+      <div class="links_header">
+        Help
+      </div>
+      <div class="inner_link">
+        Frequently asked questions
+      </div>
+    </div>
   </div>
-</footer>
+<!--  DOWN LINE-->
+  <div class="down_line">
+    <div class="footer_copyright" >
+      © 2021 Zinsstar
+    </div>
+    <div class="footer_links">
+      <a class="single_link" routerLink="/about/imprint">
+        Impressum
+      </a>
+      <a class="single_link" routerLink="/about/privacy">
+        Data protection
+      </a>
+      <a class="single_link" routerLink="/about/security">
+        IT security
+      </a>
+      <a class="single_link" routerLink="/about/terms">
+        Conditions
+      </a>
+    </div>
+
+    <div class="footer_language">
+
+      <img src="../../../../assets/img/united-kingdom.png" class="footer_flag"/>
+      <div class="footer_arrow"></div>
+    </div>
+  </div>
+
+</div>
+
+
+<!--<li>-->
+<!--  <a class="nav-main-link" routerLink="/about/imprint">-->
+<!--    {{"footer.imprint" | translate}}-->
+<!--  </a>-->
+<!--</li>-->
+<!--<li>-->
+<!--  <a class="nav-main-link" routerLink="/about/security">-->
+<!--    {{ "footer.data_protection" | translate }}-->
+<!--  </a>-->
+<!--</li>-->
+<!--<li>-->
+<!--  <a class="nav-main-link" routerLink="/about/privacy">-->
+<!--    {{ "footer.it_security" | translate }}-->
+<!--  </a>-->
+<!--</li>-->
+<!--<li>-->
+<!--  <a class="nav-main-link" routerLink="/about/terms">-->
+<!--    {{ "footer.terms_of_service" | translate }}</a>-->
+<!--</li>-->
+
+<!--<footer class="clearfix footer-large pt-5">-->
+<!--  <div class="container my-2 py-2">-->
+<!--    <div class="footer-main-links">-->
+<!--      <div class="row">-->
+<!--        <div class="col-sm-4 col-xs-12">-->
+
+<!--          <h1 class="fw-normal">-->
+<!--            {{ "footer.company_and_team" | translate }}-->
+<!--          </h1>-->
+
+<!--          <ul class="menu">-->
+<!--            <li *ngFor="let item of menuCol1">-->
+<!--              <a [routerLink]="item.route">{{"footer." + item.title | translate}}</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+
+
+<!--        </div>-->
+<!--        <div class="col-sm-4 col-xs-12">-->
+
+<!--          <h1 class="fw-normal">-->
+<!--            {{ "footer.private_customers" | translate }}-->
+<!--          </h1>-->
+
+<!--          <ul class="menu">-->
+<!--            <li *ngFor="let item of menuCol2">-->
+<!--              <a [routerLink]="item.route">{{"footer." + item.title | translate}}</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+
+
+<!--        </div>-->
+<!--        <div class="col-sm-4 col-xs-12">-->
+
+<!--          <h1 class="fw-normal">-->
+<!--            {{ "footer.help_and_contacts" | translate }}-->
+<!--          </h1>-->
+
+<!--          <ul class="menu">-->
+<!--            <li *ngFor="let m of menuCol3" [routerLink]="m.route">-->
+<!--              <a [routerLink]="m.route">{{"footer." + m.title | translate}}</a>-->
+<!--            </li>-->
+<!--          </ul>-->
+
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="row contact-row">-->
+<!--      <div class="col-xs-12 col-sm-8">-->
+<!--        <p class="fw-bold fs-5">{{'shared_about.footer.Haben' | translate}}</p>-->
+<!--        <ul class="list-unstyled contacts">-->
+<!--          <li>-->
+<!--            <a [href]="contacts.customer.href" class="text-secondary">-->
+<!--              <fa-icon [icon]="faTelephone"></fa-icon>-->
+
+<!--              <span>{{ contacts.customer.template }} </span>-->
+
+<!--              <br class="d-block d-sm-none"/>-->
+<!--              {{'shared_about.footer.date' | translate}}-->
+<!--            </a>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a [href]="emails.service.href" class="text-secondary" target="_blank">-->
+<!--              <fa-icon [icon]="faEnvelope"></fa-icon>-->
+<!--              <span>{{ emails.service.template }}</span>-->
+<!--            </a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--      <div class="col-xs-12 col-sm-4">-->
+<!--        <p class="text-end fw-normal fs-6">{{'shared_about.footer.Folgen' | translate}}</p>-->
+<!--        <ul class="list-unstyled list-inline text-end">-->
+<!--          <li class="list-inline-item btn">-->
+<!--            <a href="https://www.instagram.com/zinsunionde/" target="_blank"><i class="fa fa-instagram"></i></a>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--    </div>-->
+
+
+<!--    <section class="pt-3">-->
+<!--      <div class="footer-imprint border-top">-->
+
+<!--        <span class="px-3 mx-1 copyright">© 2021 Zinsunion</span>-->
+
+<!--        <div class="imprint-menu-copyright">-->
+<!--          <nav class="clearfix">-->
+<!--            <ul class="copyrights">-->
+<!--              <li>-->
+<!--                <a class="nav-main-link" routerLink="/about/imprint">-->
+<!--                  {{"footer.imprint" | translate}}-->
+<!--                </a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a class="nav-main-link" routerLink="/about/security">-->
+<!--                  {{ "footer.data_protection" | translate }}-->
+<!--                </a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a class="nav-main-link" routerLink="/about/privacy">-->
+<!--                  {{ "footer.it_security" | translate }}-->
+<!--                </a>-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <a class="nav-main-link" routerLink="/about/terms">-->
+<!--                  {{ "footer.terms_of_service" | translate }}</a>-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </nav>-->
+<!--        </div>-->
+
+
+
+<!--        <div class="footer-imprint-trust">-->
+<!--          <div class="py-1">-->
+<!--&lt;!&ndash;            <img class="img-fluid" src="assets/icon/footer/actnow_ghost.png"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img class="img-fluid" src="assets/icon/footer/footer-trust-1.png"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <img class="img-fluid" src="assets/icon/footer/comodo_secure_seal.png"/>&ndash;&gt;-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--  </div>-->
+<!--</footer>-->

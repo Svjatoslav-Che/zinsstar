@@ -715,6 +715,7 @@
         height: 20px;
         background-image: url("../../../../assets/img/arrow_left.png");
         background-size: contain;
+        background-repeat: no-repeat;
 
         &:hover {
           cursor: pointer;
@@ -727,6 +728,7 @@
         background-image: url("../../../../assets/img/arrow_left.png");
         background-size: contain;
         transform: rotate(180deg);
+        background-repeat: no-repeat;
 
         &:hover {
           cursor: pointer;
