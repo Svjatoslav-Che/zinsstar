@@ -1,113 +1,239 @@
-<div class="container py-4">
-  <h2 class="h1 text-center">
-    {{"about.title" | translate}}
+<div class="daz_navigator_bch">
+
+  <div class="navi_placer">
+    <div class="prev_way">
+      prev_way
+    </div>
+    <div class="arrow_right"></div>
+    <div class="current_local">
+      current_local
+    </div>
+  </div>
+</div>
+
+<div class="daz_poster_bch">
+  <div>
+    <h1>
+      Zinsstar
+    </h1>
+    <h2>
+      is the leading platform for financial investments. More than 370,000 satisfied investors have already entrusted us with their money and invested over EUR 37.0 billion.
+    </h2>
+
+    <div class="main_frame_caller">
+      More
+      <div class="mainframe_arrow">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="daz_faces_bch">
+  <h2 class="header_yach">
+    Moving great things requires a spirit of innovation and competence
   </h2>
   <div class="row">
-    <div *ngFor="let staff of employees" class="team-member text-center col-md-3 col-sm-4 col-xs-12 mx-auto m-1">
-      <img [src]="'assets/employees/' + staff.image" class="member-image img-circle" />
-      <p class="member-name">{{ staff.name }}</p>
-
-      <p class="member-position">{{ staff.position }}</p>
-
-      <div class="member-social">
-
+    <div class="cards_container_tru">
+      <div *ngFor="let staff of employees; let i = index" [id]=i
+           [ngStyle]="(i == 0 || i == 3 || i == 4 || i == 7 || i == 8 || i == 11) && {'transform':'translateY(20px)'}">
+        <div class="card_yach">
+          <img [src]="'assets/employees/' + staff.image" class="go_go-circle" />
+          <p class="go_go-name">{{ staff.name }}</p>
+          <p class="go_go-text">{{ staff.position }}</p>
+          <div class="member-social">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-
-
-<section class="bg-light">
-  <div class="container py-4">
-    <h2 class="h1 text-center">{{"about.starke" | translate}}</h2>
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <p>
-          {{"about.bei" | translate}}
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="container py-4">
-    <div class="row">
-      <div class="col-sm-4 col-xs-12 text-center mx-auto">
-        <img alt="" class="text-center" src="assets/img/starke-partner-vanguard_logo_300-e1568207203230.png"
-          width="180" />
-      </div>
-      <div class="col-sm-8 col-xs-12">
-        <div>
-          <p class="text-start">
-            <strong>{{"about.unser" | translate}}</strong>
-          </p>
-          <p>
-            {{"about.mit" | translate}}
-          </p>
+<div class="daz_partners_srtong">
+  <div class="part_container">
+    <h1>
+      Strong partners at your side
+    </h1>
+    <h2>
+      Your money is in good hands with ZinsUnion. Our partners stand for decades of experience and guarantee a high level of integrity and security.
+    </h2>
+    <div class="card_container">
+      <div class="single_card">
+        <div class="top_container">
+          <img src='../../../../assets/img/3.png'>
+        </div>
+        <div class="bottom_container">
+          <div class="header_bc">
+            Our custodian
+          </div>
+          <div class="text_bc">
+            DAB BNP Paribas has been operating secure and efficient custodian banking business since 1994. As part of the BNP Paribas Group, DAB is one of the largest and most solid financial service providers in Europe and holds over 30 billion euros in customer assets.
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="container py-4">
-    <div class="row">
-      <div class="col-sm-4 col-xs-12 text-center mx-auto">
-        <img alt="" src="assets/img/starke-partner-bnpparibas_ip_cs-e1568207186977.png" width="180" />
-      </div>
-      <div class="col-sm-8 col-xs-12">
-        <div>
-          <p><strong>{{"about.deptobank" | translate}}</strong></p>
-          <p>
-            {{"about.deptobank_die" | translate}}
-          </p>
+      <div class="single_card">
+        <div class="top_container">
+          <img src='../../../../assets/img/3.png'>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="container py-4">
-  <h2 class="h1 text-center">{{"about.partnerbanken" | translate}}</h2>
-  <div class="row">
-    <div *ngFor="let partner of partners" class="col-xs-12 col-md-4 col-sm-6 col-lg-3 p-0">
-      <div class="m-0 p-0 border text-center mx-auto partnet-image">
-        <img [alt]="partner.alt" [src]="partner.src" />
+        <div class="bottom_container">
+          <div class="header_bc">
+            Our fund provider
+          </div>
+          <div class="text_bc">
+            With total assets under management of around EUR 4 trillion, Vanguard is the second largest fund company in the world. Vanguard is organized as a cooperative and passes cost advantages on to investors.
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<section class="bg-light py-4">
-  <div class="container">
-    <h2 class="h1 text-center p-3">{{"about.auszeichnungen" | translate}}</h2>
-    <div class="row">
-      <div class="col-md-4 col-xs-12 text-center">
-        <img alt="Top Service" class="m-3" src="assets/img/top_service-siegel.jpg" />
-        <p class="h5 text-center">{{"about.gut" | translate}}</p>
-        <div class="text-center">
-          <p class="p-2">
-            {{"about.wurde" | translate}}
-          </p>
-        </div>
+<!--PARTNERS FRAME-->
+<div class="partners_info_frame">
+  <div class="partners_info_header">
+    Our partner banks
+  </div>
+  <div class="partners_info_container">
+    <div class="arrow_left">
+    </div>
+    <img src="../../../../assets/img/image_brand_1.png"/>
+    <img src="../../../../assets/img/image_brand_2.png"/>
+    <img src="../../../../assets/img/image_brand_3.png"/>
+    <img src="../../../../assets/img/image_brand_4.png"/>
+    <img src="../../../../assets/img/image_brand_5.png"/>
+    <img src="../../../../assets/img/image_brand_6.png"/>
+    <div class="arrow_right">
+    </div>
+  </div>
+</div>
+
+<div class="awards_container">
+  <div class="header_awa_cont">
+    Awards for ZinsUnion
+  </div>
+  <div class="card_holder">
+    <div class="single_cad">
+      <img class="img_sie" src='../../../../assets/img/siegel.jpg'>
+      <div class="some_button">
+        Critical Investors
       </div>
-      <div class="col-md-4 col-xs-12 text-center mx-auto">
-        <img alt="" class="m-3" src="assets/img/siegel.jpg" />
-        <p class="h5 text-center">{{"about.kritische" | translate}}</p>
-        <div class="text-center">
-          <p class="p-2">
-            {{"about.kunden" | translate}}
-          </p>
-        </div>
+      <div class="text_card">
+        According to Kritische-Anleger.de, ZinsUnion is the best-rated investment marketplace in Germany by customers, with 4.8 out of 5 points.
       </div>
-      <div class="col-md-4 col-xs-12 text-center mx-auto">
-        <img alt="" class="m-3" src="assets/img/ntv.jpg" />
-        <p class="h5 text-center">{{"about.ntv" | translate}}</p>
-        <div class="text-center p-2">
-          <p>
-            {{"about.unabh" | translate}}
-          </p>
-        </div>
+    </div>
+    <div class="single_cad">
+      <img class="img_awa" src='../../../../assets/img/Adwards.png'>
+      <div class="some_button">
+        Service quality "very good"
+      </div>
+      <div class="text_card">
+        In 2017, ZinsUnion was awarded the grade “Very Good” by the German Institute for Quality Standards and Testing.
+      </div>
+    </div>
+    <div class="single_cad">
+      <img class="img_ntv" src='../../../../assets/img/ntv.jpg'>
+      <div class="some_button">
+        N-TV
+      </div>
+      <div class="text_card">
+        ZinsUnion was honored by n-tv and the independent financial consultancy FMH in 2015, 2016, 2017, 2018, 2019 and again in 2020 as the “best fixed-term deposit broker for European banks”.
       </div>
     </div>
   </div>
-</section>
+
+
+</div>
+
+<!--<section class="bg-light">-->
+<!--  <div class="container py-4">-->
+<!--    <h2 class="h1 text-center">{{"about.starke" | translate}}</h2>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <p>-->
+<!--          {{"about.bei" | translate}}-->
+<!--        </p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="container py-4">-->
+<!--    <div class="row">-->
+<!--      <div class="col-sm-4 col-xs-12 text-center mx-auto">-->
+<!--        <img alt="" class="text-center" src="assets/img/starke-partner-vanguard_logo_300-e1568207203230.png"-->
+<!--          width="180" />-->
+<!--      </div>-->
+<!--      <div class="col-sm-8 col-xs-12">-->
+<!--        <div>-->
+<!--          <p class="text-start">-->
+<!--            <strong>{{"about.unser" | translate}}</strong>-->
+<!--          </p>-->
+<!--          <p>-->
+<!--            {{"about.mit" | translate}}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="container py-4">-->
+<!--    <div class="row">-->
+<!--      <div class="col-sm-4 col-xs-12 text-center mx-auto">-->
+<!--        <img alt="" src="assets/img/starke-partner-bnpparibas_ip_cs-e1568207186977.png" width="180" />-->
+<!--      </div>-->
+<!--      <div class="col-sm-8 col-xs-12">-->
+<!--        <div>-->
+<!--          <p><strong>{{"about.deptobank" | translate}}</strong></p>-->
+<!--          <p>-->
+<!--            {{"about.deptobank_die" | translate}}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<div class="container py-4">-->
+<!--  <h2 class="h1 text-center">{{"about.partnerbanken" | translate}}</h2>-->
+<!--  <div class="row">-->
+<!--    <div *ngFor="let partner of partners" class="col-xs-12 col-md-4 col-sm-6 col-lg-3 p-0">-->
+<!--      <div class="m-0 p-0 border text-center mx-auto partnet-image">-->
+<!--        <img [alt]="partner.alt" [src]="partner.src" />-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<section class="bg-light py-4">-->
+<!--  <div class="container">-->
+<!--    <h2 class="h1 text-center p-3">{{"about.auszeichnungen" | translate}}</h2>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-4 col-xs-12 text-center">-->
+<!--        <img alt="Top Service" class="m-3" src="assets/img/top_service-siegel.jpg" />-->
+<!--        <p class="h5 text-center">{{"about.gut" | translate}}</p>-->
+<!--        <div class="text-center">-->
+<!--          <p class="p-2">-->
+<!--            {{"about.wurde" | translate}}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-md-4 col-xs-12 text-center mx-auto">-->
+<!--        <img alt="" class="m-3" src="assets/img/siegel.jpg" />-->
+<!--        <p class="h5 text-center">{{"about.kritische" | translate}}</p>-->
+<!--        <div class="text-center">-->
+<!--          <p class="p-2">-->
+<!--            {{"about.kunden" | translate}}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="col-md-4 col-xs-12 text-center mx-auto">-->
+<!--        <img alt="" class="m-3" src="assets/img/ntv.jpg" />-->
+<!--        <p class="h5 text-center">{{"about.ntv" | translate}}</p>-->
+<!--        <div class="text-center p-2">-->
+<!--          <p>-->
+<!--            {{"about.unabh" | translate}}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
