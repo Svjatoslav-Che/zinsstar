@@ -1,164 +1,208 @@
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" routerLink="/">
-      <img alt="" src="assets/logo.png" width="150px"/>
-    </a>
-    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-            class="navbar-toggler border-0 text-muted" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
-            type="button">
-      Menu<span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-xl-flex d-md-flex d-none"></ul>
-
-      <div class="d-xl-none d-md-none d-flex p-0">
-        <div class="container">
-          <div class="row border-bottom">
-            <div class="col">
-              <a (click)="collapse.toggle()" [attr.aria-expanded]="isCollapse1" class="btn text-primary-light"
-                 type="button">
-                {{'shared_about.header.Angebote' | translate}}
-                <fa-icon *ngIf="isCollapse1" [icon]="faArrowDown"></fa-icon>
-                <fa-icon *ngIf="!isCollapse1" [icon]="faArrowUp"></fa-icon>
-              </a>
-            </div>
-            <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapse1">
-              <ul class="list-unstyled">
-                <li>
-                  <a class="btn text-primary" routerLink="/festgeld/">{{'shared_about.header.Festgeld' | translate}}</a>
-                </li>
-                <li>
-                  <a class="btn text-primary" routerLink="/tagesgeld/">{{'shared_about.header.Tagesgeld' | translate}}</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="row border-bottom">
-            <div class="col">
-              <a (click)="collapse2.toggle()" [attr.aria-expanded]="isCollapse2" aria-controls="collapseExample2"
-                 class="btn text-primary-light" type="button">
-                {{'shared_about.header.Finanzwissen' | translate}}
-                <fa-icon *ngIf="isCollapse2" [icon]="faArrowDown"></fa-icon>
-                <fa-icon *ngIf="!isCollapse2" [icon]="faArrowUp"></fa-icon>
-              </a>
-              <div #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapse2">
-                <ul class="list-unstyled">
-                  <li>
-                    <a class="btn text-primary" routerLink="/steuern">
-                      {{'shared_about.header.Steuerinformationen' | translate}}
-                    </a>
-                  </li>
-                  <li>
-                    <a class="btn text-primary" routerLink="/einlagensicherung">
-                      {{'shared_about.header.Einlagensicherung' | translate}}
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="row border-bottom">
-            <div class="col">
-              <a (click)="collapse3.toggle()" [attr.aria-expanded]="!isCollapse3" aria-controls="collapseExample"
-                 class="btn text-primary-light" type="button">
-                {{'shared_about.header.uns' | translate}}
-                <fa-icon *ngIf="isCollapse3" [icon]="faArrowDown"></fa-icon>
-                <fa-icon *ngIf="!isCollapse3" [icon]="faArrowUp"></fa-icon>
-              </a>
-              <div #collapse3="ngbCollapse" [(ngbCollapse)]="isCollapse3">
-                <ul class="list-unstyled">
-                  <li>
-                    <a class="btn text-primary" routerLink="/ueber-zinsunion">
-                      {{'shared_about.header.uber' | translate}}
-                    </a>
-                  </li>
-                  <li>
-                    <a class="btn text-primary" routerLink="/so-funktionierts/">
-                      {{'shared_about.header.So' | translate}}
-                    </a>
-                  </li>
-                  <li>
-                    <a class="btn text-primary" routerLink="/bank/">{{'shared_about.header.Banken' | translate}}</a>
-                  </li>
-                  <li>
-                    <a class="btn text-primary" routerLink="/faqs">
-                      {{'shared_about.header.Fragen' | translate}}
-                    </a>
-                  </li>
-                  <li>
-                    <a class="btn text-primary" routerLink="/kontakt">{{'shared_about.header.Kontakt' | translate}}</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+<div class="header_container">
+  <div class="header_placer">
+    <div class="links_drops_container">
+      <div class="links_drops">
+        <div>
+          Offers
+        </div>
+        <div class="link_drops_arrow">
         </div>
       </div>
-      <form class="d-flex justify-content-between p-1 m-1">
-        <a class="btn btn-outline-primary-light m-2 mt-0 mb-0" routerLink="/auth/login">{{'shared_about.header.Konto' | translate}}</a>
-        <a class="btn btn-primary-light m-2 mt-0 mb-0" routerLink="/auth/register">{{'shared_about.header.Kunde' | translate}}</a>
-      </form>
-      <app-language-selector></app-language-selector>
-
+      <div class="links_drops">
+        <div>
+          Financial literacy
+        </div>
+        <div class="link_drops_arrow">
+        </div>
+      </div>
+      <div class="links_drops">
+        <div>
+          About us
+        </div>
+        <div class="link_drops_arrow">
+        </div>
+      </div>
     </div>
+
+    <img class="zinsstar_logo" src="../../../../assets/img/zinsstar_logo.png"/>
+
+    <div class="controls_container">
+      <a class="log_button" routerLink="/auth/login">
+        Log in
+      </a>
+      <a class="reg_button" routerLink="/auth/register">
+        Register
+      </a>
+      <div class="footer_language">
+        <img src="../../../../assets/img/united-kingdom.png" class="footer_flag"/>
+        <div class="footer_arrow"></div>
+      </div>
+    </div>
+
   </div>
-</nav>
+</div>
 
-<mat-toolbar class="d-xl-flex d-md-flex d-none bg-white">
-  <mat-toolbar-row class="border-top p-0 bg-white">
-    <div class="container">
-      <div>
-        <div #angebote="ngbDropdown" class="d-inline-block z-dropdown" ngbDropdown>
-          <a (mouseenter)="
-              $event.stopPropagation(); uns.close(); angebote.open()
-            " class="btn text-primary" id="angebote" ngbDropdownToggle>
-            {{'shared_about.header.Angebote' | translate}}
-          </a>
-          <div aria-labelledby="angebote" ngbDropdownMenu>
-            <a ngbDropdownItem routerLink="/festgeld">{{'shared_about.header.Festgeld' | translate}}</a>
-            <a ngbDropdownItem routerLink="/tagesgeld">{{'shared_about.header.Tagesgeld' | translate}}</a>
-          </div>
-        </div>
-        <div #uns="ngbDropdown" class="d-inline-block z-dropdown" ngbDropdown>
-          <a (mouseenter)="
-              $event.stopPropagation();
-              finanzwissens.close();
-              angebote.close();
-              uns.open()
-            " class="btn text-primary" id="about-us" ngbDropdownToggle>
-            {{'shared_about.header.uns' | translate}}
-          </a>
-          <div aria-labelledby="about-us" ngbDropdownMenu>
-            <a ngbDropdownItem routerLink="/ueber-zinsunion">
-              {{'shared_about.header.uber' | translate}}
-            </a>
-            <a ngbDropdownItem routerLink="/so-funktionierts/">
-              {{'shared_about.header.So' | translate}}
-            </a>
-            <a ngbDropdownItem routerLink="/bank/">{{'shared_about.header.Banken' | translate}}</a>
-            <a ngbDropdownItem routerLink="/faqs"> {{'shared_about.header.Fragen' | translate}} </a>
-            <a ngbDropdownItem routerLink="/kontakt">{{'shared_about.header.Kontakt' | translate}}</a>
-          </div>
-        </div>
-        <div #finanzwissens="ngbDropdown" class="d-inline-block z-dropdown" ngbDropdown>
-          <a (mouseenter)="
-              $event.stopPropagation();
-              finanzwissens.open();
-              angebote.close();
-              uns.close()
-            " class="btn text-primary" id="finanzwissens" ngbDropdownToggle>
-            {{'shared_about.header.Finanzwissen' | translate}}
-          </a>
-          <div aria-labelledby="finanzwissens" ngbDropdownMenu>
-            <a ngbDropdownItem routerLink="/steuern"> {{'shared_about.header.Steuerinformationen' | translate}} </a>
-            <a ngbDropdownItem routerLink="/einlagensicherung/">
-              {{'shared_about.header.Einlagensicherung' | translate}}
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+<!--<nav class="navbar navbar-expand-lg">-->
+<!--  <div class="container">-->
+<!--    <a class="navbar-brand" routerLink="/">-->
+<!--      <img alt="" src="assets/logo.png" width="150px"/>-->
+<!--    </a>-->
+<!--    <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"-->
+<!--            class="navbar-toggler border-0 text-muted" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"-->
+<!--            type="button">-->
+<!--      Menu<span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+
+<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-xl-flex d-md-flex d-none"></ul>-->
+
+<!--      <div class="d-xl-none d-md-none d-flex p-0">-->
+<!--        <div class="container">-->
+<!--          <div class="row border-bottom">-->
+<!--            <div class="col">-->
+<!--              <a (click)="collapse.toggle()" [attr.aria-expanded]="isCollapse1" class="btn text-primary-light"-->
+<!--                 type="button">-->
+<!--                {{'shared_about.header.Angebote' | translate}}-->
+<!--                <fa-icon *ngIf="isCollapse1" [icon]="faArrowDown"></fa-icon>-->
+<!--                <fa-icon *ngIf="!isCollapse1" [icon]="faArrowUp"></fa-icon>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--            <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapse1">-->
+<!--              <ul class="list-unstyled">-->
+<!--                <li>-->
+<!--                  <a class="btn text-primary" routerLink="/festgeld/">{{'shared_about.header.Festgeld' | translate}}</a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <a class="btn text-primary" routerLink="/tagesgeld/">{{'shared_about.header.Tagesgeld' | translate}}</a>-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row border-bottom">-->
+<!--            <div class="col">-->
+<!--              <a (click)="collapse2.toggle()" [attr.aria-expanded]="isCollapse2" aria-controls="collapseExample2"-->
+<!--                 class="btn text-primary-light" type="button">-->
+<!--                {{'shared_about.header.Finanzwissen' | translate}}-->
+<!--                <fa-icon *ngIf="isCollapse2" [icon]="faArrowDown"></fa-icon>-->
+<!--                <fa-icon *ngIf="!isCollapse2" [icon]="faArrowUp"></fa-icon>-->
+<!--              </a>-->
+<!--              <div #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapse2">-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li>-->
+<!--                    <a class="btn text-primary" routerLink="/steuern">-->
+<!--                      {{'shared_about.header.Steuerinformationen' | translate}}-->
+<!--                    </a>-->
+<!--                  </li>-->
+<!--                  <li>-->
+<!--                    <a class="btn text-primary" routerLink="/einlagensicherung">-->
+<!--                      {{'shared_about.header.Einlagensicherung' | translate}}-->
+<!--                    </a>-->
+<!--                  </li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="row border-bottom">-->
+<!--            <div class="col">-->
+<!--              <a (click)="collapse3.toggle()" [attr.aria-expanded]="!isCollapse3" aria-controls="collapseExample"-->
+<!--                 class="btn text-primary-light" type="button">-->
+<!--                {{'shared_about.header.uns' | translate}}-->
+<!--                <fa-icon *ngIf="isCollapse3" [icon]="faArrowDown"></fa-icon>-->
+<!--                <fa-icon *ngIf="!isCollapse3" [icon]="faArrowUp"></fa-icon>-->
+<!--              </a>-->
+<!--              <div #collapse3="ngbCollapse" [(ngbCollapse)]="isCollapse3">-->
+<!--                <ul class="list-unstyled">-->
+<!--                  <li>-->
+<!--                    <a class="btn text-primary" routerLink="/ueber-zinsunion">-->
+<!--                      {{'shared_about.header.uber' | translate}}-->
+<!--                    </a>-->
+<!--                  </li>-->
+<!--                  <li>-->
+<!--                    <a class="btn text-primary" routerLink="/so-funktionierts/">-->
+<!--                      {{'shared_about.header.So' | translate}}-->
+<!--                    </a>-->
+<!--                  </li>-->
+<!--                  <li>-->
+<!--                    <a class="btn text-primary" routerLink="/bank/">{{'shared_about.header.Banken' | translate}}</a>-->
+<!--                  </li>-->
+<!--                  <li>-->
+<!--                    <a class="btn text-primary" routerLink="/faqs">-->
+<!--                      {{'shared_about.header.Fragen' | translate}}-->
+<!--                    </a>-->
+<!--                  </li>-->
+<!--                  <li>-->
+<!--                    <a class="btn text-primary" routerLink="/kontakt">{{'shared_about.header.Kontakt' | translate}}</a>-->
+<!--                  </li>-->
+<!--                </ul>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <form class="d-flex justify-content-between p-1 m-1">-->
+<!--        <a class="btn btn-outline-primary-light m-2 mt-0 mb-0" routerLink="/auth/login">{{'shared_about.header.Konto' | translate}}</a>-->
+<!--        <a class="btn btn-primary-light m-2 mt-0 mb-0" routerLink="/auth/register">{{'shared_about.header.Kunde' | translate}}</a>-->
+<!--      </form>-->
+<!--      <app-language-selector></app-language-selector>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+
+<!--<mat-toolbar class="d-xl-flex d-md-flex d-none bg-white">-->
+<!--  <mat-toolbar-row class="border-top p-0 bg-white">-->
+<!--    <div class="container">-->
+<!--      <div>-->
+<!--        <div #angebote="ngbDropdown" class="d-inline-block z-dropdown" ngbDropdown>-->
+<!--          <a (mouseenter)="-->
+<!--              $event.stopPropagation(); uns.close(); angebote.open()-->
+<!--            " class="btn text-primary" id="angebote" ngbDropdownToggle>-->
+<!--            {{'shared_about.header.Angebote' | translate}}-->
+<!--          </a>-->
+<!--          <div aria-labelledby="angebote" ngbDropdownMenu>-->
+<!--            <a ngbDropdownItem routerLink="/festgeld">{{'shared_about.header.Festgeld' | translate}}</a>-->
+<!--            <a ngbDropdownItem routerLink="/tagesgeld">{{'shared_about.header.Tagesgeld' | translate}}</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div #uns="ngbDropdown" class="d-inline-block z-dropdown" ngbDropdown>-->
+<!--          <a (mouseenter)="-->
+<!--              $event.stopPropagation();-->
+<!--              finanzwissens.close();-->
+<!--              angebote.close();-->
+<!--              uns.open()-->
+<!--            " class="btn text-primary" id="about-us" ngbDropdownToggle>-->
+<!--            {{'shared_about.header.uns' | translate}}-->
+<!--          </a>-->
+<!--          <div aria-labelledby="about-us" ngbDropdownMenu>-->
+<!--            <a ngbDropdownItem routerLink="/ueber-zinsunion">-->
+<!--              {{'shared_about.header.uber' | translate}}-->
+<!--            </a>-->
+<!--            <a ngbDropdownItem routerLink="/so-funktionierts/">-->
+<!--              {{'shared_about.header.So' | translate}}-->
+<!--            </a>-->
+<!--            <a ngbDropdownItem routerLink="/bank/">{{'shared_about.header.Banken' | translate}}</a>-->
+<!--            <a ngbDropdownItem routerLink="/faqs"> {{'shared_about.header.Fragen' | translate}} </a>-->
+<!--            <a ngbDropdownItem routerLink="/kontakt">{{'shared_about.header.Kontakt' | translate}}</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div #finanzwissens="ngbDropdown" class="d-inline-block z-dropdown" ngbDropdown>-->
+<!--          <a (mouseenter)="-->
+<!--              $event.stopPropagation();-->
+<!--              finanzwissens.open();-->
+<!--              angebote.close();-->
+<!--              uns.close()-->
+<!--            " class="btn text-primary" id="finanzwissens" ngbDropdownToggle>-->
+<!--            {{'shared_about.header.Finanzwissen' | translate}}-->
+<!--          </a>-->
+<!--          <div aria-labelledby="finanzwissens" ngbDropdownMenu>-->
+<!--            <a ngbDropdownItem routerLink="/steuern"> {{'shared_about.header.Steuerinformationen' | translate}} </a>-->
+<!--            <a ngbDropdownItem routerLink="/einlagensicherung/">-->
+<!--              {{'shared_about.header.Einlagensicherung' | translate}}-->
+<!--            </a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </mat-toolbar-row>-->
+<!--</mat-toolbar>-->
