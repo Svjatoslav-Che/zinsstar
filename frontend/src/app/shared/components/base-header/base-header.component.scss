@@ -10,16 +10,21 @@
     left: calc(50% - 49px);
   }
 
-  .footer_language {
+  .header_language {
     width: 42px;
+    height: 40px;
+    margin-top: -4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-left: 16px;
+    position: relative;
 
-    .footer_flag {
-      width: 24px;
-      height: 16px;
+    &:hover {
+      .lang_choose {
+        display: flex;
+      }
+    }
     }
 
     .footer_arrow {
@@ -36,6 +41,44 @@
       .footer_arrow {
         background-image: url("../../../../assets/img/footer_arrow_drop_hover.png");
       }
+    }
+
+    .lang_choose {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      z-index: +20;
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background: #ffffff;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      font-size: 14px;
+      line-height: 19px;
+      flex-direction: column;
+
+      img {
+        margin-top: 2px;
+        margin-right: 10px;
+        width: 20px;
+        height: 15px;
+      }
+
+      a {
+        display: flex;
+        flex-direction: row;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        color: #262222;
+        user-select: none;
+        text-decoration: none;
+        margin: 10px 15px 10px 15px;
+
+        &:hover {
+          color: #ee662a;
+        }
+
     }
   }
 
@@ -78,7 +121,7 @@
       .reg_button {
         font-size: 14px;
         line-height: 19px;
-        width: 68px;
+        width: 83px;
         height: 31px;
         border: 1px solid #F08A5D;
         background: #F08A5D;
@@ -104,6 +147,7 @@
       gap: 30px;
 
       .links_drops {
+        height: 40px;
         font-size: 16px;
         line-height: 22px;
         color: #262222;
@@ -111,6 +155,38 @@
         flex-direction: row;
         gap: 5px;
         align-items: center;
+        position: relative;
+
+        .drop_box_container {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          z-index: +20;
+          display: none;
+          position: absolute;
+          top: 40px;
+          left: 0;
+          background: #ffffff;
+          border-radius: 6px;
+          border: 1px solid rgba(0, 0, 0, 0.2);
+          font-size: 14px;
+          line-height: 19px;
+          flex-direction: column;
+
+          a {
+            display: flex;
+            flex-direction: row;
+            white-space: nowrap;
+            flex-wrap: nowrap;
+            color: #262222;
+            user-select: none;
+            text-decoration: none;
+            margin: 10px 15px 10px 15px;
+
+            &:hover {
+              color: #ee662a;
+            }
+          }
+        }
 
         &:hover {
           cursor: pointer;
@@ -119,6 +195,9 @@
           .link_drops_arrow {
             cursor: pointer;
             background-image: url("../../../../assets/img/footer_arrow_drop_hover.png");
+          }
+          .drop_box_container  {
+            display: flex;
           }
         }
 

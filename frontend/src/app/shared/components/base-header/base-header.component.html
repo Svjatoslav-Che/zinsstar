@@ -2,29 +2,46 @@
   <div class="header_placer">
     <div class="links_drops_container">
       <div class="links_drops">
-        <div>
-          Offers
+        <div class="links_drops_dropable">
+          {{'shared_about.header.Angebote' | translate}}
         </div>
         <div class="link_drops_arrow">
+        </div>
+        <div class="drop_box_container">
+          <a routerLink="/festgeld/">{{'shared_about.header.Festgeld' | translate}}</a>
+          <a routerLink="/tagesgeld/">{{'shared_about.header.Tagesgeld' | translate}}</a>
         </div>
       </div>
       <div class="links_drops">
         <div>
-          Financial literacy
+          {{'shared_about.header.Finanzwissen' | translate}}
         </div>
         <div class="link_drops_arrow">
+        </div>
+        <div class="drop_box_container">
+          <a routerLink="/steuern"> {{'shared_about.header.Steuerinformationen' | translate}} </a>
+          <a routerLink="/einlagensicherung/"> {{'shared_about.header.Einlagensicherung' | translate}} </a>
         </div>
       </div>
       <div class="links_drops">
-        <div>
-          About us
+        <div class="links_drops_dropable">
+          {{'shared_about.header.uns' | translate}}
         </div>
         <div class="link_drops_arrow">
+        </div>
+        <div class="drop_box_container">
+          <a routerLink="/ueber-zinsunion"> {{'shared_about.header.uber' | translate}} </a>
+          <a routerLink="/so-funktionierts/">{{'shared_about.header.So' | translate}}</a>
+          <a routerLink="/bank/">{{'shared_about.header.Banken' | translate}}</a>
+          <a routerLink="/faqs">{{'shared_about.header.Fragen' | translate}}</a>
+          <a routerLink="/kontakt">{{'shared_about.header.Kontakt' | translate}}</a>
         </div>
       </div>
     </div>
 
-    <img class="zinsstar_logo" src="../../../../assets/img/zinsstar_logo.png"/>
+    <a class="zinsstar_logo" routerlink="/" href="/">
+      <img class="zinsstar_logo" src="../../../../assets/img/zinsstar_logo.png"/>
+    </a>
 
     <div class="controls_container">
       <a class="log_button" routerLink="/auth/login">
@@ -33,14 +50,21 @@
       <a class="reg_button" routerLink="/auth/register">
         Register
       </a>
-      <div class="footer_language">
+      <div class="header_language">
         <img src="../../../../assets/img/united-kingdom.png" class="footer_flag"/>
         <div class="footer_arrow"></div>
+        <div class="lang_choose">
+          <a (click)="selectLanguage('de')"><img class="img-container" src="assets/img/flag/de.png"/>{{'navbar.languages.de' | translate}}</a>
+          <a (click)="selectLanguage('en')"><img class="img-container" src="assets/img/flag/en.png"/>{{'navbar.languages.en' | translate}}</a>
+        </div>
       </div>
     </div>
 
   </div>
 </div>
+
+
+<!--CROSS CHANGES-->
 
 <!--<nav class="navbar navbar-expand-lg">-->
 <!--  <div class="container">-->
