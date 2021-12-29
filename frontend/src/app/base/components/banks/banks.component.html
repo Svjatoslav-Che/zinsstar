@@ -1,25 +1,158 @@
-<div class="bg-gradient-grey">
-  <div class="pt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 mx-auto">
-          <h1 class="h1 text-center">
-            {{'banks.erfahren' | translate}}
-          </h1>
+<div class="daz_navigator_bch">
+    <div class="navi_placer">
+        <div class="prev_way">
+            About us
         </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <app-bank-filter (filterBy)="filter($event)"></app-bank-filter>
+        <div class="arrow_right"></div>
+        <div class="current_local">
+            Banks
         </div>
-      </div>
-
-      <app-bank-item
-        *ngFor="let bank of banks"
-        [bank]="bank"
-        [country]="getBankCountry(bank)"
-        style="width: 100%">
-      </app-bank-item>
     </div>
-  </div>
 </div>
+
+<div class="daz_poster_bcbk">
+    <div>
+        <h1>
+            Find out more about our partner banks
+        </h1>
+        <h2>
+            Save, invest and make provision with one registration.With an account with ZinsUnion you have uncomplicated and quick access to attractive savings and investment products.
+        </h2>
+        <div class="main_frame_caller">
+            More
+            <div class="mainframe_arrow">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="some_wired_squares_b">
+    <div class="sws_frame">
+        <div class="sws_sqr sws_1">
+            <div class="head">
+                Europe-wide fixed-term and overnight deposits
+            </div>
+            <div class="strip">
+            </div>
+            <div class="text">
+                Choose from over 720 lucrative daily and fixed deposit offers from Europe free of charge. Thanks to the EU directive, your savings balance is protected up to the equivalent of EUR 100,000 including interest income per bank.
+            </div>
+        </div>
+        <div class="sws_sqr sws_2">
+            <div class="head">
+                EU deposit insurance 100,000 EURO
+            </div>
+        </div>
+        <div class="sws_sqr sws_3">
+            <div class="head">
+                Clever retirement provision with interest union
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="banking_placer">
+    <div class="banking_cont">
+        <div class="head_text">
+            Looking for banks
+        </div>
+        <div class="search_container">
+            <div class="input_container">
+                <img src='../../../../assets/img/search-svgrepo-com%201.png'>
+                <input type="text" placeholder="What are you looking for?">
+            </div>
+            <div class="button_search">
+                Search
+            </div>
+        </div>
+        <div class="sort_container">
+            <div class="sort_by">
+                <div class="text_sort">
+                    Sort by
+                </div>
+                <div class="sort_line">
+                </div>
+                <div class="img_container">
+                </div>
+                <div class="value_choose">
+                    <a>Val 1</a>
+                    <a>Val 2</a>
+                </div>
+            </div>
+            <div class="cls_filter">
+                Clear filter
+            </div>
+        </div>
+        <div class="list_descriptor">
+            <div class="ld_bank flexing_it">
+                Bank
+            </div>
+            <div class="ld_country flexing_it">
+                Country
+            </div>
+            <div class="ld_rate flexing_it">
+                Country rating
+                <img src='../../../../assets/img/question_mark.png'>
+            </div>
+            <div class="ld_description flexing_it">
+                Description
+            </div>
+            <div class="ld_moar flexing_it">
+            </div>
+        </div>
+        <div class="some_data" *ngFor="let i of [0,1,2,3,4,5]">
+            <div class="ld_bank flexing_it">
+                Bank
+            </div>
+            <div class="ld_strip"></div>
+            <div class="ld_country flexing_it">
+                Austria
+            </div>
+            <div class="ld_strip"></div>
+            <div class="ld_rate flexing_it">
+                <div class="rate_but">
+                    AA+
+                </div>
+            </div>
+            <div class="ld_strip"></div>
+            <div class="ld_description flexing_it">
+                <div class="ld_d_container">
+                    The Addiko Group consists of Addiko Bank AG, the Austrian parent bank based in Vienna (Austria)...
+                </div>
+            </div>
+            <div class="ld_strip"></div>
+            <div class="ld_moar flexing_it">
+                <div class="moar_button">
+                    Learn more
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--<div class="bg-gradient-grey">-->
+<!--  <div class="pt-5">-->
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="col-md-8 mx-auto">-->
+<!--          <h1 class="h1 text-center">-->
+<!--            {{'banks.erfahren' | translate}}-->
+<!--          </h1>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row">-->
+<!--        <div class="col">-->
+<!--          <app-bank-filter (filterBy)="filter($event)"></app-bank-filter>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <app-bank-item-->
+<!--        *ngFor="let bank of banks"-->
+<!--        [bank]="bank"-->
+<!--        [country]="getBankCountry(bank)"-->
+<!--        style="width: 100%">-->
+<!--      </app-bank-item>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
