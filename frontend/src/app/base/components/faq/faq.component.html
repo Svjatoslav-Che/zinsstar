@@ -1,114 +1,208 @@
-<div style="
-    --bg-desktop: url(assets/img/gradient-background-v2.svg);
-    --bg-tablet: url(assets/img/gradient-background-v2.svg);
-    --bg-mobile: url(assets/img/gradient-background-v2.svg);
-    background-image: url(assets/img/gradient-background-v2.svg),
-      url(assets/img/background-dark.svg);
-  ">
-  <div class="container text-center p-5">
-    <h1 class="fs-1 display-1 my-auto text-white p-5">
+<div class="daz_navigator_bch">
+  <div class="navi_placer">
+    <div class="prev_way">
+      About us
+    </div>
+    <div class="arrow_right"></div>
+    <div class="current_local">
       {{ "faq.Fragen" | translate }}
-    </h1>
+    </div>
   </div>
 </div>
 
-<section class="vh-50">
-  <div class="container mt-5 mb-5  vh-25 ">
-    <div class="row">
-      <div class="col-6 mx-auto text-center">
-        <mat-form-field appearance="outline" style="width: 100%">
-          <input autocomplete="off" id="search" matInput name="faq-search" placeholder=" Suchbegriff eingeben" type="text"/>
-          <mat-icon matPrefix>{{ "faq.search" | translate }}search</mat-icon>
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="row p-1">
-      <div class="col-md-4">
-        <div *ngIf="false" class="h4 border-bottom pt-4 pb-2">
-          {{ "faq.Nach" | translate }}
-        </div>
-        <ul #nav="ngbNav" class="nav-pills" ngbNav orientation="vertical">
-          <li ngbNavItem>
-            <a ngbNavLink>{{ "faq.ZinsUnion" | translate }}</a>
-            <ng-template ngbNavContent>
-              <h1>{{ "faq.ZinsUnion" | translate }}</h1>
-
-              <div *ngFor="let item of firstList" class="py-3 border-bottom">
-                <div class="d-flex flex-column">
-                  <a (click)="openClose(item)" class="
-                      d-flex
-                      justify-content-between
-                      align-items-center
-                      text-decoration-none
-                    " style="cursor: pointer">
-                    <p class="fs-4 m-0 text-muted">
-                      {{ item.category }}
-                    </p>
-                    <fa-icon [icon]="item.expanded ? faArrowUp : faArrowDown">
-                    </fa-icon>
-                  </a>
-                  <div class="container">
-                    <div *ngFor="let question of getQuestions(item.category)" class="d-flex flex-column">
-                      <div *ngIf="item.expanded" class="d-flex justify-content-between py-2">
-                        <div (click)="question.expanded = !question.expanded" class="text-primary questionTitle">
-                          <fa-icon [icon]="
-                              question.expanded ? faMinusSquare : faPlusSquare
-                            " class="text-start" size="1x">
-                          </fa-icon>
-                          <span class="fs-6 fw-normal">
-                            {{ question.title }}</span>
-                        </div>
-                      </div>
-                      <div *ngIf="question.expanded" [innerHTML]="question.content" class="pt-3 p-1"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-          </li>
-          <li ngbNavItem>
-            <a ngbNavLink>{{ "faq.Tages" | translate }}</a>
-            <ng-template ngbNavContent>
-              <h1>{{ "faq.Tages" | translate }}</h1>
-
-              <div *ngFor="let item of secondList" class="py-3 border-bottom">
-                <div class="d-flex flex-column">
-                  <a (click)="openClose(item)" class="
-                      d-flex
-                      justify-content-between
-                      align-items-center
-                      text-decoration-none
-                    " style="cursor: pointer">
-                    <p class="fs-4 m-0 text-muted">
-                      {{ item.category }}
-                    </p>
-                    <fa-icon [icon]="item.expanded ? faArrowUp : faArrowDown">
-                    </fa-icon>
-                  </a>
-                  <div class="container">
-                    <div *ngFor="let question of getQuestions(item.category)" class="d-flex flex-column">
-                      <div *ngIf="item.expanded" class="d-flex justify-content-between py-2">
-                        <div (click)="question.expanded = !question.expanded" class="text-primary questionTitle">
-                          <fa-icon [icon]="
-                              question.expanded ? faMinusSquare : faPlusSquare
-                            " class="text-start" size="1x">
-                          </fa-icon>
-                          <span class="fs-6 fw-normal">
-                            {{ question.title }}</span>
-                        </div>
-                      </div>
-                      <div *ngIf="question.expanded" [innerHTML]="question.content" class="pt-3 p-1"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-8">
-        <div [ngbNavOutlet]="nav" class="ms-4"></div>
+<div class="daz_poster_fq">
+  <div>
+    <h1>
+      {{ "faq.Fragen" | translate }}
+    </h1>
+    <h2>
+      Save, invest and make provision with one registration.With an account with ZinsUnion you have uncomplicated and quick access to attractive savings and investment products.
+    </h2>
+    <div class="main_frame_caller">
+      More
+      <div class="mainframe_arrow">
       </div>
     </div>
   </div>
-</section>
+</div>
+
+<div class="faq_holda">
+  <div class="faq_container">
+    <div class="search_container">
+      <div class="input_container">
+        <img src='../../../../assets/img/search-svgrepo-com%201.png'>
+        <input type="text" placeholder="What are you looking for?">
+      </div>
+      <div class="button_search">
+        Search
+      </div>
+    </div>
+    <div class="faq_content">
+      <div class="faq_cont_left">
+        <div class="head_plank">
+          About ZinsUnion
+          <img src='../../../../assets/img/fq_arrow_dwn.png'>
+        </div>
+        <div class="solo_plank">
+          Business model and service
+        </div>
+        <div class="solo_plank">
+          The ZinsUnion account
+        </div>
+        <div class="solo_plank">
+          Online banking
+        </div>
+        <div class="solo_plank">
+          IT security and data protection
+        </div>
+        <div class="stripe_plank"></div>
+        <div class="head_plank hp_down">
+          Daily and fixed deposit
+          <img src='../../../../assets/img/fq_arrow_dwn.png'>
+        </div>
+      </div>
+      <div class="faq_cont_right">
+        <div class="header_faq">
+          About ZinsUnion
+        </div>
+
+
+        <div *ngFor="let item of firstList" class="head_list_box">
+          <div class="d-flex flex-column">
+            <a (click)="openClose(item)" class="
+                      d-flex
+                      justify-content-between
+                      align-items-center
+                      text-decoration-none
+                    " style="cursor: pointer">
+              <p class="category_name">
+                {{ item.category }}
+                <img *ngIf=item.expanded src="assets/img/PlusMinus.png">
+                <img *ngIf=!item.expanded src="assets/img/MinusPlus.png">
+              </p>
+            </a>
+            <div class="container_of_some">
+              <div *ngFor="let question of getQuestions(item.category)">
+                <div *ngIf="item.expanded">
+                  <div (click)="question.expanded = !question.expanded" class="quest_hoverable">
+                    <fa-icon [icon]="
+                              question.expanded ? faMinusSquare : faPlusSquare
+                            " class="text-start" size="1x">
+                    </fa-icon>
+                    <span>
+                            {{ question.title }}</span>
+                  </div>
+                </div>
+                <div *ngIf="question.expanded" [innerHTML]="question.content"></div>
+              </div>
+              <div *ngIf="item.expanded" class="container_step_some"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--<section class="vh-50">-->
+<!--  <div class="container mt-5 mb-5  vh-25 ">-->
+<!--    <div class="row">-->
+<!--      <div class="col-6 mx-auto text-center">-->
+<!--        <mat-form-field appearance="outline" style="width: 100%">-->
+<!--          <input autocomplete="off" id="search" matInput name="faq-search" placeholder=" Suchbegriff eingeben" type="text"/>-->
+<!--          <mat-icon matPrefix>{{ "faq.search" | translate }}search</mat-icon>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row p-1">-->
+<!--      <div class="col-md-4">-->
+<!--        <div *ngIf="false" class="h4 border-bottom pt-4 pb-2">-->
+<!--          {{ "faq.Nach" | translate }}-->
+<!--        </div>-->
+<!--        <ul #nav="ngbNav" class="nav-pills" ngbNav orientation="vertical">-->
+<!--          <li ngbNavItem>-->
+<!--            <a ngbNavLink>{{ "faq.ZinsUnion" | translate }}</a>-->
+<!--            <ng-template ngbNavContent>-->
+<!--              <h1>{{ "faq.ZinsUnion" | translate }}</h1>-->
+
+<!--              <div *ngFor="let item of firstList" class="py-3 border-bottom">-->
+<!--                <div class="d-flex flex-column">-->
+<!--                  <a (click)="openClose(item)" class="-->
+<!--                      d-flex-->
+<!--                      justify-content-between-->
+<!--                      align-items-center-->
+<!--                      text-decoration-none-->
+<!--                    " style="cursor: pointer">-->
+<!--                    <p class="fs-4 m-0 text-muted">-->
+<!--                      {{ item.category }}-->
+<!--                    </p>-->
+<!--                    <fa-icon [icon]="item.expanded ? faArrowUp : faArrowDown">-->
+<!--                    </fa-icon>-->
+<!--                  </a>-->
+<!--                  <div class="container">-->
+<!--                    <div *ngFor="let question of getQuestions(item.category)" class="d-flex flex-column">-->
+<!--                      <div *ngIf="item.expanded" class="d-flex justify-content-between py-2">-->
+<!--                        <div (click)="question.expanded = !question.expanded" class="text-primary questionTitle">-->
+<!--                          <fa-icon [icon]="-->
+<!--                              question.expanded ? faMinusSquare : faPlusSquare-->
+<!--                            " class="text-start" size="1x">-->
+<!--                          </fa-icon>-->
+<!--                          <span class="fs-6 fw-normal">-->
+<!--                            {{ question.title }}</span>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div *ngIf="question.expanded" [innerHTML]="question.content" class="pt-3 p-1"></div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </ng-template>-->
+<!--          </li>-->
+<!--          <li ngbNavItem>-->
+<!--            <a ngbNavLink>{{ "faq.Tages" | translate }}</a>-->
+<!--            <ng-template ngbNavContent>-->
+<!--              <h1>{{ "faq.Tages" | translate }}</h1>-->
+
+<!--              <div *ngFor="let item of secondList" class="py-3 border-bottom">-->
+<!--                <div class="d-flex flex-column">-->
+<!--                  <a (click)="openClose(item)" class="-->
+<!--                      d-flex-->
+<!--                      justify-content-between-->
+<!--                      align-items-center-->
+<!--                      text-decoration-none-->
+<!--                    " style="cursor: pointer">-->
+<!--                    <p class="fs-4 m-0 text-muted">-->
+<!--                      {{ item.category }}-->
+<!--                    </p>-->
+<!--                    <fa-icon [icon]="item.expanded ? faArrowUp : faArrowDown">-->
+<!--                    </fa-icon>-->
+<!--                  </a>-->
+<!--                  <div class="container">-->
+<!--                    <div *ngFor="let question of getQuestions(item.category)" class="d-flex flex-column">-->
+<!--                      <div *ngIf="item.expanded" class="d-flex justify-content-between py-2">-->
+<!--                        <div (click)="question.expanded = !question.expanded" class="text-primary questionTitle">-->
+<!--                          <fa-icon [icon]="-->
+<!--                              question.expanded ? faMinusSquare : faPlusSquare-->
+<!--                            " class="text-start" size="1x">-->
+<!--                          </fa-icon>-->
+<!--                          <span class="fs-6 fw-normal">-->
+<!--                            {{ question.title }}</span>-->
+<!--                        </div>-->
+<!--                      </div>-->
+<!--                      <div *ngIf="question.expanded" [innerHTML]="question.content" class="pt-3 p-1"></div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </ng-template>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--      <div class="col-md-8">-->
+<!--        <div [ngbNavOutlet]="nav" class="ms-4"></div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->

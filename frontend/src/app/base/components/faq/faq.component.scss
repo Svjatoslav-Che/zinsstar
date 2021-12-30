@@ -1,3 +1,368 @@
+.daz_navigator_bch {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+
+
+  .navi_placer {
+    width: 1220px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+
+    .arrow_right {
+      margin-top: 1px;
+      width: 5px;
+      height: 10px;
+      background-image: url("../../../../assets/img/arrow_left.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform: rotate(180deg);
+    }
+
+    .prev_way {
+      color: #262222;
+      opacity: 0.7;
+    }
+
+    .current_local {
+      color: #262222;
+    }
+  }
+
+  .main_frame_caller {
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+
+    .mainframe_arrow {
+      width: 19px;
+      height: 7px;
+      background-image: url("../../../../assets/img/arrow_down.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: 20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: #ee662a;
+
+      .mainframe_arrow {
+        background-image: url("../../../../assets/img/arrow_down_hover.png");
+        background-size: cover;
+      }
+    }
+  }
+
+  .mainframe_arrow {
+    width: 19px;
+    height: 7px;
+    background-image: url("../../../../assets/img/arrow_down.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+  }
+}
+
+.daz_poster_fq {
+  background-image: url("../../../../assets/img/intro_bnk.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 618px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  h1 {
+    width: 906px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 76px;
+    color: #FFFFFF;
+  }
+
+  h2 {
+    margin-top: 40px;
+    width: 920px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+  }
+
+  .main_frame_caller {
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 30px;
+    width: 120px;
+    left: calc(50% - 60px);
+
+    .mainframe_arrow {
+      width: 19px;
+      height: 8px;
+      background-image: url("../../../../assets/img/arrow_down.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: 20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: #ee662a;
+
+      .mainframe_arrow {
+        background-image: url("../../../../assets/img/arrow_down_hover.png");
+        background-size: cover;
+      }
+    }
+  }
+
+  .mainframe_arrow {
+    width: 19px;
+    height: 7px;
+    background-image: url("../../../../assets/img/arrow_down.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+  }
+}
+
+.faq_holda {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  width: 100%;
+
+  .faq_container {
+    width: 1110px;
+    margin-top: 65px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .search_container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+
+      .button_search {
+        width: 160px;
+        height: 52px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        line-height: 22px;
+        color: #FFFFFF;
+        background: #F08A5D;
+        user-select: none;
+
+        &:hover {
+          cursor: pointer;
+          background: #ee662a;
+        }
+      }
+
+      .input_container {
+        width: 920px;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid rgba(38, 34, 34, 0.15);
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+
+        input {
+          color: rgba(38, 34, 34, 1);
+          border: none;
+          margin-right: 15px;
+          width: 100%;
+          outline: none;
+        }
+
+        input::placeholder {
+          color: rgba(38, 34, 34, 0.4);
+        }
+      }
+    }
+
+    .faq_content {
+      width: 100%;
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+
+        .faq_cont_left {
+          margin-left: 25px;
+          width: 350px;
+          height: 285px;
+          box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.05);
+          border-radius: 15px;
+          display: flex;
+          flex-direction: column;
+
+          .head_plank {
+            margin-left: 20px;
+            user-select: none;
+            margin-top: 15px;
+            width: 300px;
+            height: 40px;
+            font-size: 16px;
+            line-height: 22px;
+            color: #262222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            img {
+              transform: rotate(90deg);
+              opacity: 0.4;
+            }
+
+            &:hover {
+              cursor: pointer;
+              color: #ee662a;
+
+              img {
+                transform: rotate(0deg);
+                transition: all 100ms linear ;
+                opacity: 0.4;
+              }
+            }
+
+            &:active {
+              cursor: pointer;
+              color: #F08A5D;
+            }
+          }
+
+          .solo_plank {
+            margin-left: 20px;
+            width: 300px;
+            height: 40px;
+            font-size: 14px;
+            line-height: 19px;
+            color: #262222;
+            opacity: 0.6;
+            display: flex;
+            align-items: center;
+            user-select: none;
+
+            &:hover {
+              cursor: pointer;
+              color: #ee662a;
+            }
+
+            &:active {
+              cursor: pointer;
+              color: #F08A5D;
+            }
+          }
+
+          .stripe_plank {
+            margin-left: 20px;
+            margin-top: 10px;
+            width: 300px;
+            height: 1px;
+            background: rgba(38, 34, 34, .15);
+          }
+
+          .hp_down {
+            margin-top: 5px;
+          }
+        }
+
+        .faq_cont_right {
+          width: 710px;
+          margin-bottom: 95px;
+
+          .header_faq {
+            font-size: 40px;
+            line-height: 55px;
+            font-weight: 500;
+            color: #262222;
+            margin-bottom: 50px;
+          }
+
+          .head_list_box {
+            width: 100%;
+
+            .category_name {
+              width: 100%;
+              box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.05);
+              border-radius: 10px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 16px;
+              line-height: 22px;
+              color: #262222;
+              padding: 20px 25px 20px 25px;
+            }
+
+            .container_of_some {
+              color: #262222;
+              opacity: 0.6;
+              margin-left: 25px;
+              font-size: 14px;
+              line-height: 19px;
+
+              .container_step_some {
+                margin-bottom: 15px;
+              }
+
+              .quest_hoverable {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                color: #262222;
+                opacity: 0.6;
+
+                &:hover {
+                  opacity: 1;
+                  cursor: pointer;
+                  color: #F08A5D;
+                }
+              }
+
+            }
+          }
+        }
+    }
+  }
+}
+
+//NOT THIS ONE
+
 .questionTitle {
   * {
     &:hover {
