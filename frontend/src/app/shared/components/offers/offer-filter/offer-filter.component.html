@@ -1,46 +1,168 @@
-<div class="container">
-  <div class="row mt-2">
-    <div *ngIf="!isOvernight" class="col-6 text-end">
-      <mat-form-field appearance="outline" style="width: 40%">
-        <mat-label>{{'offers.filter.Laufzeit' | translate}}</mat-label>
-        <mat-select [(value)]="duration">
-          <mat-option *ngFor="let item of filterOptions" [value]="item">{{ item.title }} ({{ getCount(item) }})
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+<div class="banking_placer">
+  <div class="banking_cont">
+    <div class="head_text">
+      Choose a fixed-term deposit - benefit from top interest rates
     </div>
-    <div [ngClass]="amountClass" class="col-6 mx-auto text-start">
-      <form [formGroup]="formGroup">
-        <mat-form-field appearance="outline">
-          <mat-label>{{'offers.filter.Anlagebetrag' | translate}}</mat-label>
-          <input formControlName="amount" matInput placeholder="Min. 1€"
-                 value="{{ amount | currency: 'EUR':'symbol':'1.0-0'  }}"/>
-          <mat-error> this is error</mat-error>
-        </mat-form-field>
-      </form>
+    <div class="search_container">
+      <div class="input_container">
+        <img src='assets/img/search-svgrepo-com%201.png'>
+        <input type="text" placeholder="What are you looking for?">
+      </div>
+      <div class="button_search">
+        Search
+      </div>
     </div>
+    <div class="sort_container">
+      <div class="sort_by">
+        <div class="text_sort">
+          Sort by
+        </div>
+        <div class="sort_line">
+        </div>
+        <div class="img_container">
+        </div>
+        <div class="value_choose">
+          <a (click)="switchOrder(sort.Percent)">{{'offers.filter.Zinssatz' | translate}}</a>
+          <a (click)="switchOrder(sort.Duration)">{{'offers.filter.Laufzeit' | translate}}</a>
+          <a (click)="switchOrder(sort.Bank)">{{'offers.filter.Bank' | translate}}</a>
+          <a (click)="switchOrder(sort.Land)">{{'offers.filter.Land' | translate}}</a>
+          <a>{{'offers.filter.plus' | translate}}</a>
+        </div>
+      </div>
+      <div class="sort_time">
+        <div class="text_sort">
+          Running time
+        </div>
+        <div class="sort_line">
+        </div>
+        <div class="img_container">
+        </div>
+      </div>
+      <div class="sort_amount">
+        <div class="text_sort">
+          Investment amount
+        </div>
+        <div class="sort_line">
+        </div>
+        <div class="img_container">
+        </div>
+      </div>
+
+<!--      <div class="container">-->
+<!--        <div class="row mt-2">-->
+<!--          <div *ngIf="!isOvernight" class="col-6">-->
+<!--            <mat-form-field appearance="outline" style="width: 40%">-->
+<!--              <mat-label>{{'offers.filter.Laufzeit' | translate}}</mat-label>-->
+<!--              <mat-select [(value)]="duration">-->
+<!--                <mat-option *ngFor="let item of filterOptions" [value]="item">{{ item.title }} ({{ getCount(item) }})-->
+<!--                </mat-option>-->
+<!--              </mat-select>-->
+<!--            </mat-form-field>-->
+<!--          </div>-->
+<!--          <div [ngClass]="amountClass" class="col-6 mx-auto">-->
+<!--            <form [formGroup]="formGroup">-->
+<!--              <mat-form-field appearance="outline">-->
+<!--                <mat-label>{{'offers.filter.Anlagebetrag' | translate}}</mat-label>-->
+<!--                <input formControlName="amount" matInput placeholder="Min. 1€"-->
+<!--                       value="{{ amount | currency: 'EUR':'symbol':'1.0-0'  }}"/>-->
+<!--                <mat-error> this is error</mat-error>-->
+<!--              </mat-form-field>-->
+<!--            </form>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <div class="cls_filter">
+        Clear filter
+      </div>
+
+
+    </div>
+    <!--    <div class="list_descriptor">-->
+    <!--      <div class="ld_bank flexing_it">-->
+    <!--        Bank-->
+    <!--      </div>-->
+    <!--      <div class="ld_country flexing_it">-->
+    <!--        Country-->
+    <!--      </div>-->
+    <!--      <div class="ld_rate flexing_it">-->
+    <!--        Country rating-->
+    <!--        <img src='assets/img/question_mark.png'>-->
+    <!--      </div>-->
+    <!--      <div class="ld_description flexing_it">-->
+    <!--        Description-->
+    <!--      </div>-->
+    <!--      <div class="ld_moar flexing_it">-->
+    <!--      </div>-->
+    <!--    </div>-->
   </div>
 </div>
 
-<div class="filter-container">
-  <div (click)="switchOrder(sort.Percent)" class="sort-button text-muted" role="button">
-    {{'offers.filter.Zinssatz' | translate}}
-    <i [ngClass]="getIconText(sort.Percent)" class="fa"></i>
+<div class="list_descriptor">
+  <div class="ld_bank flexing_it">
+    Bank
   </div>
-  <div (click)="switchOrder(sort.Duration)" class="btn sort-button text-muted text-start" role="button">
-    {{'offers.filter.Laufzeit' | translate}}
-    <i [ngClass]="getIconText(sort.Duration)" class="fa"></i>
+  <div class="ld_country flexing_it">
+    Interest rate
   </div>
-  <div (click)="switchOrder(sort.Bank)" class="sort-button text-muted" role="button">
-    {{'offers.filter.Bank' | translate}}
-    <i [ngClass]="getIconText(sort.Bank)" class="fa"></i>
+  <div class="ld_description flexing_it">
+    Running time
   </div>
-  <div (click)="switchOrder(sort.Land)" class="sort-button text-muted" role="button">
-    {{'offers.filter.Land' | translate}}
-    <i [ngClass]="getIconText(sort.Land)" class="fa"></i>
+  <div class="ld_description flexing_it">
+    Country
   </div>
-  <div class="sort-button text-muted" role="button">
-    {{'offers.filter.plus' | translate}}
+  <div class="ld_rate flexing_it">
+    Country rating
+    <img src='../../../../assets/img/question_mark.png'>
   </div>
-  <div class="sort-button text-muted" role="button"></div>
+  <div class="ld_moar flexing_it">
+    Interest income + premium
+  </div>
 </div>
+
+<!--<div class="container">-->
+<!--  <div class="row mt-2">-->
+<!--    <div *ngIf="!isOvernight" class="col-6 text-end">-->
+<!--      <mat-form-field appearance="outline" style="width: 40%">-->
+<!--        <mat-label>{{'offers.filter.Laufzeit' | translate}}</mat-label>-->
+<!--        <mat-select [(value)]="duration">-->
+<!--          <mat-option *ngFor="let item of filterOptions" [value]="item">{{ item.title }} ({{ getCount(item) }})-->
+<!--          </mat-option>-->
+<!--        </mat-select>-->
+<!--      </mat-form-field>-->
+<!--    </div>-->
+<!--    <div [ngClass]="amountClass" class="col-6 mx-auto text-start">-->
+<!--      <form [formGroup]="formGroup">-->
+<!--        <mat-form-field appearance="outline">-->
+<!--          <mat-label>{{'offers.filter.Anlagebetrag' | translate}}</mat-label>-->
+<!--          <input formControlName="amount" matInput placeholder="Min. 1€"-->
+<!--                 value="{{ amount | currency: 'EUR':'symbol':'1.0-0'  }}"/>-->
+<!--          <mat-error> this is error</mat-error>-->
+<!--        </mat-form-field>-->
+<!--      </form>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="filter-container">-->
+<!--  <div (click)="switchOrder(sort.Percent)" class="sort-button text-muted" role="button">-->
+<!--    {{'offers.filter.Zinssatz' | translate}}-->
+<!--    <i [ngClass]="getIconText(sort.Percent)" class="fa"></i>-->
+<!--  </div>-->
+<!--  <div (click)="switchOrder(sort.Duration)" class="btn sort-button text-muted text-start" role="button">-->
+<!--    {{'offers.filter.Laufzeit' | translate}}-->
+<!--    <i [ngClass]="getIconText(sort.Duration)" class="fa"></i>-->
+<!--  </div>-->
+<!--  <div (click)="switchOrder(sort.Bank)" class="sort-button text-muted" role="button">-->
+<!--    {{'offers.filter.Bank' | translate}}-->
+<!--    <i [ngClass]="getIconText(sort.Bank)" class="fa"></i>-->
+<!--  </div>-->
+<!--  <div (click)="switchOrder(sort.Land)" class="sort-button text-muted" role="button">-->
+<!--    {{'offers.filter.Land' | translate}}-->
+<!--    <i [ngClass]="getIconText(sort.Land)" class="fa"></i>-->
+<!--  </div>-->
+<!--  <div class="sort-button text-muted" role="button">-->
+<!--    {{'offers.filter.plus' | translate}}-->
+<!--  </div>-->
+<!--  <div class="sort-button text-muted" role="button"></div>-->
+<!--</div>-->

@@ -1,11 +1,17 @@
-<div class="offer-item">
-  <div class="offer-item__row">
+
+
+
+<div class="offer-item" [ngStyle]="{'width':'1110px', 'transform':'translateX(-20px)'}">
+  <div class="offer-item__row" [ngStyle]="{'width':'1110px'}">
+    <div class="offer-item__col offer-item__col_image">
+      <img *ngIf="bank" [alt]="bank.name" [src]="'assets/banks/' + bank.logo" />
+    </div>
     <div class="offer-item__col offer-item__col_rate">
       <div class="offer-item__number">
-        {{ offer ? replaceDot(offer.interest_rate) : "" }}
+        {{ offer ? replaceDot(offer.interest_rate) : "" }} %
         <div class="offer-item__suffix">
-          <div>%</div>
-          <div>p.a.</div>
+<!--          <div>%</div>-->
+          <div [ngStyle]="{'transform': 'translateY(-10px)'}">p.a.</div>
         </div>
       </div>
     </div>
@@ -17,9 +23,9 @@
         <p>{{'offers.item.Tagesgeld' | translate}}</p>
       </div>
     </div>
-    <div class="offer-item__col offer-item__col_image">
-      <img *ngIf="bank" [alt]="bank.name" [src]="'assets/banks/' + bank.logo" />
-    </div>
+<!--    <div class="offer-item__col offer-item__col_image">-->
+<!--      <img *ngIf="bank" [alt]="bank.name" [src]="'assets/banks/' + bank.logo" />-->
+<!--    </div>-->
     <div class="offer-item__col">
       <div class="offer-item__currency">
         <span>
@@ -27,7 +33,7 @@
           country ? country.credit_rating : ""
           }})</span>
         <span [matTooltip]="offerCountryTT" class="offer-item__tooltip" matTooltipPosition="above">
-          <i class="fa fa-info-circle"></i>
+          <img src="../../../../assets/img/question_mark.png">
         </span>
       </div>
       <div>in {{ offer ? offer.currency : "" }}</div>
@@ -37,14 +43,14 @@
         <div class="offer-item__bonus">
           <span class="offer-item__price">+ {{ calculatedProfits | number }} &nbsp;€</span>
           <span [matTooltip]="intrestTT" class="offer-item__tooltip" matTooltipPosition="above">
-            <i class="fa fa-info-circle"></i>
+            <img src="../../../../assets/img/question_mark.png">
           </span>
         </div>
         <div class="offer-item__bonus">
           <span class="offer-item__price">+ {{ bonus }} {{'offers.item.pra' | translate}}&nbsp;€</span>
           <span [matTooltip]="bonusTT" aria-label="Button that displays a tooltip when focused or hovered over"
             class="offer-item__tooltip" matTooltipPosition="above">
-            <i class="fa fa-info-circle"></i>
+            <img src="../../../../assets/img/question_mark.png">
           </span>
         </div>
       </div>

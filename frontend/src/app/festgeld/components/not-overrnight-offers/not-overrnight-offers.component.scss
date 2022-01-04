@@ -1,5 +1,212 @@
-.table_holda {
+.daz_navigator_bch {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   width: 100%;
   height: 50px;
-  background: #3A8DFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+
+
+  .navi_placer {
+    width: 1220px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+
+    .arrow_right {
+      margin-top: 1px;
+      width: 5px;
+      height: 10px;
+      background-image: url("../../../../assets/img/arrow_left.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform: rotate(180deg);
+    }
+
+    .prev_way {
+      color: #262222;
+      opacity: 0.7;
+    }
+
+    .current_local {
+      color: #262222;
+    }
+  }
+
+  .main_frame_caller {
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+
+    .mainframe_arrow {
+      width: 19px;
+      height: 7px;
+      background-image: url("../../../../assets/img/arrow_down.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: 20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: #ee662a;
+
+      .mainframe_arrow {
+        background-image: url("../../../../assets/img/arrow_down_hover.png");
+        background-size: cover;
+      }
+    }
+  }
+
+  .mainframe_arrow {
+    width: 19px;
+    height: 7px;
+    background-image: url("../../../../assets/img/arrow_down.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+  }
+}
+
+.daz_poster_bcbkff {
+  background-image: url("../../../../assets/img/fmc.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 618px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  h1 {
+    width: 906px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 76px;
+    color: #FFFFFF;
+  }
+
+  h2 {
+    margin-top: 40px;
+    width: 920px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #FFFFFF;
+  }
+
+  .main_frame_caller {
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 30px;
+    width: 120px;
+    left: calc(50% - 60px);
+
+    .mainframe_arrow {
+      width: 19px;
+      height: 8px;
+      background-image: url("../../../../assets/img/arrow_down.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: 20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: #ee662a;
+
+      .mainframe_arrow {
+        background-image: url("../../../../assets/img/arrow_down_hover.png");
+        background-size: cover;
+      }
+    }
+  }
+
+  .mainframe_arrow {
+    width: 19px;
+    height: 7px;
+    background-image: url("../../../../assets/img/arrow_down.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+  }
+}
+
+.card_holda {
+  width: 100%;
+  height: 430px;
+  position: relative;
+
+  .containa_cr {
+    width: 100%;
+    height: 253px;
+    background: #F7F7F7;
+    position: absolute;
+  }
+
+  .cardz_plc {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 1110px;
+    align-items: center;
+    justify-content: space-between;
+
+    .card_plc {
+      z-index: +1;
+      width:350px;
+      height: 290px;
+      box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.04);
+      border-radius: 15px;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+      }
+
+      .txt_plc {
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 286px;
+        font-size: 20px;
+        line-height: 27px;
+        text-align: center;
+        color: #262222;
+
+        b {
+          font-weight: 500;
+        }
+      }
+    }
+  }
 }
