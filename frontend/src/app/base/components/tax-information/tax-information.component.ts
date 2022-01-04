@@ -57,7 +57,7 @@ export class TaxInformationComponent implements OnInit {
         "                ><span\n" +
         "                  ><span\n" +
         "                    >Banken: Bulgarian-American Credit Bank, Fibank,\n" +
-        "                    International Asset Bank, Investbank, TBI Bank</span\n" +
+          "                    International Asset Bank, Investbank, TBI Bank</span\n" +
         "                  ></span\n" +
         "                ></strong\n" +
         "              ></span\n" +
@@ -1512,10 +1512,30 @@ export class TaxInformationComponent implements OnInit {
     },
   ]
 
+  public menu_value: number = 0;
+  public menu_value_info: number = 0;
+  public menu_value_bank: number = 0;
+  public content_bank: any = this.countries[0].content;
+
   constructor() {
   }
 
   ngOnInit(): void {
+    console.log(this.countries[0].content);
+  }
+
+  setMenuOneValue(inputNum: number) {
+    this.menu_value = inputNum;
+  }
+
+  setMenuOneValueBank(inputNum: number, content: any) {
+    this.menu_value_bank = inputNum;
+    this.content_bank = content;
+    // console.log(this.content_bank);
+  }
+
+  setMenuOneValueInfo(inputNum: number) {
+    this.menu_value_info = inputNum;
   }
 
 }

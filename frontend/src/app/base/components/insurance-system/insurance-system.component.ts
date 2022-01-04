@@ -126,6 +126,10 @@ export class InsuranceSystemComponent implements OnInit {
     },
   ];
 
+  public selectValue: number = 0;
+  public menu_value_bank: number = 0;
+  public content_bank: any = this.countries[0].content;
+
   constructor() {
   }
 
@@ -138,5 +142,19 @@ export class InsuranceSystemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  selectValueClick(input: number) {
+    if (this.selectValue !== input) {
+      this.selectValue = input;
+    } else {
+      this.selectValue = 0;
+    }
+  }
+
+  setMenuOneValueBank(inputNum: number, content: any) {
+    this.menu_value_bank = inputNum;
+    this.content_bank = content;
+    // console.log(this.content_bank);
   }
 }

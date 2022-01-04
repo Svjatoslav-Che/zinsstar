@@ -1,422 +1,869 @@
-<div class="header">
-  <div class="container ps-4 text-white py-5">
-    <h1 class="text-primary text-start pt-5">
-      <span class="bg-white fw-bold fs-1 p-1">  {{ "how_it_works.Einlagensicherung" | translate }}</span>
+<div class="daz_navigator_si">
+  <div class="navi_placer">
+    <div class="prev_way">
+      About us
+    </div>
+    <div class="arrow_right"></div>
+    <div class="current_local">
+      Einlagensicherung
+    </div>
+  </div>
+</div>
+
+<div class="daz_poster_si">
+  <div class="some_holda">
+    <h1>
+      {{ "how_it_works.Einlagensicherung" | translate }}
     </h1>
-    <p class="mt-4 fs-3">{{ "how_it_works.Sicherheit" | translate }}</p>
-    <p class="fw-normal pe-5 fs-5 ">
+    <h2 [ngStyle]="{'text-align': 'center'}">
+      {{ "how_it_works.Sicherheit" | translate }}
+      <br/><br/>
       {{ "insurance.Die" | translate }}
-    </p>
-  </div>
-</div>
-
-<div class="container">
-  <div class="d-flex justify-content-center">
-    <img class="img-fluid" src="assets/img/einlagensicherung-d-01-header.svg"/>
-  </div>
-  <div class="row">
-    <div class="col-md-8 col-xs-12 mx-auto">
-      <div>
-        <p>
-          {{ "insurance.wichtiger" | translate }}
-          <b>{{ "insurance.Spareinlagen" | translate }}
-          </b>
-          {{ "insurance.Auch" | translate }} <a routerLink="/tagesgeld">{{ "insurance.Tagesgeld" | translate }}</a> {{ "insurance.und" | translate }}
-          <a routerLink="/festgeld">{{ "insurance.Festgeld" | translate }}</a>
-          {{ "insurance.diese" | translate }}
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="text-center">
-    <a class="btn btn-primary btn-lg" routerLink="/registrierung/" target="_self">
-      {{ "insurance.Jetzt" | translate }}
-    </a>
-  </div>
-</div>
-
-<section class="py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 mx-auto">
-        <div class="page-summary">
-          <span class="page-summary-headline">{{ "insurance.Wichtigste" | translate }}</span>
-          <div class="page-summary-content">
-            <ul>
-              <li>
-                <strong>{{ "insurance.100k" | translate }}: </strong>{{ "insurance.Nach" | translate }}
-              </li>
-            </ul>
-            <ul>
-              <li>
-                <strong>{{ "insurance.0eur" | translate }}: </strong>{{ "insurance.Seit" | translate }}
-              </li>
-              <li>
-                <strong>{{ "insurance.8per" | translate }}</strong>: {{ "insurance.muss" | translate }}
-              </li>
-              <li>
-                <strong> {{ "insurance.Fremdw" | translate }}</strong>: {{ "insurance.Einlagen" | translate }}
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="bg-primary text-white py-5">
-  <div class="container">
-    <h2 class="fs-1 fw-normal text-center">
-      {{ "insurance.gilt" | translate }}
     </h2>
-    <div class="d-flex justify-content-center py-2">
-      <img class="img-fluid" src="assets/img/eu_stars1.png"/>
+    <div class="main_frame_caller">
+      More
+      <div class="mainframe_arrow">
+      </div>
     </div>
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <div class="container px-5">
-          <p class="py-1">
-            {{ "insurance.gesetzliche" | translate }}
-            <br/>
-            <br/>
-            {{ "insurance.Durch" | translate }}
-            <b> {{ "insurance.der" | translate }}</b> {{ "insurance.pro" | translate }}
-          </p>
+  </div>
+</div>
+
+<div class="promo_depo_risk">
+  <div class="promo_container">
+    <img src='assets/img/older_couple.jpg'>
+    <div class="text_holda">
+      <div class="head_proma">
+        Are deposits at risk?
+      </div>
+      <div class="texta_proma">
+        Deposit insurance is an important pillar for stable financial markets. It is a legally anchored commitment to the EU-wide protection of savers and to maintaining stability within the European Union. The basis for this is provided by the EU directives 2009/14 / EC and 2014/49 / EU), which all member states must implement. This security scheme protects savings deposits of up to EUR 100,000 per customer and per bank. This deposit protection is also generally guaranteed for <a routerlink="/festgeld" href="/festgeld">overnight money</a> and <a routerlink="/festgeld" href="/festgeld">fixed-term</a> deposits.
+      </div>
+      <a class="button_proma" routerLink="/registrierung/" target="_self">
+        Invest now
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="major_aspects">
+  <div class="major_heda">
+    Major aspects
+  </div>
+  <div class="major_containa downer">
+    <div class="major_containa_holda" (click)="selectValueClick(1)">
+      100.000 EUR
+      <div class="plus">
+      </div>
+    </div>
+    <div class="haida_texta" *ngIf="selectValue === 1">
+      Nach EU-Recht sind die nationalen Einlagensicherungssysteme harmonisiert. Alle Angebote für Fest- und Tagesgeld auf sind bis 100.000 EUR je Kunde bei der jeweiligen Bank durch die jeweiligen nationalen Einlagensicherungssysteme geschützt.
+    </div>
+  </div>
+
+  <div class="major_containa downer">
+    <div class="major_containa_holda" (click)="selectValueClick(2)">
+      0 EUR
+      <div class="plus">
+      </div>
+    </div>
+    <div class="haida_texta" *ngIf="selectValue === 2">
+      Seit Einführung der Regelung zur Einlagensicherung in der Europäischen Union im Jahr 1994 haben Sparer genau 0 EUR, bis zu der Grenze von 100.000 EUR, verloren.
+    </div>
+  </div>
+
+  <div class="major_containa downer">
+    <div class="major_containa_holda" (click)="selectValueClick(3)">
+      0,8 EUR
+      <div class="plus">
+      </div>
+    </div>
+    <div class="haida_texta" *ngIf="selectValue === 3">
+      Spätestens 2024 muss jeder Einlagensicherungsfonds in Europa zu mindestens 0,8 Prozent der gedeckten Einlagen gefüllt sein, damit dieser im Fall der Fälle sofort aktiv werden kann. Einige unserer Partnerländer erfüllen bzw. übertreffen dieses Kriterium bereits heute. Im Fall einer Entschädigungssituation unterstützen wir unsere Kunden selbstverständlich im Rahmen des rechtlich und praktisch Möglichen.
+    </div>
+  </div>
+
+  <div class="major_containa">
+    <div class="major_containa_holda" (click)="selectValueClick(4)">
+      Foreign currency
+      <div class="plus">
+      </div>
+    </div>
+    <div class="haida_texta" *ngIf="selectValue === 4">
+      Einlagen sind pro Kunde insgesamt bis 100.000 EUR bzw. der festgelegte Betrag in Fremdwährung geschützt. Sofern die Währung des Einlagensicherungsfonds eine Fremdwährung ist, erfolgt die Sicherung in Fremdwährung und es sind Anlagebetrag sowie aufgelaufene Zinsen bis zu dem festgelegten Betrag in Fremdwährung abgesichert. Die Sicherungsgrenze kann dann vom aktuellen Wechselkurs abhängen.
+    </div>
+  </div>
+
+</div>
+
+<div class="some_containa">
+  <div class="picta">
+  </div>
+  <div class="head_sc">
+    {{ "insurance.gilt" | translate }}
+  </div>
+  <div class="texta_sc">
+    {{ "insurance.gesetzliche" | translate }}
+    <br/>
+    <br/>
+    {{ "insurance.Durch" | translate }}
+    <b> {{ "insurance.der" | translate }}</b> {{ "insurance.pro" | translate }}
+  </div>
+  <div class="some_containa_containa">
+    <div class="point_hadar">
+      100.000 <sup>EUR</sup>
+    </div>
+    <div class="point_hadar_text">
+      With the statutory deposit insurance, deposits within the entire EU are protected up to an amount of EUR 100,000 per customer and bank.
+    </div>
+    <div class="point_hadar_btns">
+      <a routerlink="/festgeld/" href="/festgeld" target="_self" class="button_proma">Deposit offers</a>
+      <a routerlink="/festgeld/" href="/festgeld" target="_self" class="button_cls">Overnight offers</a>
+    </div>
+  </div>
+</div>
+
+<div class="einlag_container">
+  <div class="head_ei">
+    {{ "insurance.WasEinlagensicherung" | translate }}
+  </div>
+  <div class="text_ei">
+
+    The statutory deposit insurance within the European Union is an expression of the political will to protect European savers from the consequences of a possible bankruptcy. This means that bank deposits are secured up to the equivalent of EUR 100,000 per customer and bank . This means that if a bank becomes insolvent and can no longer repay deposits, savers receive their money back in full up to the protection limit via the statutory deposit guarantee system. This compensation scheme primarily serves to protect private investors and companies.
+    <br/><br/>
+    In addition to the minimum requirements of the statutory deposit protection, many credit institutions offer additional voluntary deposit protection by paying into additional deposit protection funds. In addition, the state guarantee plays an important role in security.
+    <br/><br/>
+    All over Europe, the minimum requirements for the legally guaranteed deposit insurance have been further developed for years in order to improve the protection of investors in the European Union: Since July 2015, they have been implemented successively in all EU member states.
+  </div>
+  <div class="text_ei_2">
+    The three pillars of deposit insurance
+  </div>
+  <img src="assets/img/constr.png">
+
+</div>
+
+<div class="info_cont_container" [ngStyle]="{'margin-bottom': '55px'}">
+  <div class="cont_baller">
+    <div class="cont_header">
+      The deposit guarantees of the individual countries and protection limits in EU countries with foreign currencies
+    </div>
+  </div>
+  <div class="switcher_container">
+
+    <div class="menu_right_cont">
+      <div *ngFor="let item of countries; let i = index"
+           [ngClass]="menu_value_bank === i ? 'plaha_active' : 'plaha'" (click)="setMenuOneValueBank(i, item.content)">
+        <div class="text_plaha">
+          {{ item.country }}
+        </div>
+        <img src="assets/img/fq_arrow_dwn.png">
+      </div>
+
+    </div>
+
+    <div class="menu_right_cont_cb">
+      <div class="tags_rules" [innerHtml]=content_bank>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="any_questions_frame">
+<!--  <img class="stripes_top" src="../../../../assets/img/stripes_question.png"/>-->
+<!--  <img class="stripes_bottom" src="../../../../assets/img/stripes_question.png"/>-->
+  <div class="any_questions_header">
+    Which accounts does the deposit protection apply to?
+  </div>
+  <div class="any_questions_text">
+    Deposit protection applies to all savings such as fixed-term deposits, overnight deposits and current accounts. Also, savings accounts and savings bonds are subject to the deposit insurance systems.
+  </div>
+  <div class="any_questions_button">
+    Deposit offers
+  </div>
+</div>
+
+<div class="any_questions_frame_2">
+  <!--  <img class="stripes_top" src="../../../../assets/img/stripes_question.png"/>-->
+  <!--  <img class="stripes_bottom" src="../../../../assets/img/stripes_question.png"/>-->
+  <div class="any_questions_header">
+    Which accounts does the deposit protection apply to?
+  </div>
+  <div class="any_questions_text">
+    Deposit protection applies to all savings such as fixed-term deposits, overnight deposits and current accounts. Also, savings accounts and savings bonds are subject to the deposit insurance systems.
+  </div>
+<!--  <div class="any_questions_button">-->
+<!--    Deposit offers-->
+<!--  </div>-->
+</div>
+
+<div class="some_containa_2">
+<!--  <div class="picta">-->
+<!--  </div>-->
+  <div class="head_sc">
+    Deposit insurance in non-EU countries
+  </div>
+  <div class="texta_sc">
+    Banks from non-EU countries can be set up completely differently when it comes to deposit insurance. First, as an investor, you have to deal with when a bank comes under European law. For example, while branches of German or EU banks are subject to the statutory deposit insurance of the EU despite their location in a non-EU country, this does not count for subsidiaries. In addition to the legal regulations, the creditworthiness of the countries must also be observed.
+  </div>
+</div>
+
+<div class="jst_text">
+  <div class="jst_text_holda">
+    <div class="header_jst">
+      Deposit insurance in Germany
+    </div>
+    <div class="htxt_jst">
+      Due to the comparatively complicated banking system in Germany, the statutory deposit insurance is also much more complex in this country than in other EU countries. In addition to public and private banks, there are also savings banks and cooperative banks in Germany. Each of these banking associations has its own deposit guarantee system.
+    </div>
+    <div class="htxt_jstminh">
+      Private banks
+    </div>
+    <div class="strip_hhd">
+    </div>
+
+    <div class="htxt_jst">
+      Due to the comparatively complicated banking system in Germany, the statutory deposit insurance is also much more complex in this country than in other EU countries. In addition to public and private banks, there are also savings banks and cooperative banks in Germany. Each of these banking associations has its own deposit guarantee system.
+    </div>
+    <div class="htxt_jstminh">
+      Public banks
+    </div>
+    <div class="strip_hhd">
+    </div>
+
+    <div class="htxt_jst">
+      Members of the Federal Association of Public Banks in Germany (VÖB) rely on their own deposit insurance. The compensation scheme of the Federal Association of Public Banks in Germany (EdÖ) is responsible for this . Apart from this, numerous public banks are members of the voluntary deposit protection fund.
+    </div>
+    <div class="htxt_jstminh">
+      Savings banks and cooperative banks
+    </div>
+    <div class="strip_hhd">
+    </div>
+    <div class="htxt_jst">
+      Savings banks and cooperative banks do not rely on the statutory deposit insurance. Instead, the institute protection applies to this banking association . If a bank in this group gets into financial difficulties, the remaining members step in. The institute security is intended to prevent a compensation event from occurring in the first place
+    </div>
+
+  </div>
+</div>
+
+<div class="jst_text_2">
+  <div class="jst_text_holda_2">
+    <div class="header_jst">
+      Deposit insurance in Germany
+    </div>
+    <div class="htxt_jst">
+      Banks that have a branch in Germany but are headquartered abroad are not subject to German deposit insurance. However, the foreign banks have the option of voluntarily joining the deposit protection fund of the Association of German Banks and providing additional protection for bank deposits.
+    </div>
+    <div class="htxt_jst">
+      Compensation in other EU countries was significantly simplified in 2015 . In the event of bank insolvency, investors no longer have to deal with the compensation scheme in the respective country. The compensation runs automatically through the German deposit insurance system.
+    </div>
+    <div class="htxt_jst">
+      In an international comparison, deposit insurance in Germany and other EU countries is considered very secure.
+    </div>
+    <div class="htxt_jst">
+      In addition, by 2024 the statutory payout period through deposit protection funds must be reduced from the current 20 to 7 working days . This has already been implemented in some countries. Overall, however, the process can take a few weeks longer, as it must first be determined whether there is actually a case for the deposit insurance.
+    </div>
+
+  </div>
+</div>
+
+<div class="proc_container">
+  <div class="payouts">
+    <div class="hadar">
+      Processing and payouts by the deposit insurance
+    </div>
+    <div class="texta">
+      In the event of damage, the respective country's deposit insurance is obliged to make the payment within a maximum of 21 days - this period will be gradually reduced to 7 days by 2024. This has already been implemented in some countries. Overall, however, the process can take a few weeks longer, as it must first be determined whether there is actually a case for deposit insurance.
+    </div>
+    <div class="texta">
+      Payouts may be delayed, especially in the case of investments via the trust model.
+      In the event of a compensation situation, we will of course support our customers within the framework of what is legally and practically possible.
+    </div>
+    <div class="cards_holda">
+      <div class="card_1">
+        <img src='assets/img/first_stage.png'>
+        <div class="card_h">
+          First stage
+        </div>
+        <div class="card_t">
+          Financial supervision (BaFin) determines compensation case
+        </div>
+      </div>
+      <div class="card_1">
+        <img src='assets/img/first_stage.png'>
+        <div class="card_h">
+          Srcond stage
+        </div>
+        <div class="card_t">
+          Security system informs the public about the details of the compensation process
+        </div>
+      </div>
+      <div class="card_1">
+        <img src='assets/img/first_stage.png'>
+        <div class="card_h">
+          Third stage
+        </div>
+        <div class="card_t">
+          Security system prepares payout
+        </div>
+      </div>
+      <div class="card_1">
+        <img src='assets/img/first_stage.png'>
+        <div class="card_h">
+          Fourth stage
+        </div>
+        <div class="card_t">
+          Security system provides compensation amount
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="text-center mx-auto">
-    <a class="btn btn-primary m-3" routerLink="/festgeld/" target="_self">
-      {{ "insurance.Alle" | translate }}
-    </a>
-    <a class="btn btn-outline-primary m-3" routerLink="/tagesgeld/" target="_self">
-      {{ "insurance.Tagesgeldangeboten" | translate }}
-    </a>
+<div class="proc_container">
+  <div class="payouts">
+    <div class="hadar">
+      Even more security to protect depositors in the future
+    </div>
+    <div class="texta">
+      As part of the initiative towards a banking union, the ECB has taken on European banking supervision to ensure that state intervention to rescue the banking system will be less necessary in the future. By 2024 at the latest, the available financial resources of the respective deposit protection fund must correspond to at least 0.8% of the deposits covered .
+    </div>
+    <div class="texta">
+      Overnight and fixed-term deposit savers can rightly hope that investments in other European countries will in future be even more secure than they are already thanks to the statutory deposit protection. At ZinsUnion, fixed-term deposit offers are specifically shown in Europe, which have interest rates well above the German level.
+    </div>
+    <div class="cards_holda">
+      <div class="card_2">
+        <img src='assets/img/icon_state.png'>
+        <div class="card_h">
+          State banking supervision
+        </div>
+      </div>
+      <div class="card_2">
+        <img src='assets/img/icon_statuory.png'>
+        <div class="card_h">
+          Statutory deposit insurance
+        </div>
+      </div>
+      <div class="card_2">
+        <img src='assets/img/icon_european.png'>
+        <div class="card_h">
+          European banking supervision
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<section class="py-5">
-  <div class="container">
-    <h2 class="fs-1 text-center">{{ "insurance.WasEinlagensicherung" | translate }}</h2>
-
-    <div class="d-flex justify-content-center">
-      <img class="d-sm-none d-md-block img-fluid"
-           src="assets/img/einlagensicherung-d-02-was-ist-einlagensicherung.svg"/>
-      <img class="d-none d-sm-block d-md-none img-fluid"
-           src="assets/img/einlagensicherung-m-02-was-ist-einlagensicherung.svg"/>
-    </div>
-
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <div>
-          <p>
-            {{ "insurance.innerhalb" | translate }}
-            <b>{{ "insurance.XXXX" | translate }}
-            </b>
-            {{ "insurance.XXXX" | translate }}
-            <b>{{ "insurance.100kPro" | translate }}</b> {{ "insurance.abgesichert" | translate }}
-          </p>
-        </div>
-      </div>
-    </div>
+<div class="advantages_sheets">
+  <div class="head">
+    Your advantages with ZinsUnion
   </div>
-</section>
-
-<section class="py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <div>
-          <p>
-            {{ "insurance.Mindestanforderungen" | translate }}
-            <b>{{ "insurance.freiwillige" | translate }}</b>, {{ "insurance.indem" | translate }}
-          </p>
-
-          <p><strong>{{ "insurance.drei" | translate }}:</strong></p>
-          <ul>
-            <li>{{ "insurance.Gesetzliche" | translate }}</li>
-            <li>{{ "insurance.Freiwillige" | translate }}</li>
-            <li>{{ "insurance.Staatsgarantie" | translate }}</li>
-          </ul>
-          <p>
-            {{ "insurance.ganz" | translate }}
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="d-flex justify-content-center">
-      <div class="d-sm-none d-md-block">
-        <img class="img-fluid" src="assets/img/einlagensicherung-d-03-saeule-der-einlagensicherung.svg"/>
-      </div>
-      <div class="d-none d-sm-block d-md-none">
-        <img class="img-fluid" src="assets/img/einlagensicherung-m-03-saeule-der-einlagensicherung.svg"/>
-      </div>
-    </div>
+  <div class="text">
+    ZinsUnion is the leading platform for financial investments in Europe and beyond.
   </div>
-</section>
-<section class="p-5">
-  <div class="container">
-    <h1 class="fs-3 text-center">
-      {{ "insurance.einzelnen" | translate }}
-    </h1>
-    <div class="row border p-1">
-      <div class="col-md-4 col-sm-12">
-        <ul #nav="ngbNav" class="nav-pills" ngbNav orientation="vertical">
-          <li *ngFor="let c of countries" ngbNavItem>
-            <a ngbNavLink>{{ c.country }} </a>
-            <ng-template ngbNavContent>
-              <div [innerHtml]="c.content" class="pt-3"></div>
-            </ng-template>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-8 col-sm-12">
-        <div [ngbNavOutlet]="nav" class="ms-4"></div>
-      </div>
-    </div>
-  </div>
-</section>
+  <div class="card_placer">
 
-<section class="py-5">
-  <div class="container">
-    <h3 class="fs-3 text-center">
-      {{ "insurance.welche" | translate }}
-    </h3>
-    <div class="d-flex justify-content-center">
-      <img class="d-sm-none d-md-block img-fluid"
-           src="assets/img/einlagensicherung-d-04-welche-konten-haben-einlagesicherung.svg"/>
-    </div>
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <div>
-          <p>
-            {{ "insurance.DieSpareinlagen" | translate }}
-            <a routerLink="/geldanlage/sparbuch/">{{ "insurance.Sparb" | translate }}</a>
-            {{ "insurance.Sparbriefe" | translate }}
-          </p>
-        </div>
+    <div class="daz_card">
+      <img src='../../../../assets/img/advantages1.png'/>
+      <img src='../../../../assets/img/Line%2013.png'/>
+      <div class="texts">
+        <div class="head_txt">Simply</div>
+        <div class="text_txt">Rregister once and access all offers with the free Zinsunion account.</div>
       </div>
     </div>
-  </div>
-</section>
-<section class="py-5">
-  <div class="container">
-    <h3 class="fs-3 text-center">
-      {{ "insurance.wen" | translate }}
-    </h3>
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <p>
-          {{ "insurance.Schutz" | translate }}
-        </p>
+
+    <div class="daz_card">
+      <img src='../../../../assets/img/advantages2.svg'/>
+      <img src='../../../../assets/img/Line%2013.png'/>
+      <div class="texts">
+        <div class="head_txt">High interest rates</div>
+        <div class="text_txt">Over 720 attractive offers from more than 104 European banks.</div>
       </div>
     </div>
-  </div>
-</section>
 
-<section>
-  <div class="container">
-    <div class="d-flex justify-content-center">
-      <img class=" img-fluid" src="assets/img/einlagensicherung-d-06-deutschland.svg"/>
-
-    </div>
-  </div>
-</section>
-<section class="py-5">
-  <div class="container">
-    <h3 class="fs-3 text-center">{{ "insurance.Deutschland" | translate }}</h3>
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <div>
-          <p>
-            {{ "insurance.vergleichsweise" | translate }}
-          </p>
-          <p><b>{{ "insurance.Private" | translate }}</b></p>
-          <p>
-            {{ "insurance.privaten" | translate }}
-            <b>{{ "insurance.deutscher" | translate }}</b> {{ "insurance.zust" | translate }}
-            <b>{{ "insurance.freiwilligen" | translate }}</b>. {{ "insurance.Dabei" | translate }}
-          </p>
-          <p><b>{{ "insurance.Banken" | translate }}</b></p>
-          <p>
-            {{ "insurance.Mitglieder" | translate }}
-            <b>{{ "insurance.Entsch" | translate }}</b>. {{ "insurance.Abseits" | translate }}
-          </p>
-          <p><b>{{ "insurance.Sparkassen" | translate }}</b></p>
-          <p>
-            {{ "insurance.SparkassenUnd" | translate }} <b>{{ "insurance.Institutssicherung" | translate }}</b>. {{ "insurance.Falls" | translate }}
-          </p>
-        </div>
+    <div class="daz_card">
+      <img src='../../../../assets/img/advantages3.svg'/>
+      <img src='../../../../assets/img/Line%2013.png'/>
+      <div class="texts">
+        <div class="head_txt">High interest rates</div>
+        <div class="text_txt">Over 720 attractive offers from more than 104 European banks.</div>
       </div>
     </div>
-  </div>
-</section>
-<section>
-  <div class="container">
-    <div class="d-flex justify-content-center">
-      <img class=" img-fluid" src="assets/img/einlagensicherung-d-07-europa.svg"/>
-    </div>
-  </div>
-</section>
 
-<section class="py-5">
-  <div class="container">
-    <h3 class="fs-3 text-center">{{ "insurance.EinlagensicherungInEur" | translate }}</h3>
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <div>
-          <p>
-            {{ "insurance.BankenDie" | translate }}
-          </p>
-          <p>
-            {{ "insurance.Jahr" | translate }}
-            <b>{{ "insurance.vereinfacht" | translate }}</b>. {{ "insurance.einer" | translate }}
-          </p>
-          <p>
-            {{ "insurance.internationalen" | translate }}
-          </p>
-          <p>
-            {{ "insurance.bisMuss" | translate }} <b>{{ "insurance.gesetzlicheAus" | translate }}</b> {{ "insurance.durch" | translate }} <b>{{ "insurance.Arbeitstage" | translate }}</b>{{ "insurance.reduziert" | translate }}
-          </p>
-        </div>
+    <div class="daz_card">
+      <img src='../../../../assets/img/advantages4.svg'/>
+      <img src='../../../../assets/img/Line%2013.png'/>
+      <div class="texts">
+        <div class="head_txt">High interest rates</div>
+        <div class="text_txt">Over 720 attractive offers from more than 104 European banks.</div>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="py-5">
-  <div class="container">
-    <h2 class="fs-3 text-center">{{ "insurance.EinlagensicherungIn" | translate }}</h2>
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <div>
-          <p>
-            {{ "insurance.BankenAus" | translate }}
-            <b>{{ "insurance.Bonit" | translate }}</b> {{ "insurance.zuBeachten" | translate }}
-          </p>
-        </div>
+    <div class="daz_card">
+      <img src='../../../../assets/img/advantages5.svg'/>
+      <img src='../../../../assets/img/Line%2013.png'/>
+      <div class="texts">
+        <div class="head_txt">High interest rates</div>
+        <div class="text_txt">Over 720 attractive offers from more than 104 European banks.</div>
       </div>
     </div>
-    <div class="d-flex justify-content-center">
-      <img class="img-fluid" src="assets/img/einlagensicherung-d-08-nicht-eu-laender.svg"/>
-    </div>
-  </div>
-</section>
 
-<section class="py-5">
-  <div class="container">
-    <h2 class="fs-3 text-center">
-      {{ "insurance.Abwicklung" | translate }}
-    </h2>
-
-    <div class="d-flex justify-content-center">
-      <img class="img-fluid" src="assets/img/wie-entschaedigungen-ablaufen.svg"/>
-
-    </div>
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <div>
-          <p>
-            {{ "insurance.Schadensfall" | translate }}
-          </p>
-          <p>
-            {{ "insurance.Insbesondere" | translate }}
-          </p>
-          <p>
-            {{ "insurance.selbstve" | translate }}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-5">
-  <div class="container">
-    <h2 class="fs-3 text-center">
-      {{ "insurance.noch" | translate }}
-    </h2>
-    <div class="d-flex justify-content-center">
-      <div class="d-none d-xs-none d-sm-none ">
-        <img class="img-fluid" src="assets/img/einlagensicherung-d-10-noch-mehr-schutz.svg"/>
-      </div>
-      <div class="d-none d-xs-block d-sm-block d-flex">
-        <img class="img-fluid" src="assets/img/einlagensicherung-m-10-noch-mehr-schutz.svg"/>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <div>
-          <p>
-            {{ "insurance.Rahmen" | translate }}
-            <b>{{ "insurance.Bankenaufsicht" | translate }}</b> {{ "insurance.sorgen" | translate }}
-            <b>{{ "insurance.mindestens" | translate }}</b>{{ "insurance.entsprechen" | translate }}
-          </p>
-          <p>
-            {{ "insurance.TagesgeldUnd" | translate }}
-            <b>{{ "insurance.Geldanlagen" | translate }} </b>{{ "insurance.werdenAls" | translate }}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-5">
-  <div class="container">
-    <h3 class="fs-3 text-center">{{ "insurance.funktioniert" | translate }}</h3>
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <div>
-          <p>
-            {{ "insurance.erhalten" | translate }}
-          </p>
-          <p>
-            {{ "insurance.FestgeldUnd" | translate }}
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="d-flex justify-content-center">
-      <img class="d-sm-none d-md-block img-fluid"
-           src="assets/img/einlagensicherung-d-12-wie-funktioniert-zinsunion.svg"/>
-      <img class="d-none d-sm-block d-md-none img-fluid"
-           src="assets/img/einlagensicherung-m-12-wie-funktioniert-zinsunion.svg"/>
-    </div>
-  </div>
-</section>
-
-<section class="py-5">
-  <div class="container">
-    <h3 class="fs-3 text-center">{{ "insurance.Blick" | translate }}</h3>
-    <div class="row">
-      <div class="col-md-8 col-xs-12 mx-auto">
-        <div>
-          <ul>
-            <li>
-              {{ "insurance.hohe" | translate }}
-            </li>
-            <li>{{ "insurance.ohne" | translate }}</li>
-            <li>
-              {{ "insurance.AlleAnge" | translate }}
-            </li>
-            <li>{{ "insurance.Geldanlage" | translate }}</li>
-            <li>
-              {{ "insurance.meisten" | translate }}
-            </li>
-            <li>
-              {{ "insurance.AnlageIn" | translate }}
-            </li>
-          </ul>
-        </div>
+    <div class="daz_card">
+      <img src='../../../../assets/img/advantages6.svg'/>
+      <img src='../../../../assets/img/Line%2013.png'/>
+      <div class="texts">
+        <div class="head_txt">High interest rates</div>
+        <div class="text_txt">Over 720 attractive offers from more than 104 European banks.</div>
       </div>
     </div>
 
   </div>
-</section>
+</div>
+
+<div class="proc_container">
+  <div class="payouts">
+    <div class="hadar">
+      How does the ZinsUnion work?
+    </div>
+    <div class="texta">
+      Via ZinsUnion, savers have easy access to attractive European overnight and fixed-term deposit offers. Opening an interest union account does not require any more effort than opening an account with a domestic direct bank. Transparency is always guaranteed via convenient online banking functions, which also enables uncomplicated account management and monitoring
+    </div>
+    <div class="texta">
+      With overnight money and fixed-term deposits, interest rates can be realized via ZinsUnion that are significantly higher than with German banks - without having to compromise on security when it comes to deposit protection.
+    </div>
+    <div class="cards_holda">
+      <div class="card_2">
+        <img src='assets/img/Select%20investment%20offer.png'>
+      </div>
+      <div class="card_2">
+        <img src='assets/img/Open%20a%20Zinsunion%20account.png'>
+      </div>
+      <div class="card_2">
+        <img src='assets/img/Register%20with%20ZinsunionRegister%20with%20Zinsunion.png'>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="header">-->
+<!--  <div class="container ps-4 text-white py-5">-->
+<!--    <h1 class="text-primary text-start pt-5">-->
+<!--      <span class="bg-white fw-bold fs-1 p-1">  {{ "how_it_works.Einlagensicherung" | translate }}</span>-->
+<!--    </h1>-->
+<!--    <p class="mt-4 fs-3">{{ "how_it_works.Sicherheit" | translate }}</p>-->
+<!--    <p class="fw-normal pe-5 fs-5 ">-->
+<!--      {{ "insurance.Die" | translate }}-->
+<!--    </p>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+<!--  <div class="d-flex justify-content-center">-->
+<!--    <img class="img-fluid" src="assets/img/einlagensicherung-d-01-header.svg"/>-->
+<!--  </div>-->
+<!--  <div class="row">-->
+<!--    <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--      <div>-->
+<!--        <p>-->
+<!--          {{ "insurance.wichtiger" | translate }}-->
+<!--          <b>{{ "insurance.Spareinlagen" | translate }}-->
+<!--          </b>-->
+<!--          {{ "insurance.Auch" | translate }} <a routerLink="/tagesgeld">{{ "insurance.Tagesgeld" | translate }}</a> {{ "insurance.und" | translate }}-->
+<!--          <a routerLink="/festgeld">{{ "insurance.Festgeld" | translate }}</a>-->
+<!--          {{ "insurance.diese" | translate }}-->
+<!--        </p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="text-center">-->
+<!--    <a class="btn btn-primary btn-lg" routerLink="/registrierung/" target="_self">-->
+<!--      {{ "insurance.Jetzt" | translate }}-->
+<!--    </a>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<section class="py-5">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 mx-auto">-->
+<!--        <div class="page-summary">-->
+<!--          <span class="page-summary-headline">{{ "insurance.Wichtigste" | translate }}</span>-->
+<!--          <div class="page-summary-content">-->
+<!--            <ul>-->
+<!--              <li>-->
+<!--                <strong>{{ "insurance.100k" | translate }}: </strong>{{ "insurance.Nach" | translate }}-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--            <ul>-->
+<!--              <li>-->
+<!--                <strong>{{ "insurance.0eur" | translate }}: </strong>{{ "insurance.Seit" | translate }}-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <strong>{{ "insurance.8per" | translate }}</strong>: {{ "insurance.muss" | translate }}-->
+<!--              </li>-->
+<!--              <li>-->
+<!--                <strong> {{ "insurance.Fremdw" | translate }}</strong>: {{ "insurance.Einlagen" | translate }}-->
+<!--              </li>-->
+<!--            </ul>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<div class="bg-primary text-white py-5">-->
+<!--  <div class="container">-->
+<!--    <h2 class="fs-1 fw-normal text-center">-->
+<!--      {{ "insurance.gilt" | translate }}-->
+<!--    </h2>-->
+<!--    <div class="d-flex justify-content-center py-2">-->
+<!--      <img class="img-fluid" src="assets/img/eu_stars1.png"/>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <div class="container px-5">-->
+<!--          <p class="py-1">-->
+<!--            {{ "insurance.gesetzliche" | translate }}-->
+<!--            <br/>-->
+<!--            <br/>-->
+<!--            {{ "insurance.Durch" | translate }}-->
+<!--            <b> {{ "insurance.der" | translate }}</b> {{ "insurance.pro" | translate }}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="container">-->
+<!--  <div class="text-center mx-auto">-->
+<!--    <a class="btn btn-primary m-3" routerLink="/festgeld/" target="_self">-->
+<!--      {{ "insurance.Alle" | translate }}-->
+<!--    </a>-->
+<!--    <a class="btn btn-outline-primary m-3" routerLink="/tagesgeld/" target="_self">-->
+<!--      {{ "insurance.Tagesgeldangeboten" | translate }}-->
+<!--    </a>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<section class="py-5">-->
+<!--  <div class="container">-->
+<!--    <h2 class="fs-1 text-center">{{ "insurance.WasEinlagensicherung" | translate }}</h2>-->
+
+<!--    <div class="d-flex justify-content-center">-->
+<!--      <img class="d-sm-none d-md-block img-fluid"-->
+<!--           src="assets/img/einlagensicherung-d-02-was-ist-einlagensicherung.svg"/>-->
+<!--      <img class="d-none d-sm-block d-md-none img-fluid"-->
+<!--           src="assets/img/einlagensicherung-m-02-was-ist-einlagensicherung.svg"/>-->
+<!--    </div>-->
+
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <div>-->
+<!--          <p>-->
+<!--            {{ "insurance.innerhalb" | translate }}-->
+<!--            <b>{{ "insurance.XXXX" | translate }}-->
+<!--            </b>-->
+<!--            {{ "insurance.XXXX" | translate }}-->
+<!--            <b>{{ "insurance.100kPro" | translate }}</b> {{ "insurance.abgesichert" | translate }}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section class="py-5">-->
+<!--  <div class="container">-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <div>-->
+<!--          <p>-->
+<!--            {{ "insurance.Mindestanforderungen" | translate }}-->
+<!--            <b>{{ "insurance.freiwillige" | translate }}</b>, {{ "insurance.indem" | translate }}-->
+<!--          </p>-->
+
+<!--          <p><strong>{{ "insurance.drei" | translate }}:</strong></p>-->
+<!--          <ul>-->
+<!--            <li>{{ "insurance.Gesetzliche" | translate }}</li>-->
+<!--            <li>{{ "insurance.Freiwillige" | translate }}</li>-->
+<!--            <li>{{ "insurance.Staatsgarantie" | translate }}</li>-->
+<!--          </ul>-->
+<!--          <p>-->
+<!--            {{ "insurance.ganz" | translate }}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="d-flex justify-content-center">-->
+<!--      <div class="d-sm-none d-md-block">-->
+<!--        <img class="img-fluid" src="assets/img/einlagensicherung-d-03-saeule-der-einlagensicherung.svg"/>-->
+<!--      </div>-->
+<!--      <div class="d-none d-sm-block d-md-none">-->
+<!--        <img class="img-fluid" src="assets/img/einlagensicherung-m-03-saeule-der-einlagensicherung.svg"/>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--<section class="p-5">-->
+<!--  <div class="container">-->
+<!--    <h1 class="fs-3 text-center">-->
+<!--      {{ "insurance.einzelnen" | translate }}-->
+<!--    </h1>-->
+<!--    <div class="row border p-1">-->
+<!--      <div class="col-md-4 col-sm-12">-->
+<!--        <ul #nav="ngbNav" class="nav-pills" ngbNav orientation="vertical">-->
+<!--          <li *ngFor="let c of countries" ngbNavItem>-->
+<!--            <a ngbNavLink>{{ c.country }} </a>-->
+<!--            <ng-template ngbNavContent>-->
+<!--              <div [innerHtml]="c.content" class="pt-3"></div>-->
+<!--            </ng-template>-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--      <div class="col-md-8 col-sm-12">-->
+<!--        <div [ngbNavOutlet]="nav" class="ms-4"></div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section class="py-5">-->
+<!--  <div class="container">-->
+<!--    <h3 class="fs-3 text-center">-->
+<!--      {{ "insurance.welche" | translate }}-->
+<!--    </h3>-->
+<!--    <div class="d-flex justify-content-center">-->
+<!--      <img class="d-sm-none d-md-block img-fluid"-->
+<!--           src="assets/img/einlagensicherung-d-04-welche-konten-haben-einlagesicherung.svg"/>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <div>-->
+<!--          <p>-->
+<!--            {{ "insurance.DieSpareinlagen" | translate }}-->
+<!--            <a routerLink="/geldanlage/sparbuch/">{{ "insurance.Sparb" | translate }}</a>-->
+<!--            {{ "insurance.Sparbriefe" | translate }}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--<section class="py-5">-->
+<!--  <div class="container">-->
+<!--    <h3 class="fs-3 text-center">-->
+<!--      {{ "insurance.wen" | translate }}-->
+<!--    </h3>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <p>-->
+<!--          {{ "insurance.Schutz" | translate }}-->
+<!--        </p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section>-->
+<!--  <div class="container">-->
+<!--    <div class="d-flex justify-content-center">-->
+<!--      <img class=" img-fluid" src="assets/img/einlagensicherung-d-06-deutschland.svg"/>-->
+
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--<section class="py-5">-->
+<!--  <div class="container">-->
+<!--    <h3 class="fs-3 text-center">{{ "insurance.Deutschland" | translate }}</h3>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <div>-->
+<!--          <p>-->
+<!--            {{ "insurance.vergleichsweise" | translate }}-->
+<!--          </p>-->
+<!--          <p><b>{{ "insurance.Private" | translate }}</b></p>-->
+<!--          <p>-->
+<!--            {{ "insurance.privaten" | translate }}-->
+<!--            <b>{{ "insurance.deutscher" | translate }}</b> {{ "insurance.zust" | translate }}-->
+<!--            <b>{{ "insurance.freiwilligen" | translate }}</b>. {{ "insurance.Dabei" | translate }}-->
+<!--          </p>-->
+<!--          <p><b>{{ "insurance.Banken" | translate }}</b></p>-->
+<!--          <p>-->
+<!--            {{ "insurance.Mitglieder" | translate }}-->
+<!--            <b>{{ "insurance.Entsch" | translate }}</b>. {{ "insurance.Abseits" | translate }}-->
+<!--          </p>-->
+<!--          <p><b>{{ "insurance.Sparkassen" | translate }}</b></p>-->
+<!--          <p>-->
+<!--            {{ "insurance.SparkassenUnd" | translate }} <b>{{ "insurance.Institutssicherung" | translate }}</b>. {{ "insurance.Falls" | translate }}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--<section>-->
+<!--  <div class="container">-->
+<!--    <div class="d-flex justify-content-center">-->
+<!--      <img class=" img-fluid" src="assets/img/einlagensicherung-d-07-europa.svg"/>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section class="py-5">-->
+<!--  <div class="container">-->
+<!--    <h3 class="fs-3 text-center">{{ "insurance.EinlagensicherungInEur" | translate }}</h3>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <div>-->
+<!--          <p>-->
+<!--            {{ "insurance.BankenDie" | translate }}-->
+<!--          </p>-->
+<!--          <p>-->
+<!--            {{ "insurance.Jahr" | translate }}-->
+<!--            <b>{{ "insurance.vereinfacht" | translate }}</b>. {{ "insurance.einer" | translate }}-->
+<!--          </p>-->
+<!--          <p>-->
+<!--            {{ "insurance.internationalen" | translate }}-->
+<!--          </p>-->
+<!--          <p>-->
+<!--            {{ "insurance.bisMuss" | translate }} <b>{{ "insurance.gesetzlicheAus" | translate }}</b> {{ "insurance.durch" | translate }} <b>{{ "insurance.Arbeitstage" | translate }}</b>{{ "insurance.reduziert" | translate }}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section class="py-5">-->
+<!--  <div class="container">-->
+<!--    <h2 class="fs-3 text-center">{{ "insurance.EinlagensicherungIn" | translate }}</h2>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <div>-->
+<!--          <p>-->
+<!--            {{ "insurance.BankenAus" | translate }}-->
+<!--            <b>{{ "insurance.Bonit" | translate }}</b> {{ "insurance.zuBeachten" | translate }}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="d-flex justify-content-center">-->
+<!--      <img class="img-fluid" src="assets/img/einlagensicherung-d-08-nicht-eu-laender.svg"/>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section class="py-5">-->
+<!--  <div class="container">-->
+<!--    <h2 class="fs-3 text-center">-->
+<!--      {{ "insurance.Abwicklung" | translate }}-->
+<!--    </h2>-->
+
+<!--    <div class="d-flex justify-content-center">-->
+<!--      <img class="img-fluid" src="assets/img/wie-entschaedigungen-ablaufen.svg"/>-->
+
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <div>-->
+<!--          <p>-->
+<!--            {{ "insurance.Schadensfall" | translate }}-->
+<!--          </p>-->
+<!--          <p>-->
+<!--            {{ "insurance.Insbesondere" | translate }}-->
+<!--          </p>-->
+<!--          <p>-->
+<!--            {{ "insurance.selbstve" | translate }}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section class="py-5">-->
+<!--  <div class="container">-->
+<!--    <h2 class="fs-3 text-center">-->
+<!--      {{ "insurance.noch" | translate }}-->
+<!--    </h2>-->
+<!--    <div class="d-flex justify-content-center">-->
+<!--      <div class="d-none d-xs-none d-sm-none ">-->
+<!--        <img class="img-fluid" src="assets/img/einlagensicherung-d-10-noch-mehr-schutz.svg"/>-->
+<!--      </div>-->
+<!--      <div class="d-none d-xs-block d-sm-block d-flex">-->
+<!--        <img class="img-fluid" src="assets/img/einlagensicherung-m-10-noch-mehr-schutz.svg"/>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <div>-->
+<!--          <p>-->
+<!--            {{ "insurance.Rahmen" | translate }}-->
+<!--            <b>{{ "insurance.Bankenaufsicht" | translate }}</b> {{ "insurance.sorgen" | translate }}-->
+<!--            <b>{{ "insurance.mindestens" | translate }}</b>{{ "insurance.entsprechen" | translate }}-->
+<!--          </p>-->
+<!--          <p>-->
+<!--            {{ "insurance.TagesgeldUnd" | translate }}-->
+<!--            <b>{{ "insurance.Geldanlagen" | translate }} </b>{{ "insurance.werdenAls" | translate }}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section class="py-5">-->
+<!--  <div class="container">-->
+<!--    <h3 class="fs-3 text-center">{{ "insurance.funktioniert" | translate }}</h3>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <div>-->
+<!--          <p>-->
+<!--            {{ "insurance.erhalten" | translate }}-->
+<!--          </p>-->
+<!--          <p>-->
+<!--            {{ "insurance.FestgeldUnd" | translate }}-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="d-flex justify-content-center">-->
+<!--      <img class="d-sm-none d-md-block img-fluid"-->
+<!--           src="assets/img/einlagensicherung-d-12-wie-funktioniert-zinsunion.svg"/>-->
+<!--      <img class="d-none d-sm-block d-md-none img-fluid"-->
+<!--           src="assets/img/einlagensicherung-m-12-wie-funktioniert-zinsunion.svg"/>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section class="py-5">-->
+<!--  <div class="container">-->
+<!--    <h3 class="fs-3 text-center">{{ "insurance.Blick" | translate }}</h3>-->
+<!--    <div class="row">-->
+<!--      <div class="col-md-8 col-xs-12 mx-auto">-->
+<!--        <div>-->
+<!--          <ul>-->
+<!--            <li>-->
+<!--              {{ "insurance.hohe" | translate }}-->
+<!--            </li>-->
+<!--            <li>{{ "insurance.ohne" | translate }}</li>-->
+<!--            <li>-->
+<!--              {{ "insurance.AlleAnge" | translate }}-->
+<!--            </li>-->
+<!--            <li>{{ "insurance.Geldanlage" | translate }}</li>-->
+<!--            <li>-->
+<!--              {{ "insurance.meisten" | translate }}-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              {{ "insurance.AnlageIn" | translate }}-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</section>-->
