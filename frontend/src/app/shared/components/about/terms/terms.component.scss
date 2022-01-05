@@ -1,0 +1,56 @@
+.some_orange_bunner {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 400px;
+  font-weight: 500;
+  font-size: 70px;
+  line-height: 76px;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ECB179;
+}
+
+.conditions_ip {
+  width: 100%;
+  display: flex;
+
+  .conditions_container_ip {
+    font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 60px;
+
+    .header_cc {
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 55px;
+      text-align: center;
+      color: #262222;
+    }
+
+    .text_cc {
+      margin-top: 20px;
+      text-align: center;
+      color: #262222;
+
+      a {
+        color: #F08A5D;
+
+        &:hover {
+          cursor: pointer;
+          color: #ee662a;
+        }
+      }
+    }
+  }
+}
+
+.__back_gray {
+  background: #F7F7F7;
+}
