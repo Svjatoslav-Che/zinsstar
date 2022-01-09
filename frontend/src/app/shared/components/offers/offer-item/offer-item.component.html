@@ -71,6 +71,9 @@
         <div class="offer-item__ul__item__content">{{'offers.item.Einlagensicherung' | translate}}</div>
       </li>
     </ul>
+    <div class="border_add" *ngIf="selectedTab !== 0">
+
+    </div>
     <div [hidden]="selectedTab !== 1">
       <app-offer-details [bank]="bank" [country]="country" [offer]="offer"></app-offer-details>
     </div>
