@@ -1,86 +1,166 @@
-<mat-toolbar class="p-0 bg-white">
-  <mat-toolbar-row class="p-0">
-    <div class="container ps-5 pe-5">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid p-1">
-          <a class="navbar-brand" routerLink="/">
-            <img alt="" src="assets/logo.png" width="150px"/>
+<div class="login_holdbox">
+  <div class="left_log_holda">
+    <a class="logo_login" href="/" routerlink="/">
+    </a>
+    <div class="text_log_holda">
+      Now up to 270 EUR and secure the welcome bonus
+      <div class="small_txt">
+        Exclusively for new customers when opening a fixed or overnight account.
+      </div>
+      <a class="btn_txt">Fixed deposit offers</a>
+    </div>
+  </div>
+  <div class="right_log_holda">
+    <a class="back_button" onclick="history.back()">
+      <div class="arrow_back">
+      </div>
+      <div class="text_back">
+        Back
+      </div>
+    </a>
+
+    <div class="log_container">
+      <div class="head_lin">
+        Log In
+      </div>
+      <div class="text_lin">
+        Enter your credentials to access your account
+      </div>
+
+      <form (ngSubmit)="login()" [formGroup]="loginForm" [ngStyle]="{'width':'450px'}">
+        <div class="text_lin minihead_lin" [ngStyle]="{'margin-top':'60px'}">
+          Enter your email
+        </div>
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label class="label_lin">{{"login.kontonummer" | translate}}</mat-label>
+              <input class="label_lin_in" autocomplete="email" formControlName="username" matInput required type="email"/>
+            </mat-form-field>
+
+        <div class="text_lin minihead_lin" [ngStyle]="{'margin-top':'10px'}">
+          Enter your password
+        </div>
+            <mat-form-field appearance="outline" style="width: 100%">
+              <mat-label class="label_lin">{{"login.pass" | translate}}</mat-label>
+              <input class="label_lin_in" formControlName="password" matInput type="password"/>
+            </mat-form-field>
+
+        <div class="msg_lin" [ngStyle]="{'transform': 'translateY(-20px)'}">
+          Your password must be 6 to 16 characters and can contain letters and numbers.
+        </div>
+
+        <div class="row">
+          <div class="col text-center">
+            <button [disabled]="!loginForm.valid" class="btn btn-orange text-white" type="submit"
+                    [ngStyle]="{'width':'130px', 'height':'52px', 'border-radius':'8px'}">
+              <span *ngIf="loginProgress" aria-hidden="true" class="spinner-grow spinner-grow-sm" role="status"></span>
+              {{"login.anmelden" | translate}}
+            </button>
+          </div>
+        </div>
+
+        <div class="msg_lin"  [ngStyle]="{'margin-top': '30px', 'text-align':'center'}">
+          Not a customer yet?
+          <a class="forgot_lin" href="/auth/register">
+            Register as a private customer
           </a>
         </div>
-      </nav>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
 
-<div *ngIf="success" class="sent">{{"login.restoresuccess" | translate}}</div>
+<!--        <div class="msg_lin"  [ngStyle]="{'margin-top': '30px', 'text-align':'center'}">-->
+<!--          Not a customer yet?-->
+<!--          <a class="forgot_lin" routerLink="/auth/reset">-->
+<!--            {{"login.forgot" | translate}}-->
+<!--          </a>-->
+<!--        </div>-->
 
-<div class="wrapper h-75">
-  <div class="container">
-    <h2 class="display-1 text-center pt-5 fw-normal fs-3">
-      {{"login.willkommen" | translate}}
-    </h2>
-    <hr/>
-    <div class="container">
-      <div *ngIf="error" class="error">
-        <i-bs class="text-danger" height="24" name="infoCircle" width="24"></i-bs>
-        <div class="mx-2" style="max-width: 70%">
-          <p>
-            <strong> {{"login.anmeldungsfehler" | translate}} </strong>
-          </p>
-          <p class="text-dark fs-6 fw-light">
-            {{"login.die_1" | translate}}<br/>{{"login.die_2" | translate}}
-            <a [href]="emails.service.href" class="text-danger" target="_blank">{{ emails.service.template }}</a>
-            {{"login.die_3" | translate}}
-            <a [href]="contacts.customer.href" class="text-danger">
-              {{ contacts.customer.template }}</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <form (ngSubmit)="login()" [formGroup]="loginForm">
-      <div class="row ms-5 me-5">
-        <div class="col-lg-6 col-sm-8 text-center mx-auto mt-5">
-          <mat-form-field appearance="outline" style="width: 100%">
-            <mat-label>{{"login.kontonummer" | translate}}</mat-label>
-            <input autocomplete="email" formControlName="username" matInput required type="email"/>
-          </mat-form-field>
-        </div>
-      </div>
+      </form>
 
-      <div class="row ms-5 me-5">
-        <div class="col-lg-6 col-sm-8 text-center mx-auto">
-          <mat-form-field appearance="outline" style="width: 100%">
-            <mat-label>{{"login.pass" | translate}}</mat-label>
-            <input formControlName="password" matInput type="password"/>
-          </mat-form-field>
-        </div>
-      </div>
-
-      <a class="forgot" routerLink="/auth/reset">{{"login.forgot" | translate}}</a>
-
-      <div class="row">
-        <div class="col text-center">
-          <button [disabled]="!loginForm.valid" class="btn btn-orange text-white" type="submit">
-            <span *ngIf="loginProgress" aria-hidden="true" class="spinner-grow spinner-grow-sm" role="status"></span>
-            {{"login.anmelden" | translate}}
-
-          </button>
-        </div>
-      </div>
-    </form>
-    <hr/>
-    <div class="container">
-      <div class="row">
-        <div class="col text-center">
-          <b> {{"login.kunde" | translate}}</b>
-          <br/>
-          <a class="btn text-primary" routerLink="/auth/register">
-            {{"login.registrieren" | translate}}
-            <fa-icon [icon]="faChevronRight" class="ms-2"></fa-icon>
-          </a>
-          <br/>
-        </div>
-      </div>
     </div>
   </div>
 </div>
+
+<!--<mat-toolbar class="p-0 bg-white">-->
+<!--  <mat-toolbar-row class="p-0">-->
+<!--    <div class="container ps-5 pe-5">-->
+<!--      <nav class="navbar navbar-expand-lg">-->
+<!--        <div class="container-fluid p-1">-->
+<!--          <a class="navbar-brand" routerLink="/">-->
+<!--            <img alt="" src="assets/logo.png" width="150px"/>-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </nav>-->
+<!--    </div>-->
+<!--  </mat-toolbar-row>-->
+<!--</mat-toolbar>-->
+
+<!--<div *ngIf="success" class="sent">{{"login.restoresuccess" | translate}}</div>-->
+
+<!--<div class="wrapper h-75">-->
+<!--  <div class="container">-->
+<!--    <h2 class="display-1 text-center pt-5 fw-normal fs-3">-->
+<!--      {{"login.willkommen" | translate}}-->
+<!--    </h2>-->
+<!--    <hr/>-->
+<!--    <div class="container">-->
+<!--      <div *ngIf="error" class="error">-->
+<!--        <i-bs class="text-danger" height="24" name="infoCircle" width="24"></i-bs>-->
+<!--        <div class="mx-2" style="max-width: 70%">-->
+<!--          <p>-->
+<!--            <strong> {{"login.anmeldungsfehler" | translate}} </strong>-->
+<!--          </p>-->
+<!--          <p class="text-dark fs-6 fw-light">-->
+<!--            {{"login.die_1" | translate}}<br/>{{"login.die_2" | translate}}-->
+<!--            <a [href]="emails.service.href" class="text-danger" target="_blank">{{ emails.service.template }}</a>-->
+<!--            {{"login.die_3" | translate}}-->
+<!--            <a [href]="contacts.customer.href" class="text-danger">-->
+<!--              {{ contacts.customer.template }}</a>.-->
+<!--          </p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <form (ngSubmit)="login()" [formGroup]="loginForm">-->
+<!--      <div class="row ms-5 me-5">-->
+<!--        <div class="col-lg-6 col-sm-8 text-center mx-auto mt-5">-->
+<!--          <mat-form-field appearance="outline" style="width: 100%">-->
+<!--            <mat-label>{{"login.kontonummer" | translate}}</mat-label>-->
+<!--            <input autocomplete="email" formControlName="username" matInput required type="email"/>-->
+<!--          </mat-form-field>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="row ms-5 me-5">-->
+<!--        <div class="col-lg-6 col-sm-8 text-center mx-auto">-->
+<!--          <mat-form-field appearance="outline" style="width: 100%">-->
+<!--            <mat-label>{{"login.pass" | translate}}</mat-label>-->
+<!--            <input formControlName="password" matInput type="password"/>-->
+<!--          </mat-form-field>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <a class="forgot" routerLink="/auth/reset">{{"login.forgot" | translate}}</a>-->
+
+<!--      <div class="row">-->
+<!--        <div class="col text-center">-->
+<!--          <button [disabled]="!loginForm.valid" class="btn btn-orange text-white" type="submit">-->
+<!--            <span *ngIf="loginProgress" aria-hidden="true" class="spinner-grow spinner-grow-sm" role="status"></span>-->
+<!--            {{"login.anmelden" | translate}}-->
+
+<!--          </button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--    <hr/>-->
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="col text-center">-->
+<!--          <b> {{"login.kunde" | translate}}</b>-->
+<!--          <br/>-->
+<!--          <a class="btn text-primary" routerLink="/auth/register">-->
+<!--            {{"login.registrieren" | translate}}-->
+<!--            <fa-icon [icon]="faChevronRight" class="ms-2"></fa-icon>-->
+<!--          </a>-->
+<!--          <br/>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

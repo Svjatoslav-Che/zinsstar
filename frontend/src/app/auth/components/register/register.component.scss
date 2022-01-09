@@ -1,3 +1,217 @@
+.login_holdbox {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  background: #0070b6;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  .left_log_holda {
+    width: 50%;
+    height: 100%;
+    background: #ECB179;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .step_container {
+      margin-left: 70px;
+
+      .step_step {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 55px;
+        color: #FFFFFF;
+      }
+
+      .step_text {
+        margin-top: 30px;
+        font-size: 16px;
+        line-height: 22px;
+        color: #FFFFFF;
+      }
+
+      .step_counter_container {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+
+        .step_active {
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+          line-height: 22px;
+          color: #FFFFFF;
+
+          .num_cont {
+            margin-right: 30px;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            line-height: 22px;
+            color: #FFFFFF;
+            background-image: url("../../../../assets/img/Ellipse 57.png");
+          }
+        }
+
+        .step_passive {
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+          line-height: 22px;
+          color: #F7E0C9;
+
+          .num_cont {
+            margin-right: 30px;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            line-height: 22px;
+            color: #F7E0C9;
+            background-image: url("../../../../assets/img/Ellipse 57p.png");
+          }
+        }
+
+        .strip_step {
+          margin-left: 17px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          width: 1px;
+          height: 48px;
+          background-image: url("../../../../assets/img/Line 37.png");
+        }
+      }
+    }
+  }
+
+  .right_log_holda {
+    background-image: url("../../../../assets/img/zz_login_hover.png");
+    width: 50%;
+    height: 100%;
+    background: #FFFFFF;
+    position: relative;
+
+
+    .back_button {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+
+        .arrow_back {
+          background-image: url("../../../../assets/img/b_btn_hover.png");
+        }
+
+        .text_back {
+          color: #EE662A;
+        }
+      }
+
+      .arrow_back {
+        width: 14px;
+        height: 14px;
+        background-image: url("../../../../assets/img/b_btn.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .text_back {
+        margin-left: 10px;
+        font-size: 16px;
+        line-height: 16px;
+        color: #F08A5D;
+        opacity: 1;
+      }
+    }
+
+    .log_container {
+      width: 450px;
+      margin-top: 125px;
+      margin-left: auto;
+      margin-right: auto;
+
+      .head_lin {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 55px;
+        text-align: center;
+        color: #262222;
+      }
+
+      .text_lin {
+        margin-top: 30px;
+        font-size: 16px;
+        line-height: 22px;
+        color: #262222;
+        text-align: center;
+        opacity: 0.8;
+      }
+
+      .minihead_lin {
+        font-weight: 500;
+        text-align: left;
+        margin-bottom: 10px;
+      }
+
+      .label_lin {
+        color: #262222;
+        opacity: 0.6;
+        font-size: 16px;
+        line-height: 22px;
+        margin-left: 15px;
+      }
+
+      .label_lin_in {
+        margin-top: 4px;
+      }
+
+      .msg_lin {
+        color: #E5E5E5;
+        //opacity: 0.4;
+        font-size: 14px;
+        line-height: 19px;
+        display: flex;
+        flex-direction: column;
+
+        .forgot_lin {
+          opacity: 1;
+          margin-top: 10px;
+          text-decoration: none;
+          margin-left: auto;
+          margin-right: auto;
+          font-size: 14px;
+          line-height: 20px;
+          color: #F08A5D;
+
+          &:hover {
+            color: #EE662A;
+          }
+        }
+      }
+
+      ._up {
+        transform: translateY(-20px);
+      }
+    }
+
+
+
+  }
+}
+
+
 .m-container {
   font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 15px;

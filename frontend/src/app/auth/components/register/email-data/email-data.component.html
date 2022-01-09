@@ -1,21 +1,27 @@
 <div class="content mt-5">
   <mat-card class="m-5 mx-auto" style="padding-top: 0; padding-left: 0; padding-right: 0; max-width: 60%">
-    <mat-card-title class="py-4 text-center">
-      {{'register.email.willkommen' | translate}}
+    <mat-card-title class="header_register">
+      Your email
+      <div class="header_register_text">
+        Enter your email to register in the system
+      </div>
     </mat-card-title>
 
     <mat-card-content>
-      <div class="container mt-3">
+      <div>
         <form (ngSubmit)="onSubmit()" [formGroup]="emailForm">
-          <div class="row">
-            <div class="col-8 text-start mx-auto">
-              <mat-form-field appearance="outline" style="width: 100%">
-                <mat-label> {{"register.email.email" | translate}}</mat-label>
+          <div>
+            <div>
+              <div class="input_header">
+                Email
+              </div>
+              <mat-form-field appearance="outline" style="width: 100%" class="enter_field">
+                <mat-label [ngStyle]="{'padding-left':'20px'}"> Enter your email</mat-label>
                 <input (change)="checkExist()" autocomplete="off" formControlName="email" matInput type="email"/>
 
-                <mat-hint *ngIf="!emailExistInDB">
-                  {{"register.email.ich" | translate}} <a routerLink="/about/security" target="_blank">{{"register.email.datenschutzbestimmungen" | translate}}</a> {{"register.email.der" | translate}}
-                </mat-hint>
+<!--                <mat-hint *ngIf="!emailExistInDB">-->
+<!--                  {{"register.email.ich" | translate}} <a routerLink="/about/security" target="_blank">{{"register.email.datenschutzbestimmungen" | translate}}</a> {{"register.email.der" | translate}}-->
+<!--                </mat-hint>-->
               </mat-form-field>
               <div *ngIf="emailExistInDB" class="text-danger">
                 {{"register.email.address" | translate}}
@@ -26,8 +32,8 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-8 mx-auto mt-3">
-              <mat-checkbox class="text-start text-wrap" color="primary">
+            <div>
+              <mat-checkbox class="text-start text-wrap" color="primary" class="checkbox_rediz">
                 {{"register.email.verpassen" | translate}}
               </mat-checkbox>
             </div>

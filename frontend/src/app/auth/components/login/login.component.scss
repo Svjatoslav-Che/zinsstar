@@ -1,3 +1,200 @@
+.login_holdbox {
+  width: 100%;
+  height: 100%;
+  background: #0070b6;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  .left_log_holda {
+    width: 50%;
+    height: 100%;
+    background: #1BAD2B;
+    position: relative;
+    background-image: url("../../../../assets/img/left_part.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .logo_login {
+      position: absolute;
+      width: 122px;
+      height: 46px;
+      top: 80px;
+      left: 70px;
+      background-image: url("../../../../assets/img/zz_login.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      &:hover {
+        cursor: pointer;
+        background-image: url("../../../../assets/img/zz_login_hover.png");
+      }
+    }
+
+    .text_log_holda {
+      font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+      position: absolute;
+      left: 10%;
+      top: 300px;
+      width: 80%;
+      font-weight: 500;
+      font-size: 70px;
+      line-height: 76px;
+      color: #FFFFFF;
+
+      .small_txt {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        margin-top: 40px;
+      }
+
+      .btn_txt {
+        margin-top: 55px;
+        width: 227px;
+        height: 52px;
+        background: #FFFFFF;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #F08A5D;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        text-decoration: none;
+
+        &:hover {
+          background: #EE662A;
+          color: #FFFFFF;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .right_log_holda {
+    background-image: url("../../../../assets/img/zz_login_hover.png");
+    width: 50%;
+    height: 100%;
+    background: #FFFFFF;
+    position: relative;
+
+
+    .back_button {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      &:hover {
+        cursor: pointer;
+
+        .arrow_back {
+          background-image: url("../../../../assets/img/b_btn_hover.png");
+        }
+
+        .text_back {
+          color: #EE662A;
+        }
+      }
+
+      .arrow_back {
+        width: 14px;
+        height: 14px;
+        background-image: url("../../../../assets/img/b_btn.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .text_back {
+        margin-left: 10px;
+        font-size: 16px;
+        line-height: 16px;
+        color: #F08A5D;
+        opacity: 1;
+      }
+    }
+
+    .log_container {
+      width: 450px;
+      margin-top: 125px;
+      margin-left: auto;
+      margin-right: auto;
+
+      .head_lin {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 55px;
+        text-align: center;
+        color: #262222;
+      }
+
+      .text_lin {
+        margin-top: 30px;
+        font-size: 16px;
+        line-height: 22px;
+        color: #262222;
+        text-align: center;
+        opacity: 0.8;
+      }
+
+      .minihead_lin {
+        font-weight: 500;
+        text-align: left;
+        margin-bottom: 10px;
+      }
+
+      .label_lin {
+        color: #262222;
+        opacity: 0.6;
+        font-size: 16px;
+        line-height: 22px;
+        margin-left: 15px;
+      }
+
+      .label_lin_in {
+        margin-top: 4px;
+      }
+
+      .msg_lin {
+        color: #E5E5E5;
+        //opacity: 0.4;
+        font-size: 14px;
+        line-height: 19px;
+        display: flex;
+        flex-direction: column;
+
+        .forgot_lin {
+          opacity: 1;
+          margin-top: 10px;
+          text-decoration: none;
+          margin-left: auto;
+          margin-right: auto;
+          font-size: 14px;
+          line-height: 20px;
+          color: #F08A5D;
+
+          &:hover {
+            color: #EE662A;
+          }
+        }
+      }
+
+      ._up {
+        transform: translateY(-20px);
+      }
+    }
+
+
+
+  }
+}
+
+
+
 .error {
   width: 100%;
   margin-bottom: 15px;
