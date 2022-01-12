@@ -1,3 +1,7 @@
+.text_style {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
 .notice {
   font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -10,10 +14,12 @@
 }
 
 mat-card {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   max-width: 750px !important;
 }
 
 .header_register {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   width: 100%;
   font-size: 40px;
   line-height: 55px;
@@ -28,11 +34,13 @@ mat-card {
 }
 
 .enter_field {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
 }
 
 .input_header {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
   color: #262222;
@@ -40,10 +48,22 @@ mat-card {
 }
 
 .checkbox_rediz {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: rgba(38, 34, 34, 1);
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 300;
+}
 
-  .mat-checkbox-inner-container {
-    border-radius: 3px;
-    border: 1px solid rgba(38, 34, 34, .4);
+.das_ist_button {
+  border: none;
+  padding: 15px 40px;
+  background: #F08A5D;
+  border-radius: 8px;
+  color: #FFFFFF;
+
+  &:hover {
+    cursor: pointer;
+    background: #EE662A;
   }
-
 }
