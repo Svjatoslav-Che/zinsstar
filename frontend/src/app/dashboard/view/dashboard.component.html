@@ -1,6 +1,84 @@
-<app-user-nav-bar></app-user-nav-bar>
-<app-user-overview></app-user-overview>
+<div class="dash_screen">
 
-<router-outlet></router-outlet>
+    <div class="sheet_acc _acc">
+        <div class="text_head">
+            Zinsunion Account
+        </div>
+        <div class="text_data">
+            € 200.000,00
+        </div>
+    </div>
+    <div class="sheet_acc _amo">
+        <div class="text_head">
+            Amount available
+        </div>
+        <div class="text_data">
+            € 0,00
+        </div>
+    </div>
 
-<app-base-footer></app-base-footer>
+    <div class="left_menu">
+        <div class="image_container" routerLinkActive="active">
+            <img src="assets/img/pexels-photo-614810.jpeg"/>
+            <a class="plus" routerLink="/dashboard/Personal">
+                +
+            </a>
+        </div>
+        <div class="user_name">
+            Joseph Milstroy
+        </div>
+        <div class="undername_strip">
+        </div>
+        <div class="buttons_container" routerLinkActive="active">
+            <a class="home_btn" routerLink="/dashboard/MyInvestments">
+                <div class="home_icon">
+                </div>
+                <div class="home_txt">
+                    Home
+                </div>
+            </a>
+            <a class="offers_btn" routerLink="/dashboard/Products">
+                <div class="home_icon">
+                </div>
+                <div class="home_txt">
+                    Offers
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="right_container">
+        <div class="logout_sheet">
+            <div class="logout_button">
+                <div class="icon_lo">
+                </div>
+                Logout
+            </div>
+        </div>
+
+        <div class="id_sheet">
+            <div class="id_button">
+                <div class="icon_bell">
+                </div>
+                Identification pending
+            </div>
+            <div class="id_button_moar">
+                Learn more
+            </div>
+        </div>
+    <div class="router_window">
+        <router-outlet></router-outlet>
+    </div>
+    </div>
+</div>
+
+
+<!--<app-user-nav-bar></app-user-nav-bar>-->
+
+<!--ЗДЕСЬ ИНФА ПО АВТОРИЗАЦИИ И БАБЛУ ЮЗЕРА-->
+<!--<app-user-overview></app-user-overview>-->
+<!--ЗДЕСЬ ИНФА ПО АВТОРИЗАЦИИ И БАБЛУ ЮЗЕРА-->
+
+<!--<router-outlet></router-outlet>-->
+
+<!--<app-base-footer></app-base-footer>-->

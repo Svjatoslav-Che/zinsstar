@@ -272,6 +272,7 @@
         .plus {
           background-image: url("../../../../assets/img/MinusPlus.png");
           transition: all 150ms;
+          text-decoration: none;
         }
       }
 
@@ -279,6 +280,7 @@
         width: 24px;
         height: 24px;
         background-image: url("../../../../assets/img/PlusMinus.png");
+        text-decoration: none;
       }
     }
 
