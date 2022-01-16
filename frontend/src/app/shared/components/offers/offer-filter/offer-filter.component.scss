@@ -1,13 +1,15 @@
 .list_descriptor {
   margin-bottom: 30px;
-  width: calc(100% + 15px);
+  width: 1200px;
   height: 40px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 20px;
   color: rgba(0, 0, 0, 0.4);
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   border-bottom: 1px solid rgba(38, 37, 34, 0.2);
+  margin-right: auto;
+  margin-left: auto;
 
   .flexing_it {
     display: flex;
@@ -16,26 +18,26 @@
   }
 
   .ld_bank {
-    width: 200px;
+    width: 180px;
   }
 
   .ld_country {
-    width: 200px;
+    width: 180px;
   }
 
   .ld_rate {
     img {
       margin-left: 10px;
     }
-    width: 200px;
+    width: 180px;
   }
 
   .ld_description {
-    width: 200px;
+    width: 180px;
   }
 
   .ld_moar {
-    width: 200px;
+    width: 180px;
   }
 }
 
