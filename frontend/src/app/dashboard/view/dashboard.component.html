@@ -5,7 +5,7 @@
             Zinsunion Account
         </div>
         <div class="text_data">
-            € 200.000,00
+            € {{user.availableBalance}}
         </div>
     </div>
     <div class="sheet_acc _amo">
@@ -13,7 +13,7 @@
             Amount available
         </div>
         <div class="text_data">
-            € 0,00
+            € {{user.totalBalance}}
         </div>
     </div>
 
@@ -57,7 +57,7 @@
 
     <div class="right_container">
         <div class="logout_sheet">
-            <div class="logout_button">
+            <div class="logout_button" (click)="logout()">
                 <div class="icon_lo">
                 </div>
                 Logout

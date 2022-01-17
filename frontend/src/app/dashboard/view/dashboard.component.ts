@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {DashboardService} from "../services/dashboard.service";
 import {VerificationService} from "../services/verification.service";
 import {MatDialog} from "@angular/material/dialog";
+import {AuthService} from "../../auth/services/auth.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -14,8 +15,10 @@ export class DashboardComponent implements OnInit {
 
   public offersOpen: boolean = false;
   public routeShow: string = 'casual';
+  public user;
 
   constructor(
+    private authService: AuthService,
     private router: Router,
     private dashboardService: DashboardService,
     private verificationService: VerificationService,
@@ -24,6 +27,12 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.verificationService.userSubject.subscribe((user) => {
+      if (!user) return;
+
+      this.user = user;
+    })
+
     this.verificationService.documentsSubject.subscribe(documents => {
       if (!documents) return;
 
@@ -52,6 +61,10 @@ export class DashboardComponent implements OnInit {
 
   chooseRoute(value: any) {
       this.routeShow = value;
+  }
+
+  public logout(): void {
+    this.authService.logout()
   }
 
 }
