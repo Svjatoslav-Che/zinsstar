@@ -12,6 +12,9 @@ import {MatDialog} from "@angular/material/dialog";
 })
 export class DashboardComponent implements OnInit {
 
+  public offersOpen: boolean = false;
+  public routeShow: string = 'casual';
+
   constructor(
     private router: Router,
     private dashboardService: DashboardService,
@@ -41,6 +44,14 @@ export class DashboardComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+  openRoute() {
+    this.offersOpen = !this.offersOpen;
+  }
+
+  chooseRoute(value: any) {
+      this.routeShow = value;
   }
 
 }

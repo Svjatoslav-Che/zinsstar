@@ -206,9 +206,9 @@
   .right_container {
     overflow: scroll;
     position: absolute;
-    right: 0px;
+    right: 250px;
     top: 0px;
-    width: calc(100% - 200px);
+    width: calc(100% - 450px);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -307,6 +307,130 @@
 
     .router_window {
       width: 100%;
+    }
+  }
+
+  .very_right_container {
+    width: 250px;
+    height: 200px;
+    //background: #1BAD2B;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.ver_container {
+  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  width: 100%;
+  box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  margin-top: 10px;
+
+  .cont_headbox {
+    position: relative;
+    height: 80px;
+    width: 100%;
+    //background: #1BAD2B;
+
+    img {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+    }
+
+    .cont_header {
+      position: absolute;
+      left: 70px;
+      top: 15px;
+      font-size: 14px;
+      line-height: 19px;
+      color: #262222;
+      opacity: 0.6;
+    }
+
+    .cont_header_desc {
+      position: absolute;
+      left: 70px;
+      top: 40px;
+      font-weight: 500;
+      font-size: 14px;
+      //was 16 px
+      line-height: 22px;
+      color: #262222;
+    }
+
+    .cont_btn {
+      position: absolute;
+      top: 25px;
+      right: 20px;
+      width: 90px;
+      height: 31px;
+      font-size: 14px;
+      line-height: 19px;
+      color: #FFFFFF;
+      background: #F08A5D;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        cursor: pointer;
+        background: #EE662A;
+      }
+    }
+
+    .cont_btn_empt {
+      position: absolute;
+      top: 25px;
+      right: 20px;
+      width: 111px;
+      height: 31px;
+      font-size: 14px;
+      line-height: 19px;
+      color: #F08A5D;
+      background: #ffffff;
+      border: 1px solid #F08A5D;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        cursor: pointer;
+        background: #EE662A;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .just_text {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+
+    b {
+      font-weight: 600;
+    }
+  }
+}
+
+.txt_sheets {
+  font-size: 14px;
+  line-height: 19px;
+
+
+  .txt_txt {
+    margin-left: 67px;
+    opacity: 0.4;
+    color: #262222;
+
+    &:hover {
+      color: #F08A5D;
+      opacity: 1;
+      cursor: pointer;
     }
   }
 }
