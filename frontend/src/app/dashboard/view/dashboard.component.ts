@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {VerificationComponent} from "../components/verification/verification.component";
 import {Router} from "@angular/router";
 import {DashboardService} from "../services/dashboard.service";
@@ -11,11 +11,12 @@ import {AuthService} from "../../auth/services/auth.service";
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
 
   public offersOpen: boolean = false;
   public routeShow: string = 'casual';
   public user;
+  public offerId: string;
 
   constructor(
     private authService: AuthService,
@@ -41,6 +42,7 @@ export class DashboardComponent implements OnInit {
       }
       console.log('VerificationService', 'verified', this.verificationService.verified);
     });
+    document.body.style.background = '#F7F7F7';
   }
 
 
@@ -60,11 +62,19 @@ export class DashboardComponent implements OnInit {
   }
 
   chooseRoute(value: any) {
-      this.routeShow = value;
+    this.routeShow = value;
   }
 
   public logout(): void {
     this.authService.logout()
   }
 
+  ngOnDestroy(): void {
+    document.body.style.background = '#FFF';
+  }
+
+  public onOfferSelected(offerId: string): void {
+    this.offerId = offerId;
+    this.routeShow = 'offer';
+  }
 }

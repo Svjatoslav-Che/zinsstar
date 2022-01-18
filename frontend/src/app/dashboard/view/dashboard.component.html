@@ -1,62 +1,69 @@
 <div class="dash_screen">
-
-    <div class="sheet_acc _acc">
-        <div class="text_head">
-            Zinsunion Account
-        </div>
-        <div class="text_data">
-            € {{user.availableBalance}}
-        </div>
-    </div>
-    <div class="sheet_acc _amo">
-        <div class="text_head">
-            Amount available
-        </div>
-        <div class="text_data">
-            € {{user.totalBalance}}
-        </div>
-    </div>
-
     <div class="left_menu">
-        <div class="image_container" routerLinkActive="active">
-            <img src="assets/img/pexels-photo-614810.jpeg"/>
-            <a class="plus" routerLink="/dashboard/Personal" (click)="chooseRoute('casual')">
-                +
-            </a>
+
+        <div class="user_container">
+            <div class="image_container" routerLinkActive="active">
+                <div class="plus_container">
+                    <img src="./assets/img/pexels-photo-614810.jpeg" alt="avatar"/>
+                    <a class="plus" routerLink="/dashboard/Personal" (click)="chooseRoute('casual')">+</a>
+                </div>
+
+            </div>
+            <div class="user_name">
+                {{user?.name}}
+            </div>
+
+            <div class="undername_strip"></div>
         </div>
-        <div class="user_name">
-            Joseph Milstroy
-        </div>
-        <div class="undername_strip">
-        </div>
-        <div class="buttons_container" routerLinkActive="active">
-            <a class="home_btn" routerLink="/dashboard/MyInvestments" (click)="chooseRoute('casual')">
+
+
+        <div class="buttons_container " routerLinkActive="active">
+            <a class="home_btn" [ngClass]="{'active': !offersOpen }" routerLink="/dashboard/MyInvestments" (click)="chooseRoute('casual'); openRoute();">
                 <div class="home_icon">
                 </div>
                 <div class="home_txt">
                     Home
                 </div>
             </a>
-            <div class="offers_btn" (click)="openRoute()">
+            <a class="offers_btn" (click)="openRoute()" [ngClass]="{'active': !!offersOpen }">
                 <div class="home_icon">
                 </div>
                 <div class="home_txt" >
                     Offers
                 </div>
-            </div>
-            <div class="txt_sheets" [ngStyle]="{'margin-top':'10px'}" *ngIf="offersOpen">
-                <div class="txt_txt" routerLink="festgeld" (click)="chooseRoute('fixed')">
+            </a>
+            <div class="txt_sheets" *ngIf="offersOpen" >
+                <div class="txt_txt" routerLink="festgeld" [ngClass]="{'activeItem': routeShow === 'fixed' }" (click)="chooseRoute('fixed')">
                     Fixed deposit
                 </div>
-                <div class="txt_txt" [ngStyle]="{'margin-top':'10px'}" (click)="chooseRoute('over')">
+                <div class="txt_txt" (click)="chooseRoute('over')" [ngClass]="{'activeItem': routeShow === 'over' }">
                     Overnight money
+                </div>
+            </div>
+        </div>
+
+        <div class="amount_container">
+            <div class="sheet_acc _acc">
+                <div class="text_head">
+                    Zinsunion Account
+                </div>
+                <div class="text_data">
+                    € {{user?.availableBalance}}
+                </div>
+            </div>
+            <div class="sheet_acc _amo">
+                <div class="text_head">
+                    Amount available
+                </div>
+                <div class="text_data">
+                    € {{user?.totalBalance}}
                 </div>
             </div>
         </div>
     </div>
 
     <div class="right_container">
-        <div class="logout_sheet">
+        <div class="logout_container">
             <div class="logout_button" (click)="logout()">
                 <div class="icon_lo">
                 </div>
@@ -64,98 +71,27 @@
             </div>
         </div>
 
-<!--        <div class="id_sheet">-->
-<!--            <div class="id_button">-->
-<!--                <div class="icon_bell">-->
-<!--                </div>-->
-<!--                Identification pending-->
-<!--            </div>-->
-<!--            <div class="id_button_moar">-->
-<!--                Learn more-->
-<!--            </div>-->
-<!--        </div>-->
-    <div class="router_window">
-        <app-offers [festgeld]="false" *ngIf="routeShow === 'fixed'"></app-offers>
-        <app-offers [festgeld]="true" [place]="'festgeld'" *ngIf="routeShow === 'over'"></app-offers>
-        <router-outlet *ngIf="routeShow === 'casual'"></router-outlet>
-    </div>
+        <div class="main_content">
+            <div class="router_container">
+                <app-offers (onOfferSelected)="onOfferSelected($event)" [festgeld]="false" *ngIf="routeShow === 'fixed'"></app-offers>
+                <app-offers (onOfferSelected)="onOfferSelected($event)" [festgeld]="true" [place]="'festgeld'" *ngIf="routeShow === 'over'"></app-offers>
+                <app-deposit-products *ngIf="routeShow === 'offer'" [offerId]="offerId"></app-deposit-products>
+                <router-outlet *ngIf="routeShow === 'casual'"></router-outlet>
+            </div>
+
+            <div class="plant_status_container">
+                <h1 class="title">Open your first plant</h1>
+
+                <p class="description">
+                    Benefit from higher interest rates with our savings offers. Better than your house bank.
+                </p>
+
+                <div class="action_container">
+                    <div class="button deposit_offers" (click)="chooseRoute('fixed')">Deposit offers</div>
+                    <div class="button overnight_offers" (click)="chooseRoute('over')">Overnight offers</div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="very_right_container">
-        <div class="ver_container" [ngStyle]="{'margin-bottom':'20px'}">
-                  <div class="cont_headbox">
-                    <img src="assets/img/identification.png">
-                    <div class="cont_header">
-                      Step 1
-                    </div>
-                    <div class="cont_header_desc">
-                      Identification
-                    </div>
-<!--                    <div class="cont_btn">-->
-<!--                      Identify-->
-<!--                    </div>-->
-                  </div>
-                  <div class="just_text">
-                    Please carry out our identification procedure to fully verify yourself.
-                  </div>
-                </div>
-
-                <div class="ver_container">
-                  <div class="cont_headbox">
-                    <img src="assets/img/select_investment.png">
-                    <div class="cont_header">
-                      Step 2
-                    </div>
-                    <div class="cont_header_desc">
-                      Select investment
-                    </div>
-<!--                    <div class="cont_btn_empt">-->
-<!--                      Choose offer-->
-<!--                    </div>-->
-                  </div>
-                  <div class="just_text">
-                    If necessary, select a suitable investment before the interest union account has been fully activated.
-                  </div>
-                </div>
-
-        <div class="ver_container">
-                  <div class="cont_headbox">
-                    <img src="assets/img/application_processing.png">
-                    <div class="cont_header">
-                      Step 3
-                    </div>
-                    <div class="cont_header_desc">
-                      Application processing
-                    </div>
-                  </div>
-                  <div class="just_text">
-                    After the identification process, it usually takes 2–3 bank working days before you can use your account to the full. <b>You will receive an email from us with details of your interest union account</b> ( clearing account for your investments ).
-                  </div>
-                </div>
-                <div class="ver_container" [ngStyle]="{'margin-bottom':'20px'}">
-                  <div class="cont_headbox">
-                    <img src="assets/img/application_processing.png">
-                    <div class="cont_header">
-                      Step 4
-                    </div>
-                    <div class="cont_header_desc">
-                      Opened account
-                    </div>
-                  </div>
-                  <div class="just_text">
-                    You can then transfer money to your Zinsunion account and make additional investments in online banking at any time .
-                  </div>
-                </div>
-    </div>
 </div>
-
-
-<!--<app-user-nav-bar></app-user-nav-bar>-->
-
-<!--ЗДЕСЬ ИНФА ПО АВТОРИЗАЦИИ И БАБЛУ ЮЗЕРА-->
-<!--<app-user-overview></app-user-overview>-->
-<!--ЗДЕСЬ ИНФА ПО АВТОРИЗАЦИИ И БАБЛУ ЮЗЕРА-->
-
-<!--<router-outlet></router-outlet>-->
-
-<!--<app-base-footer></app-base-footer>-->

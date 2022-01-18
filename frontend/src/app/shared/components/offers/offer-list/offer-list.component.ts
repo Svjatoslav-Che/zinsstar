@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Observable } from 'rxjs';
 import { Bank } from 'src/app/shared/models/api/bank.class';
 import { Country } from 'src/app/shared/models/api/country.model';
@@ -21,7 +21,13 @@ export class OfferListComponent implements OnInit {
   @Input('amount') amount: number;
   private sortType$: SortType = null;
 
+  @Output()
+  public onOfferSelected = new EventEmitter();
   constructor(private service: OfferService) {
+  }
+
+  public onOfferSelectedFunc(event) {
+    this.onOfferSelected.emit(event);
   }
 
   get sortType() {

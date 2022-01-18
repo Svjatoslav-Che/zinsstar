@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Offer} from '../../../models/api/offer.model';
 import {Bank} from '../../../models/api/bank.class';
 import {Country} from '../../../models/api/country.model';
@@ -23,6 +23,9 @@ export class OfferItemComponent implements OnInit {
   @Input('offer') private offer$: Offer;
   @Input('bank') private bank$: Bank;
   @Input('country') private country$: Country;
+
+  @Output()
+  public onOfferSelected = new EventEmitter();
 
   constructor(private router: Router) {
   }
@@ -65,9 +68,11 @@ export class OfferItemComponent implements OnInit {
   }
 
   order() {
-    this.router.navigate(['/dashboard/DepositProducts'], {
-      queryParams: {order: this.offer.oid},
-    });
+    console.log('order', this.offer.oid);
+    this.onOfferSelected.emit(this.offer.oid);
+    // this.router.navigate(['/dashboard/DepositProducts'], {
+    //   queryParams: {order: this.offer.oid},
+    // });
   }
 
   selectTab(tabIndex: number): void {

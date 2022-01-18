@@ -1,8 +1,7 @@
-import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation,} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation,} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {map, tap} from 'rxjs/operators';
 import {BankDetails} from 'src/app/dashboard/models/bank-details.model';
 import {DashboardService, UserOffer,} from 'src/app/dashboard/services/dashboard.service';
 import {Bank} from 'src/app/shared/models/api/bank.class';
@@ -22,7 +21,6 @@ export class DepositProductsComponent implements OnInit {
   mask = {
 
   };
-  order: string = '';
   cb1: boolean = false;
   requestComplete: boolean = false;
   formGroup: FormGroup;
@@ -32,6 +30,8 @@ export class DepositProductsComponent implements OnInit {
   private userOffer$: UserOffer = null;
   @ViewChild('content', { static: false }) ref: ElementRef;
 
+  @Input('offerId') order: string;
+
   constructor(
     private modalService: NgbModal,
     private offerService: OfferService,
@@ -40,17 +40,17 @@ export class DepositProductsComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private fb: FormBuilder
   ) {
-    this.activatedRoute.queryParams
-      .pipe(
-        map((res) => res.order),
-        tap((res) => {
-          if (!res) {
-            this.router.navigate(['/dashboard']);
-          }
-          this.order = res;
-        })
-      )
-      .subscribe();
+    // this.activatedRoute.queryParams
+    //   .pipe(
+    //     map((res) => res.order),
+    //     tap((res) => {
+    //       if (!res) {
+    //         this.router.navigate(['/dashboard']);
+    //       }
+    //       this.order = res;
+    //     })
+    //   )
+    //   .subscribe();
   }
 
   public ngOnInit(): void {
