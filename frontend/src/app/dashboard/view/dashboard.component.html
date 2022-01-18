@@ -55,14 +55,8 @@
         </div>
     </div>
 
-    <div class="right_container">
-        <div class="logout_sheet">
-            <div class="logout_button" (click)="logout()">
-                <div class="icon_lo">
-                </div>
-                Logout
-            </div>
-        </div>
+    <div class="right_container" [ngStyle]="routeShow !== 'casual' && {'width': 'calc(100% - 250px)'}">
+
 
 <!--        <div class="id_sheet">-->
 <!--            <div class="id_button">-->
@@ -81,9 +75,17 @@
     </div>
     </div>
 
-    <div class="very_right_container">
+    <div class="logout_sheet">
+        <div class="logout_button" (click)="logout()">
+            <div class="icon_lo">
+            </div>
+            Logout
+        </div>
+    </div>
+
+    <div class="very_right_container" *ngIf="routeShow === 'casual'">
         <div class="ver_container" [ngStyle]="{'margin-bottom':'20px'}">
-                  <div class="cont_headbox">
+                  <div class="cont_headbox" [ngStyle]="{'margin-top':'20px'}">
                     <img src="assets/img/identification.png">
                     <div class="cont_header">
                       Step 1
