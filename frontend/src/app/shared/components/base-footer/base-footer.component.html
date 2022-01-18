@@ -89,9 +89,12 @@
     </div>
 
     <div class="footer_language">
-
       <img src="../../../../assets/img/united-kingdom.png" class="footer_flag"/>
       <div class="footer_arrow"></div>
+      <div class="lang_choose">
+        <a (click)="selectLanguage('de')"><img class="img-container" src="assets/img/flag/de.png"/>{{'navbar.languages.de' | translate}}</a>
+        <a (click)="selectLanguage('en')"><img class="img-container" src="assets/img/flag/en.png"/>{{'navbar.languages.en' | translate}}</a>
+      </div>
     </div>
   </div>
 
