@@ -70,31 +70,33 @@
       <app-email-data *ngIf="phase === Phase.EMAIL"></app-email-data>
 
 
-<!--          <mat-card [hidden]="phase === Phase.EMAIL">-->
-<!--            <mat-stepper #stepper *ngIf="phase === Phase.DATA" labelPosition="bottom" linear>-->
-<!--              <mat-step [stepControl]="personalFormGroup">-->
-<!--                <ng-template matStepLabel>{{"register.pers" | translate}}</ng-template>-->
-<!--                <form [formGroup]="personalFormGroup">-->
-<!--                  <app-personal-data [formGroup]="personalFormGroup"></app-personal-data>-->
-<!--                </form>-->
-<!--              </mat-step>-->
-<!--              <mat-step [stepControl]="contactFormGroup">-->
-<!--                <ng-template matStepLabel>{{"register.kont" | translate}}</ng-template>-->
-<!--                <form [formGroup]="contactFormGroup">-->
-<!--                  <app-contact-data [formGroup]="contactFormGroup"></app-contact-data>-->
-<!--                </form>-->
-<!--              </mat-step>-->
-<!--              <mat-step [stepControl]="additionalFormGroup">-->
-<!--                <ng-template matStepLabel>{{"register.weitere" | translate}}</ng-template>-->
-<!--                <form [formGroup]="additionalFormGroup">-->
-<!--                  <app-additional-data [formGroup]="additionalFormGroup"></app-additional-data>-->
-<!--                </form>-->
-<!--              </mat-step>-->
-<!--            </mat-stepper>-->
-<!--            <app-password *ngIf="phase === Phase.PASSWORD"></app-password>-->
-<!--          </mat-card>-->
+<!--      UNCOMMENTED-->
 
+          <mat-card [hidden]="phase === Phase.EMAIL">
+            <mat-stepper #stepper *ngIf="phase === Phase.DATA" labelPosition="bottom" linear>
+              <mat-step [stepControl]="personalFormGroup">
+                <ng-template matStepLabel>{{"register.pers" | translate}}</ng-template>
+                <form [formGroup]="personalFormGroup">
+                  <app-personal-data [formGroup]="personalFormGroup"></app-personal-data>
+                </form>
+              </mat-step>
+              <mat-step [stepControl]="contactFormGroup">
+                <ng-template matStepLabel>{{"register.kont" | translate}}</ng-template>
+                <form [formGroup]="contactFormGroup">
+                  <app-contact-data [formGroup]="contactFormGroup"></app-contact-data>
+                </form>
+              </mat-step>
+              <mat-step [stepControl]="additionalFormGroup">
+                <ng-template matStepLabel>{{"register.weitere" | translate}}</ng-template>
+                <form [formGroup]="additionalFormGroup">
+                  <app-additional-data [formGroup]="additionalFormGroup"></app-additional-data>
+                </form>
+              </mat-step>
+            </mat-stepper>
+            <app-password *ngIf="phase === Phase.PASSWORD"></app-password>
+          </mat-card>
 
+<!--      UNCOMMENTED-->
 
 
     </div>
