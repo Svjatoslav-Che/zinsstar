@@ -1,0 +1,156 @@
+<div class="login_holdbox">
+  <div class="left_log_holda">
+    <div class="step_container">
+      <div class="step_step">
+        Step 1
+      </div>
+      <div class="step_text">
+        Enter your email to register in the system
+      </div>
+      <div class="step_counter_container">
+        <div class="step_active">
+          <div class="num_cont">
+            1
+          </div>
+          Your email
+        </div>
+        <div class="strip_step">
+        </div>
+        <div class="step_passive">
+          <div class="num_cont">
+            2
+          </div>
+          Personal information
+        </div>
+        <div class="strip_step">
+        </div>
+        <div class="step_passive">
+          <div class="num_cont">
+            3
+          </div>
+          Contact details
+        </div>
+        <div class="strip_step">
+        </div>
+        <div class="step_passive">
+          <div class="num_cont">
+            4
+          </div>
+          More information
+        </div>
+        <div class="strip_step">
+        </div>
+        <div class="step_passive">
+          <div class="num_cont">
+            5
+          </div>
+          Password setting
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right_log_holda">
+    <a class="back_button" onclick="history.back()">
+      <div class="arrow_back">
+      </div>
+      <div class="text_back">
+        Back
+      </div>
+    </a>
+
+    <div class="log_container">
+<!--      <div class="head_lin">-->
+<!--        Your email-->
+<!--      </div>-->
+<!--      <div class="text_lin">-->
+<!--        Enter your email to register in the system-->
+<!--      </div>-->
+
+
+<!--      THIS IS THE FIRST-->
+      <app-email-data *ngIf="phase === Phase.EMAIL"></app-email-data>
+
+
+<!--      THIS IS THE TRASH-->
+<!--      <app-personal-data></app-personal-data>-->
+<!--      <ng-template matStepLabel>{{"register.pers" | translate}}</ng-template>-->
+
+<!--      UNCOMMENTED-->
+
+          <mat-card [hidden]="phase === Phase.EMAIL">
+            <mat-stepper #stepper *ngIf="phase === Phase.DATA" labelPosition="bottom" linear>
+              <mat-step [stepControl]="personalFormGroup">
+                <ng-template matStepLabel>{{"register.pers" | translate}}</ng-template>
+                <form [formGroup]="personalFormGroup">
+                  <app-personal-data [formGroup]="personalFormGroup"></app-personal-data>
+                </form>
+              </mat-step>
+              <mat-step [stepControl]="contactFormGroup">
+                <ng-template matStepLabel>{{"register.kont" | translate}}</ng-template>
+                <form [formGroup]="contactFormGroup">
+                  <app-contact-data [formGroup]="contactFormGroup"></app-contact-data>
+                </form>
+              </mat-step>
+              <mat-step [stepControl]="additionalFormGroup">
+                <ng-template matStepLabel>{{"register.weitere" | translate}}</ng-template>
+                <form [formGroup]="additionalFormGroup">
+                  <app-additional-data [formGroup]="additionalFormGroup"></app-additional-data>
+                </form>
+              </mat-step>
+            </mat-stepper>
+            <app-password *ngIf="phase === Phase.PASSWORD"></app-password>
+          </mat-card>
+
+<!--      UNCOMMENTED-->
+
+
+    </div>
+  </div>
+</div>
+
+
+<!--<mat-toolbar class="p-0">-->
+<!--  <mat-toolbar-row class="p-0">-->
+<!--    <div class="container ps-5 pe-5">-->
+<!--      <nav class="navbar navbar-expand-lg">-->
+<!--        <div class="container-fluid p-1">-->
+<!--          <a class="navbar-brand" routerLink="/">-->
+<!--            <img alt="" src="assets/logo.png" width="150px"/>-->
+<!--          </a>-->
+<!--        </div>-->
+<!--        <a class="btn btn-outline-primary-light m-2 my-0" routerLink="/auth/login">{{"register.mein" | translate}}</a>-->
+<!--      </nav>-->
+<!--    </div>-->
+<!--  </mat-toolbar-row>-->
+<!--</mat-toolbar>-->
+
+<div>
+  <app-email-data *ngIf="phase === Phase.EMAIL"></app-email-data>
+  <div>
+    <div >
+      <mat-card [hidden]="phase === Phase.EMAIL">
+        <mat-stepper #stepper *ngIf="phase === Phase.DATA" labelPosition="bottom" linear>
+          <mat-step [stepControl]="personalFormGroup">
+            <ng-template matStepLabel>{{"register.pers" | translate}}</ng-template>
+            <form [formGroup]="personalFormGroup">
+              <app-personal-data [formGroup]="personalFormGroup"></app-personal-data>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="contactFormGroup">
+            <ng-template matStepLabel>{{"register.kont" | translate}}</ng-template>
+            <form [formGroup]="contactFormGroup">
+              <app-contact-data [formGroup]="contactFormGroup"></app-contact-data>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="additionalFormGroup">
+            <ng-template matStepLabel>{{"register.weitere" | translate}}</ng-template>
+            <form [formGroup]="additionalFormGroup">
+              <app-additional-data [formGroup]="additionalFormGroup"></app-additional-data>
+            </form>
+          </mat-step>
+        </mat-stepper>
+        <app-password *ngIf="phase === Phase.PASSWORD"></app-password>
+      </mat-card>
+    </div>
+  </div>
+</div>
