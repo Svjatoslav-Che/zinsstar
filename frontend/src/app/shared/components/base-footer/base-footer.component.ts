@@ -1,13 +1,17 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {faEnvelope as FaEnvelope, faPhone as FaPhone} from '@fortawesome/free-solid-svg-icons'
 import {environment as env} from 'src/environments/environment';
+import {TranslateService} from "@ngx-translate/core";
+import {LanguageService} from "../../services/language.service";
 
 @Component({
   selector: 'app-base-footer',
   templateUrl: './base-footer.component.html',
   styleUrls: ['./base-footer.component.scss']
 })
-export class BaseFooterComponent implements OnInit {
+export class BaseFooterComponent implements OnInit, AfterViewInit {
+public selectedLanguage = this.languageService.getCurrentLanguage();
+
   // Unternehmen & Team
   menuCol1: FooterMenu[] = [
     {title: 'about_zinsunion', route: '/ueber-zinsunion'},
@@ -27,7 +31,19 @@ export class BaseFooterComponent implements OnInit {
   faTelephone = FaPhone;
   faEnvelope = FaEnvelope;
 
-  constructor() {
+  public geti18nKey(): string {
+    return `navbar.languages.${this.selectedLanguage}`;
+  }
+
+  public selectLanguage(lang: string): void {
+    this.selectedLanguage = lang;
+    this.languageService.setLanguage(lang);
+  }
+
+  constructor(
+      private translateService: TranslateService,
+      private languageService: LanguageService,
+  ) {
   }
 
   get contacts() {
@@ -39,6 +55,9 @@ export class BaseFooterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
   }
 }
 
