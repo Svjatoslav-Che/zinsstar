@@ -1,0 +1,59 @@
+<div class="text_style">
+  <mat-card [ngStyle]="{'box-shadow':'none'}">
+    <mat-card-title class="header_register" [ngStyle]="{'margin-top':'10px'}">
+      Your email
+      <div class="header_register_text" [ngStyle]="{'margin-top':'30px'}">
+        Enter your email to register in the system
+      </div>
+    </mat-card-title>
+
+    <mat-card-content>
+      <div>
+        <form (ngSubmit)="onSubmit()" [formGroup]="emailForm">
+          <div>
+            <div>
+              <div class="input_header" [ngStyle]="{'margin-top':'50px', 'margin-bottom':'20px'}">
+                Email
+              </div>
+              <mat-form-field appearance="outline" style="width: 100%" class="enter_field">
+                <mat-label [ngStyle]="{'padding-left':'20px'}"> Enter your email</mat-label>
+                <input (change)="checkExist()" autocomplete="off" formControlName="email" matInput type="email"/>
+
+<!--                <mat-hint *ngIf="!emailExistInDB">-->
+<!--                  {{"register.email.ich" | translate}} <a routerLink="/about/security" target="_blank">{{"register.email.datenschutzbestimmungen" | translate}}</a> {{"register.email.der" | translate}}-->
+<!--                </mat-hint>-->
+              </mat-form-field>
+              <div *ngIf="emailExistInDB" class="text-danger">
+                {{"register.email.address" | translate}}
+              </div>
+              <div *ngIf="blacklisted" class="text-danger">
+                {{"register.email.blacklist" | translate}}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <mat-checkbox class="text-start text-wrap" color="primary" class="checkbox_rediz">
+                Do not miss any information on partner banks, new offers, interest rate changes and premiums. Sign up for our newsletter. You can unsubscribe at any time.
+              </mat-checkbox>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col text-center" [ngStyle]="{'margin-top':'25px'}">
+              <button [disabled]="!emailForm.valid || emailExistInDB || blacklisted" class="das_ist_button" type="submit">
+                <span *ngIf="loadingProgress" [aria-hidden]="!loadingProgress" class="spinner-grow spinner-grow-sm" role="status"></span>
+                {{"register.email.registrieren" | translate}}
+              </button>
+            </div>
+          </div>
+          <div class="row mt-1 mb-5">
+            <div class="col text-center text-muted checkbox_rediz" [ngStyle]="{'margin-top':'25px'}">
+              <fa-icon [icon]="faLockOpen" [ngStyle]="{'margin-right':'10px'}"></fa-icon>
+              {{"register.email.ihre" | translate}}
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
