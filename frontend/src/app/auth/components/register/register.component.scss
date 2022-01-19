@@ -358,7 +358,7 @@ mat-card {
 
 .add_reg_style {
   background: #ECB179 !important;
-  height: calc(100% - 100px) !important;
+  min-height: calc(100% - 100px) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
