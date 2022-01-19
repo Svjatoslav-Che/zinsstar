@@ -1,10 +1,16 @@
-import { Exclude } from 'class-transformer';
+import { Exclude } from "class-transformer";
 import {
-  BaseEntity, Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn,
-} from 'typeorm';
-import { UserOfferStatus } from '../../modules/user/models/offer-status.enum';
-import { UserEntity } from './user.entity';
-import { OffersEntity } from './offer.entity';
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn
+} from "typeorm";
+import { UserOfferStatus } from "../../modules/user/models/offer-status.enum";
+import { UserEntity } from "./user.entity";
+import { OffersEntity } from "./offer.entity";
 
 @Entity()
 export class UserOffersEntity extends BaseEntity {
@@ -33,7 +39,7 @@ export class UserOffersEntity extends BaseEntity {
   @Column({ nullable: true })
   public investment_start: Date;
 
-  @Column()
+  @Column({ nullable: true })
   public bankDetails: string;
 
   @CreateDateColumn()

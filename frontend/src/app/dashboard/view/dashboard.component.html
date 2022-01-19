@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div class="right_container">
+    <div class="right_container" >
         <div class="logout_container">
             <div class="logout_button" (click)="logout()">
                 <div class="icon_lo">
@@ -79,7 +79,7 @@
                 <router-outlet *ngIf="routeShow === 'casual'"></router-outlet>
             </div>
 
-            <div class="plant_status_container">
+            <div class="plant_status_container" *ngIf="routeShow === 'casual'">
                 <h1 class="title">Open your first plant</h1>
 
                 <p class="description">

@@ -80,7 +80,7 @@ export class DepositProductsComponent implements OnInit {
 
   get amount() {
     return this.formGroup
-      .get('amount')
+      .get('depositAmount')
       .value.replace(/\D/g, '')
       .replace(/^0+/, '');
   }
@@ -89,28 +89,26 @@ export class DepositProductsComponent implements OnInit {
     return env;
   }
 
-  get userOffer(): UserOffer {
-    return this.userOffer$;
-  }
 
+  onSubmit(): void {
+    console.log('sub')
+    if (!this.formGroup.valid) return;
+    this.onGoingRequest = true;
+    const offerApp: OfferApplication = {
+      amount: this.amount,
+      oid: this.offer.oid,
+    };
 
-  onSubmit(conttent?): void {
-    if (!this.dashboardService.userVerified) {
-      this.modalService.open(conttent, { centered: true });
-    } else if (this.formGroup.valid) {
-      this.onGoingRequest = true;
+    this.dashboardService.applyForOffer(offerApp).subscribe((res) => {
+      this.userOffer$ = res;
+      this.requestComplete = true;
+      this.onGoingRequest = false;
+      window.scroll(0, 0);
+    }, error => {
+      this.onGoingRequest = false;
 
-      const offerApp: OfferApplication = {
-        amount: this.amount,
-        oid: this.offer.oid,
-      };
-      this.dashboardService.applyForOffer(offerApp).subscribe((res) => {
-        this.userOffer$ = res;
-        this.requestComplete = true;
-        this.onGoingRequest = false;
-        window.scroll(0, 0);
-      });
-    }
+      console.log(error);
+    });
   }
 
   private initForm(): void {
