@@ -1,25 +1,26 @@
 .login_holdbox {
-  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 100%;
-  height: 100%;
-  background: #0070b6;
+  min-height: 100%;
+  background: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 
   .left_log_holda {
     width: 40%;
-    height: 100%;
+    min-height: 100%;
     background: #ECB179;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    //align-items: center;
 
     .step_container {
       margin-left: 70px;
+      margin-top: 100px;
 
       .step_step {
-        font-weight: 500;
+        font-weight: 700;
         font-size: 40px;
         line-height: 55px;
         color: #FFFFFF;
@@ -143,7 +144,7 @@
       margin-right: auto;
 
       .head_lin {
-        font-weight: 500;
+        font-weight: 700;
         font-size: 40px;
         line-height: 55px;
         text-align: center;
@@ -160,7 +161,7 @@
       }
 
       .minihead_lin {
-        font-weight: 500;
+        font-weight: 700;
         text-align: left;
         margin-bottom: 10px;
       }
@@ -211,7 +212,7 @@
 
 
 .m-container {
-  font-family: Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.5;
   color: #404040;
@@ -291,7 +292,7 @@ mat-card {
     margin-right: auto;
 
     .head_lin {
-      font-weight: 500;
+      font-weight: 700;
       font-size: 40px;
       line-height: 55px;
       text-align: center;
@@ -308,7 +309,7 @@ mat-card {
     }
 
     .minihead_lin {
-      font-weight: 500;
+      font-weight: 700;
       text-align: left;
       margin-bottom: 10px;
     }
@@ -357,9 +358,24 @@ mat-card {
 }
 
 .add_reg_style {
-  background: #ECB179 !important;
-  height: calc(100% - 100px) !important;
+  background: #FFFFFF !important;
+  min-height: calc(100% - 100px) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+
+
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: none !important;
+}
+
+.mat-card {
+  box-shadow: none !important;
+}
+
+.log_log_containa {
+  width: 100%;
+  margin-top: 20px;
 }
