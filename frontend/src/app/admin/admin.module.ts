@@ -18,6 +18,7 @@ import {SafeUrlPipe} from "./models/safe-url.pipe";
 import {BanksComponent} from "./components/banks/banks.component";
 import {BankDetailsComponent} from "./components/bank-details/bank-details.component";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {CreateBankComponent} from "./components/create-bank/create-bank.component";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     SafeUrlPipe,
     BanksComponent,
     BankDetailsComponent,
+    CreateBankComponent,
   ],
   imports: [
     PdfViewerModule,

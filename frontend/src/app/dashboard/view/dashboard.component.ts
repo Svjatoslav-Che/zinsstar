@@ -61,6 +61,10 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.offersOpen = !this.offersOpen;
   }
 
+  public onNavigateDashboard() {
+    this.routeShow = 'casual';
+  }
+
   chooseRoute(value: any) {
     this.routeShow = value;
   }

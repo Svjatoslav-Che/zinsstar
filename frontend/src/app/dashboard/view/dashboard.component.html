@@ -75,8 +75,8 @@
             <div class="router_container">
                 <app-offers (onOfferSelected)="onOfferSelected($event)" [festgeld]="false" *ngIf="routeShow === 'fixed'"></app-offers>
                 <app-offers (onOfferSelected)="onOfferSelected($event)" [festgeld]="true" [place]="'festgeld'" *ngIf="routeShow === 'over'"></app-offers>
-                <app-deposit-products *ngIf="routeShow === 'offer'" [offerId]="offerId"></app-deposit-products>
-                <router-outlet *ngIf="routeShow === 'casual'"></router-outlet>
+                <app-deposit-products *ngIf="routeShow === 'offer'" [offerId]="offerId" (onNavigateDashboard)="onNavigateDashboard()"></app-deposit-products>
+                <router-outlet name='dashboard' *ngIf="routeShow === 'casual'"></router-outlet>
             </div>
 
             <div class="plant_status_container" *ngIf="routeShow === 'casual'">

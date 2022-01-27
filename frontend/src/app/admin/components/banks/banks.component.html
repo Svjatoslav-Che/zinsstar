@@ -1,5 +1,8 @@
 <div class="d-flex flex-column p-2 pt-5">
 
+  <div class="add-bank-container">
+    <button mat-flat-button color="accent" class="save-bank-button green" [routerLink]="'/admin/bank/create'">ADD</button>
+  </div>
   <table mat-table [dataSource]="bankDataSource" matSort class="mat-elevation-z8">
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef class="text-primary">

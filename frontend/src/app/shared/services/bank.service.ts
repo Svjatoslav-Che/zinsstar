@@ -92,4 +92,22 @@ export class BankService {
 
     return this.http.put(this.urlBuilder.bank(''), updateEntity);
   }
+
+
+
+  public create(data): Observable<any> {
+    const createEntity = {
+      id: data.id,
+      uid: data.uid,
+      name: data.name,
+      description: data.description,
+      permalink: data.permalink,
+      logo: data.logo,
+      insurance_name: data.insurance_name,
+      insurance_description: data.insurance_description,
+      country_code: data.country_code,
+    };
+
+    return this.http.post(this.urlBuilder.bank(''), createEntity);
+  }
 }

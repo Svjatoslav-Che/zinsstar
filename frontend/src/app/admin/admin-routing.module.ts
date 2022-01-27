@@ -6,6 +6,7 @@ import {UserDetailsComponent} from './components/user-details/user-details.compo
 import {UserDocumentComponent} from './components/user-document/user-document.component';
 import {BanksComponent} from "./components/banks/banks.component";
 import {BankDetailsComponent} from "./components/bank-details/bank-details.component";
+import {CreateBankComponent} from "./components/create-bank/create-bank.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: 'users', component: UsersComponent },
       { path: 'banks', component: BanksComponent },
       { path: 'bank', component: BankDetailsComponent },
+      { path: 'bank/create', component: CreateBankComponent },
       { path: 'user', component: UserDetailsComponent },
       { path: 'doc', component: UserDocumentComponent },
     ],

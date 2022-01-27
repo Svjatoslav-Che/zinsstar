@@ -1,0 +1,81 @@
+<div class="details" *ngIf="bank">
+<!--  <div class="docs">-->
+<!--    <img [alt]="bank.name" [src]="'assets/banks/' + bank.logo" />-->
+<!--  </div>-->
+
+  <div class="profile">
+    <h1>Create bank</h1>
+    <mat-divider></mat-divider>
+
+    <div class="forms">
+
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Bank UID</mat-label>
+          <input [(ngModel)]="bank.uid" type="name" name="name" matInput>
+        </mat-form-field>
+      </form>
+
+      <form class="form-content">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Permalink</mat-label>
+          <input [(ngModel)]="bank.permalink" type="name" name="permalink" matInput>
+        </mat-form-field>
+      </form>
+
+      <form class="form-content large" >
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input [(ngModel)]="bank.name" type="name" name="id" matInput placeholder="1">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content large">
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Description</mat-label>
+          <input [(ngModel)]="bank.description" type="name" name="description" matInput placeholder="Ex. Johnson">
+        </mat-form-field>
+      </form>
+
+
+      <form class="form-content large" >
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Logo URL</mat-label>
+          <input [(ngModel)]="bank.logo" type="name" name="logo" matInput placeholder="https...">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content large" >
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Insurance Name</mat-label>
+          <input [(ngModel)]="bank.insurance_name" type="name" name="ins" matInput placeholder="...">
+        </mat-form-field>
+      </form>
+
+      <form class="form-content large" >
+        <mat-form-field class="form-input form" appearance="fill">
+          <mat-label>Insurance Description</mat-label>
+          <input [(ngModel)]="bank.insurance_description" type="name" name="desc" matInput placeholder="DEU">
+        </mat-form-field>
+      </form>
+
+
+      <mat-form-field appearance="fill" class="form-content large" *ngIf="countries">
+        <mat-label>Country</mat-label>
+
+        <mat-select [(ngModel)]="bank.country_code">
+          <mat-option *ngFor="let country of countries" [value]="country.country_code">
+            {{country.country_code}}
+          </mat-option>
+        </mat-select>
+
+      </mat-form-field>
+
+      <mat-spinner *ngIf="isUpdating" [diameter]="30"></mat-spinner>
+      <button *ngIf="!isUpdating && !bank.id" mat-flat-button color="primary" class="save-button" (click)="save()">CREATE</button>
+      <button *ngIf="bank.id" mat-flat-button color="primary" class="save-button" (click)="save()" [routerLink]="['/admin/bank']" [queryParams]="{ id: bank.id }">OVERVIEW BANK</button>
+    </div>
+
+  </div>
+</div>

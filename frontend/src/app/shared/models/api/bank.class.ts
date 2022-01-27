@@ -2,7 +2,7 @@ import {Country, CountryCode} from './country.model';
 import {Offer} from "./offer.model";
 
 export class Bank {
-  id: number;
+  id?: number;
   uid: string;
   name: string;
   description: string;
@@ -12,6 +12,6 @@ export class Bank {
   insurance_description: string;
   country_code: CountryCode;
   countryId?: number;
-  country: Country;
-  offers: Offer[];
+  country?: Country;
+  offers?: Offer[];
 }

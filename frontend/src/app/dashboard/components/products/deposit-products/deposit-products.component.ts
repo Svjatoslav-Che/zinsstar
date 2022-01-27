@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild, ViewEncapsulation,} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation,} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
@@ -31,6 +31,10 @@ export class DepositProductsComponent implements OnInit {
   @ViewChild('content', { static: false }) ref: ElementRef;
 
   @Input('offerId') order: string;
+
+  @Output()
+  public onNavigateDashboard = new EventEmitter();
+
 
   constructor(
     private modalService: NgbModal,
@@ -121,5 +125,9 @@ export class DepositProductsComponent implements OnInit {
 
   public getMinDepositAmount() {
     return this.offer.min_deposit === -1 ? 5000 : this.offer.min_deposit;
+  }
+
+  public navigateDashboard() {
+    this.onNavigateDashboard.emit();
   }
 }

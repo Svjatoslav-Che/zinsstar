@@ -1,10 +1,8 @@
-import { Exclude } from 'class-transformer';
-import {
-  BaseEntity, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn,
-} from 'typeorm';
-import { OffersEntity } from './offer.entity';
-import { CountryEntity } from './country.entity';
-import { CountryCode } from '../../modules/country/models/country.code.enum';
+import { Exclude } from "class-transformer";
+import { BaseEntity, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { OffersEntity } from "./offer.entity";
+import { CountryEntity } from "./country.entity";
+import { CountryCode } from "../../modules/country/models/country.code.enum";
 
 @Entity('banks')
 export class BanksEntity extends BaseEntity {
@@ -44,4 +42,9 @@ export class BanksEntity extends BaseEntity {
     eager: false,
   })
   country: CountryEntity;
+
+  public constructor(partial?: Partial<BanksEntity>) {
+    super();
+    if (partial) Object.assign(this, partial);
+  }
 }
