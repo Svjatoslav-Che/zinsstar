@@ -370,6 +370,10 @@ div.mat-card:not([class*=mat-elevation-z]) {
   box-shadow: none !important;
 }
 
+:host ::ng-deep .mat-horizontal-stepper-header-container {
+  display: none !important;
+}
+
 .mat-card {
   box-shadow: none !important;
 }

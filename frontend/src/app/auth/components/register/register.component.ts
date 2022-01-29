@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
   }
 
   get phase() {
+    // console.log(this.authService.phase);
     return this.authService.phase;
   }
 
