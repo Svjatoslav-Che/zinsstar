@@ -5,3 +5,46 @@
   font-weight: 700;
   color: #262222;
 }
+
+.personal_register_text {
+  margin-top: 15px !important;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 300;
+}
+
+.do_relative {
+  position: relative !important;
+}
+
+.write_over_gr {
+  font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: -35px;
+}
+
+.mat-form-field {
+  margin-top: 25px !important;
+  position: relative !important;
+}
+
+.das_ist_button {
+  margin-top: 10px !important;
+  margin-bottom: 25px !important;
+  border: none;
+  padding: 15px 40px;
+  background: #F08A5D;
+  border-radius: 8px;
+  color: #FFFFFF;
+
+  &:hover {
+    cursor: pointer;
+    background: #EE662A;
+  }
+}
+
+.down_words {
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(38, 34, 34, .4);
+}
