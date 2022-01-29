@@ -62,10 +62,15 @@
     <div class="log_log_containa">
 
       <div class="container m-container pt-5 pb-5 add_reg_style">
-        <app-email-data *ngIf="phase === Phase.EMAIL"></app-email-data>
+
+<!--        CHAHGE !== ON ===-->
+
+        <app-email-data *ngIf="phase !== Phase.EMAIL"></app-email-data>
         <div class="row">
           <div class="col-12 col-xs-12 mx-auto text-center">
-            <mat-card [hidden]="phase === Phase.EMAIL" class="mx-auto">
+<!--            !!!-->
+            <mat-card [hidden]="phase !== Phase.EMAIL" class="mx-auto">
+<!--            !!!-->
               <mat-stepper #stepper *ngIf="phase === Phase.DATA" labelPosition="bottom" linear>
                 <mat-step [stepControl]="personalFormGroup">
                   <ng-template matStepLabel>{{"register.pers" | translate}}</ng-template>
@@ -86,7 +91,7 @@
                   </form>
                 </mat-step>
               </mat-stepper>
-              <app-password *ngIf="phase === Phase.PASSWORD"></app-password>
+              <app-password *ngIf="phase !== Phase.PASSWORD"></app-password>
             </mat-card>
           </div>
         </div>

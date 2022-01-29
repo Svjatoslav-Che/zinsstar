@@ -1,21 +1,28 @@
 <div class="content mt-5">
   <mat-card class="m-5 mx-auto" style="padding-top: 0; padding-left: 0; padding-right: 0; max-width: 60%">
-    <mat-card-title class="py-4 text-center">
+    <mat-card-title class="py-4 text-center header_register">
       {{'register.email.willkommen' | translate}}
+      <div class="header_register_text">
+        Enter your email to register in the system
+      </div>
     </mat-card-title>
+
 
     <mat-card-content>
       <div class="container mt-3">
         <form (ngSubmit)="onSubmit()" [formGroup]="emailForm">
           <div class="row">
             <div class="col-8 text-start mx-auto">
+              <div class="enter_field">
+                Email
+              </div>
               <mat-form-field appearance="outline" style="width: 100%">
                 <mat-label> {{"register.email.email" | translate}}</mat-label>
                 <input (change)="checkExist()" autocomplete="off" formControlName="email" matInput type="email"/>
 
-                <mat-hint *ngIf="!emailExistInDB">
-                  {{"register.email.ich" | translate}} <a routerLink="/about/security" target="_blank">{{"register.email.datenschutzbestimmungen" | translate}}</a> {{"register.email.der" | translate}}
-                </mat-hint>
+<!--                <mat-hint *ngIf="!emailExistInDB">-->
+<!--                  {{"register.email.ich" | translate}} <a routerLink="/about/security" target="_blank">{{"register.email.datenschutzbestimmungen" | translate}}</a> {{"register.email.der" | translate}}-->
+<!--                </mat-hint>-->
               </mat-form-field>
               <div *ngIf="emailExistInDB" class="text-danger">
                 {{"register.email.address" | translate}}
@@ -34,7 +41,7 @@
           </div>
           <div class="row">
             <div class="col text-center">
-              <button [disabled]="!emailForm.valid || emailExistInDB || blacklisted" class="btn btn-orange text-white mt-2" type="submit">
+              <button [disabled]="!emailForm.valid || emailExistInDB || blacklisted" class="btn btn-orange text-white mt-2 das_ist_button" type="submit">
                 <span *ngIf="loadingProgress" [aria-hidden]="!loadingProgress" class="spinner-grow spinner-grow-sm" role="status"></span>
                 {{"register.email.registrieren" | translate}}
               </button>

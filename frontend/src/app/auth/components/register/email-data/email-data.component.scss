@@ -13,7 +13,7 @@
   box-sizing: border-box;
 }
 
-mat-card {
+.mat-card {
   font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   max-width: 750px !important;
 }
@@ -27,6 +27,7 @@ mat-card {
   text-align: center;
 
   .header_register_text {
+    margin-top: 15px;
     font-size: 16px;
     line-height: 22px;
     font-weight: 300;
@@ -34,6 +35,7 @@ mat-card {
 }
 
 .enter_field {
+  margin-top: 25px;
   font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -56,6 +58,8 @@ mat-card {
 }
 
 .das_ist_button {
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
   border: none;
   padding: 15px 40px;
   background: #F08A5D;
@@ -66,4 +70,8 @@ mat-card {
     cursor: pointer;
     background: #EE662A;
   }
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+ box-shadow: none !important;
 }
