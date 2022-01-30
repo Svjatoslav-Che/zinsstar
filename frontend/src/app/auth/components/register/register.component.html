@@ -8,41 +8,45 @@
         Enter your email to register in the system
       </div>
       <div class="step_counter_container">
-        <div class="step_active">
+        <div [ngClass]="{'step_active': globalsService.stepCounter >= 0} ">
           <div class="num_cont">
-            1
+            {{globalsService.stepCounter <= 1 ? '1' : '✓' }}
           </div>
           Your email
         </div>
         <div class="strip_step">
         </div>
-        <div class="step_passive">
+        <div [ngClass]="{'step_active': globalsService.stepCounter >= 2,
+                         'step_passive': globalsService.stepCounter < 2}">
           <div class="num_cont">
-            2
+            {{globalsService.stepCounter <= 2 ? '2' : '✓' }}
           </div>
           Personal information
         </div>
         <div class="strip_step">
         </div>
-        <div class="step_passive">
+        <div [ngClass]="{'step_active': globalsService.stepCounter >= 3,
+                         'step_passive': globalsService.stepCounter < 3}">
           <div class="num_cont">
-            3
+            {{globalsService.stepCounter <= 3 ? '3' : '✓' }}
           </div>
           Contact details
         </div>
         <div class="strip_step">
         </div>
-        <div class="step_passive">
+        <div [ngClass]="{'step_active': globalsService.stepCounter >= 4,
+                         'step_passive': globalsService.stepCounter < 4}">
           <div class="num_cont">
-            4
+            {{globalsService.stepCounter <= 4 ? '4' : '✓' }}
           </div>
           More information
         </div>
         <div class="strip_step">
         </div>
-        <div class="step_passive">
+        <div [ngClass]="{'step_active': globalsService.stepCounter >= 5,
+                         'step_passive': globalsService.stepCounter < 5}">
           <div class="num_cont">
-            5
+            {{globalsService.stepCounter <= 5 ? '5' : '✓' }}
           </div>
           Password setting
         </div>
@@ -91,7 +95,7 @@
                   </form>
                 </mat-step>
               </mat-stepper>
-              <app-password *ngIf="phase !== Phase.PASSWORD"></app-password>
+              <app-password *ngIf="phase === Phase.PASSWORD"></app-password>
             </mat-card>
           </div>
         </div>

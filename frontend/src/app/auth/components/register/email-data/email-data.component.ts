@@ -1,6 +1,6 @@
 import { CustomEmailValidator } from './../../../../shared/services/custom-email-validator.service';
 import { Component, OnInit } from '@angular/core';
-
+import { GlobalsService} from '../../../../services/globals.service';
 import { AuthService, RegistrationPhase, } from 'src/app/auth/services/auth.service';
 import { AbstractControl, FormBuilder, FormGroup, Validators, } from '@angular/forms';
 import { Register } from '../../../models/register.interface';
@@ -22,6 +22,7 @@ export class EmailDataComponent implements OnInit {
   loadingProgress: boolean = false;
 
   constructor(
+    public globalsService: GlobalsService,
     private fb: FormBuilder,
     private authService: AuthService,
     private emailValidationService: CustomEmailValidator,
@@ -34,6 +35,7 @@ export class EmailDataComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.globalsService.stepCounter = 1;
     this.emailForm = this.fb.group({
       email: [
         '',
@@ -58,6 +60,7 @@ export class EmailDataComponent implements OnInit {
     if (this.emailForm.valid && !this.emailExistInDB && !this.blacklisted) {
       this.authService.registerData.email = this.email;
       this.authService.phase = RegistrationPhase.DATA;
+      this.globalsService.stepCounter = 2;
     }
   }
   showError(control: AbstractControl): boolean {

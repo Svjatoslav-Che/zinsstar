@@ -27,6 +27,8 @@ import { SanitizeHtmlPipe } from './shared/pipes/sanitize-html.pipe';
 import {LanguageService} from "./shared/services/language.service";
 import {ToastrModule} from "ngx-toastr";
 
+import { GlobalsService } from "./services/globals.service";
+
 export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
 }
@@ -71,6 +73,7 @@ export function createTranslateLoader(http: HttpClient): TranslateHttpLoader {
     NgxBootstrapIconsModule.pick(allIcons),
   ],
   providers: [
+    GlobalsService,
     LanguageService,
     TranslateService,
     CurrencyPipe,

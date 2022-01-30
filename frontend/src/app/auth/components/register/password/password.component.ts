@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators,} from '@angular/forms';
 import {AuthService} from '../../../services/auth.service';
 import {environment as env} from 'src/environments/environment';
+import {GlobalsService} from "../../../../services/globals.service";
 
 @Component({
   selector: 'app-password',
@@ -12,7 +13,10 @@ export class PasswordComponent implements OnInit {
   passwordForm: FormGroup;
   registerOnGoing: boolean = false;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(
+      public globalsService: GlobalsService,
+      private fb: FormBuilder,
+      private authService: AuthService) {
   }
 
   get contacts() {
@@ -32,6 +36,7 @@ export class PasswordComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.globalsService.stepCounter = 5;
     this.passwordForm = this.fb.group(
       {
         password: [
