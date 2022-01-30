@@ -65,19 +65,19 @@
 
 <!--        CHAHGE !== ON ===-->
 
-        <app-email-data *ngIf="phase !== Phase.EMAIL"></app-email-data>
+        <app-email-data *ngIf="phase === Phase.EMAIL"></app-email-data>
         <div class="row">
           <div class="col-12 col-xs-12 mx-auto text-center">
 <!--            !!!-->
-            <mat-card [hidden]="phase !== Phase.EMAIL" class="mx-auto">
+            <mat-card [hidden]="phase === Phase.EMAIL" class="mx-auto">
 <!--            !!!-->
-              <mat-stepper #stepper *ngIf="phase !== Phase.DATA" labelPosition="bottom" linear class="hider_some">
-<!--                <mat-step [stepControl]="personalFormGroup">-->
-<!--                  <ng-template matStepLabel>{{"register.pers" | translate}}</ng-template>-->
-<!--                  <form [formGroup]="personalFormGroup">-->
-<!--                    <app-personal-data [formGroup]="personalFormGroup"></app-personal-data>-->
-<!--                  </form>-->
-<!--                </mat-step>-->
+              <mat-stepper #stepper *ngIf="phase === Phase.DATA" labelPosition="bottom" linear class="hider_some">
+                <mat-step [stepControl]="personalFormGroup">
+                  <ng-template matStepLabel>{{"register.pers" | translate}}</ng-template>
+                  <form [formGroup]="personalFormGroup">
+                    <app-personal-data [formGroup]="personalFormGroup"></app-personal-data>
+                  </form>
+                </mat-step>
                 <mat-step [stepControl]="contactFormGroup">
                   <ng-template matStepLabel>{{"register.kont" | translate}}</ng-template>
                   <form [formGroup]="contactFormGroup">
@@ -91,7 +91,7 @@
                   </form>
                 </mat-step>
               </mat-stepper>
-              <app-password *ngIf="phase === Phase.PASSWORD"></app-password>
+              <app-password *ngIf="phase !== Phase.PASSWORD"></app-password>
             </mat-card>
           </div>
         </div>

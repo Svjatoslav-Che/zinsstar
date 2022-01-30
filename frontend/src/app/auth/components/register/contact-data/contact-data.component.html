@@ -66,7 +66,7 @@
       <div class="col-sm-12 col-md-3 text-start p-0">
         <div class="some_vol_lab">Postcode</div>
         <mat-form-field appearance="outline" style="width: 100%">
-          <mat-label>PLZ</mat-label>
+          <mat-label>Enter your postcode</mat-label>
           <input autocomplete="off" formControlName="postal_code" matInput type="number" value="" />
           <mat-error *ngIf="showError(postalCode)">
             Enter your postcode
@@ -74,9 +74,9 @@
         </mat-form-field>
       </div>
       <div class="col-sm-12 col-md-5 ps-md-3 p-0">
-        <div class="some_vol_lab">bbb</div>
+        <div class="some_vol_lab">Location</div>
         <mat-form-field appearance="outline" style="width: 100%">
-          <mat-label>Location</mat-label>
+          <mat-label>Enter your location</mat-label>
           <input autocomplete="off" formControlName="town" matInput type="text" />
           <mat-error *ngIf="showError(town)">
             Enter your location
@@ -104,6 +104,12 @@
           {{"register.contact.weiter" | translate}}
         </button>
       </div>
+
+      <div class="down_words">
+        <img src="assets/img/lock%201.png">
+        Your details will be transmitted in encrypted form.
+      </div>
+
     </div>
   </div>
 

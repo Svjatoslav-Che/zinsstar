@@ -1,0 +1,58 @@
+.font_family {
+  font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.some_hadar {
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 5px;
+}
+
+.some_hadar_2 {
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 15px;
+}
+
+.das_ist_button {
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+  border: none;
+  padding: 15px 40px;
+  background: #F08A5D;
+  border-radius: 8px;
+  color: #FFFFFF;
+
+  &:hover {
+    cursor: pointer;
+    background: #EE662A;
+  }
+}
+
+.header_register {
+  font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 100%;
+  font-size: 40px;
+  line-height: 55px;
+  font-weight: 700;
+  text-align: center;
+
+  .header_register_text {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 300;
+  }
+}
+
+.down_words {
+  font-size: 14px;
+  line-height: 19px;
+  color: rgba(38, 34, 34, .4);
+}
+
+.links_links {
+  a {
+    color: #F08A5D;
+  }
+}
