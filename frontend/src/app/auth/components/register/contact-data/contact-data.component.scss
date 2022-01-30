@@ -22,3 +22,63 @@ ngx-intl-tel-input {
   width: 20px;
   margin: 0 3px -2px 5px;
 }
+
+.some_relative {
+  position: relative;
+}
+
+.some_absolute {
+  position: absolute;
+  top: -25px;
+  left: -10px;
+}
+
+.text_rules {
+  font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.header_register {
+  font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  width: 100%;
+  font-size: 40px;
+  line-height: 55px;
+  font-weight: 700;
+  text-align: center;
+
+  .header_register_text {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 300;
+  }
+}
+
+.das_ist_button {
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+  border: none;
+  padding: 15px 40px;
+  background: #F08A5D;
+  border-radius: 8px;
+  color: #FFFFFF;
+
+  &:hover {
+    cursor: pointer;
+    background: #EE662A;
+  }
+}
+
+.align_this {
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.align_this_lable {
+  width: 100%;
+}
+
+.some_vol_lab {
+  display: flex;
+  margin-bottom: 10px;
+}

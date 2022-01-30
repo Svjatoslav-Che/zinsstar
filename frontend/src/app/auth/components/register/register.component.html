@@ -72,12 +72,12 @@
             <mat-card [hidden]="phase !== Phase.EMAIL" class="mx-auto">
 <!--            !!!-->
               <mat-stepper #stepper *ngIf="phase !== Phase.DATA" labelPosition="bottom" linear class="hider_some">
-                <mat-step [stepControl]="personalFormGroup">
-                  <ng-template matStepLabel>{{"register.pers" | translate}}</ng-template>
-                  <form [formGroup]="personalFormGroup">
-                    <app-personal-data [formGroup]="personalFormGroup"></app-personal-data>
-                  </form>
-                </mat-step>
+<!--                <mat-step [stepControl]="personalFormGroup">-->
+<!--                  <ng-template matStepLabel>{{"register.pers" | translate}}</ng-template>-->
+<!--                  <form [formGroup]="personalFormGroup">-->
+<!--                    <app-personal-data [formGroup]="personalFormGroup"></app-personal-data>-->
+<!--                  </form>-->
+<!--                </mat-step>-->
                 <mat-step [stepControl]="contactFormGroup">
                   <ng-template matStepLabel>{{"register.kont" | translate}}</ng-template>
                   <form [formGroup]="contactFormGroup">
