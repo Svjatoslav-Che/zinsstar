@@ -3,11 +3,26 @@
   width: 100%;
   height: 70px;
 
+  @media screen and (max-width: 1300px){
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 15px;
+    height: 55px;
+  }
+
+  @media screen and (max-width: 700px){
+    background: #5B4247;
+  }
+
   .zinsstar_logo {
     position: absolute;
     width: 98px;
     height: 37px;
     left: calc(50% - 49px);
+
+    @media screen and (max-width: 840px){
+      display: none;
+    }
   }
 
   .header_language {
@@ -82,14 +97,18 @@
     }
 
   .header_placer {
-    position: absolute;
-    width: 1220px;
-    height: 70px;
-    top: 0px;
-    left: calc(50% - 610px);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (min-width: 1300px){
+      position: absolute;
+      width: 1220px;
+      height: 70px;
+      top: 0px;
+      left: calc(50% - 610px);
+    }
 
     .controls_container {
       display: flex;
