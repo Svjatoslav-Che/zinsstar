@@ -21,6 +21,7 @@ export enum UploadStatus {
   styleUrls: ['./single-document.component.scss']
 })
 export class SingleDocumentComponent implements OnInit {
+  @Input('num') num: string = '';
   @Input('title') title: string = '';
   @Input('doc') private docType$: DocType = DocType.ID;
   @Input('status') private status$: DocumentStatus;
@@ -42,6 +43,15 @@ export class SingleDocumentComponent implements OnInit {
 
 
   get status() {
+    // Verifiziert
+    // VERIFIED = 'VERIFIED',
+    //     // Abgelehnt
+    //     DECLINED = 'DECLINED',
+    //     // Überprüfung
+    //     PENDING = 'PENDING',
+    //     // Ausstehend
+    //     NA = 'NA',
+    // return 'DECLINED'
     return this.status$;
   }
 

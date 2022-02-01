@@ -1,11 +1,19 @@
-<h2>{{ title }}</h2>
+<div class="card_hadar">
+  <div class="round_it">{{ num }}</div> {{ title }}
+</div>
+
+
 <div class="d-flex flex-row justify-content-around py-1">
-  <figure [ngClass]="{ 'py-0': document === docType.SELFIE }">
-    <img class="img-fluid" [src]="image" alt="" width="250px" height="200px" />
-  </figure>
+
+
+<!--  <figure [ngClass]="{ 'py-0': document === docType.SELFIE }">-->
+<!--    <img class="img-fluid" [src]="image" alt="" width="250px" height="200px" />-->
+<!--  </figure>-->
+
+
   <div class="d-flex flex-column" [ngSwitch]="status">
     <div *ngSwitchCase="docStatus.NA">
-      <b>{{'dashboard.verification.Foto' | translate}} <span *ngIf="document !== docType.SELFIE">/ {{'dashboard.verification.Scan' | translate}}</span></b>
+      <b class="inner_hadar">{{'dashboard.verification.Foto' | translate}} <span *ngIf="document !== docType.SELFIE">/ {{'dashboard.verification.Scan' | translate}}</span></b>
       <div class="my-3 text-muted" style="font-size: 12px !important">
         <strong *ngIf="document === docType.SELFIE">
           {{'dashboard.verification.Auswei' | translate}}
@@ -17,16 +25,18 @@
         <p class="m-0"><b>{{'dashboard.verification.Erlaubte' | translate}}</b> :png, jpg, jpeg, pdf, bmp</p>
       </div>
       <button
-        class="btn btn-sm btn-primary flex-end some_class"
+        class="btn btn-sm btn-primary flex-end some_class das_ist_button_zmall"
         (click)="onSelect()"
         *ngIf="
           uploadStatus === UploadStatus.idle ||
           uploadStatus === UploadStatus.failed
         "
       >
-        {{'dashboard.verification.Hochladen' | translate}}
+        Upload
       </button>
     </div>
+
+
     <div *ngSwitchCase="docStatus.PENDING">
       <div class="justify-content-center align-content-center">
         <p class="px-3">
@@ -40,6 +50,8 @@
         </p>
       </div>
     </div>
+
+
     <div *ngSwitchCase="docStatus.DECLINED">
       <div
         class="d-flex flex-column justify-content-center align-content-center"
@@ -55,17 +67,19 @@
           <li><b>{{'dashboard.verification.Erlaubte' | translate}}</b> :png, jpg, jpeg, pdf, bmp.</li>
         </ul>
         <button
-          class="btn btn-sm btn-primary align-self-end justify-content-end"
+          class="das_ist_button_zmall sixe_ir"
           (click)="onSelect()"
           *ngIf="
             uploadStatus === UploadStatus.idle ||
             uploadStatus === UploadStatus.failed
           "
         >
-          {{'dashboard.verification.Hochladen' | translate}}
+          Upload
         </button>
       </div>
     </div>
+
+
     <div *ngSwitchCase="docStatus.VERIFIED" class="d-flex align-content-center">
       <div class="container-fluid">
         <p class="p-3 text-success">
@@ -87,6 +101,10 @@
       </div>
     </div>
   </div>
+
+  <figure [ngClass]="{ 'py-0': document === docType.SELFIE }">
+    <img class="some_imaga" [src]="image" alt="" width="250px" height="200px" />
+  </figure>
 </div>
 
 <input

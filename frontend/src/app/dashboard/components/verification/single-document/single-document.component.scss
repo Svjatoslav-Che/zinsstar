@@ -1,3 +1,62 @@
 .some_class {
   background: #1BAD2B;
 }
+
+.inner_hadar {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.pos_rel {
+  position: relative;
+}
+
+.sixe_ir {
+  max-width: 100px;
+  margin-left: 15px;
+}
+
+.das_ist_button_zmall {
+  //position: absolute;
+  //top: 0;
+  //right: 0;
+  margin-bottom: 15px !important;
+  border: none;
+  padding: 10px 20px;
+  background: #F08A5D;
+  border-radius: 8px;
+  color: #FFFFFF;
+  user-select: none;
+
+  &:hover {
+    cursor: pointer;
+    background: #EE662A;
+  }
+}
+
+.some_imaga {
+  width: 120px;
+  height: auto;
+  margin-left: 10px;
+}
+
+.card_hadar {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 33px;
+  color: #262222;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+
+  .round_it {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #262222;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
