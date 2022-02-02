@@ -4,7 +4,18 @@
   <div class="zinsstar_container">
     <div class="top_logos">
       <img class="zinsstar_logo" src="../../../../assets/img/zinsstar_logo.png"/>
-      <a class="insta_icon" href="https://www.instagram.com/zinsunionde/" target="_blank"></a>
+      <div class="some_flexes">
+        <a class="insta_icon" href="https://www.instagram.com/zinsunionde/" target="_blank"></a>
+        <div class="footer_language_up">
+          <img src="../../../../assets/img/united-kingdom.png" class="footer_flag"/>
+          <div class="footer_arrow"></div>
+          <div class="lang_choose">
+            <a (click)="selectLanguage('de')"><img class="img-container" src="assets/img/flag/de.png"/>{{'navbar.languages.de' | translate}}</a>
+            <a (click)="selectLanguage('en')"><img class="img-container" src="assets/img/flag/en.png"/>{{'navbar.languages.en' | translate}}</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -70,6 +81,17 @@
   </div>
 <!--  DOWN LINE-->
   <div class="down_line">
+
+    <div class="footer_language">
+      <img src="../../../../assets/img/united-kingdom.png" class="footer_flag"/>
+      <div class="footer_arrow"></div>
+      <div class="lang_choose">
+        <a (click)="selectLanguage('de')"><img class="img-container" src="assets/img/flag/de.png"/>{{'navbar.languages.de' | translate}}</a>
+        <a (click)="selectLanguage('en')"><img class="img-container" src="assets/img/flag/en.png"/>{{'navbar.languages.en' | translate}}</a>
+      </div>
+    </div>
+
+
     <div class="footer_copyright" >
       © 2021 Zinsstar
     </div>
@@ -86,15 +108,6 @@
       <a class="single_link" routerLink="/about/terms">
         Conditions
       </a>
-    </div>
-
-    <div class="footer_language">
-      <img src="../../../../assets/img/united-kingdom.png" class="footer_flag"/>
-      <div class="footer_arrow"></div>
-      <div class="lang_choose">
-        <a (click)="selectLanguage('de')"><img class="img-container" src="assets/img/flag/de.png"/>{{'navbar.languages.de' | translate}}</a>
-        <a (click)="selectLanguage('en')"><img class="img-container" src="assets/img/flag/en.png"/>{{'navbar.languages.en' | translate}}</a>
-      </div>
     </div>
   </div>
 
