@@ -3,35 +3,59 @@
   width: 100%;
   background-image: url("../../../../assets/img/bg/Rectangle 1.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 
-  .content_container {
-    position: absolute;
-    top: 295px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+
+    //top: 295px;
+    //width: 100%;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
+    //flex-direction: column;
 
     .header_frame {
-      font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 1100px;
+      text-align: center;
       font-weight: 700;
       font-size: 70px;
-      letter-spacing: -1px;
       line-height: 76px;
-      text-align: center;
-      width: 1110px;
-      color: #ffffff;
+      color: #FFFFFF;
+
+      @media screen and (max-width: 1000px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      @media screen and (max-width: 800px) {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 40px;
+        line-height: 46px;
+      }
     }
 
     .description_frame {
-      font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 40px;
+      max-width: 920px;
+      text-align: center;
       font-weight: 400;
       font-size: 16px;
       line-height: 22px;
-      margin-top: 30px;
-      color: #ffffff;
+      color: #FFFFFF;
+
+      @media screen and (max-width: 1000px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
 
     .main_frame_button {
@@ -41,6 +65,8 @@
       color: #ffffff;
       width: 145px;
       height: 52px;
+      margin-left: auto;
+      margin-right: auto;
       background-color: #F08A5D;
       border-radius: 8px;
       display: flex;
@@ -54,74 +80,89 @@
       }
     }
 
-    .main_frame_caller {
-      font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 16px;
-      color: #ffffff;
-      margin-top: 25px;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-
-      .mainframe_arrow {
-        width: 19px;
-        height: 7px;
-        background-image: url("../../../../assets/img/arrow_down.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin-top: 20px;
-      }
-
-      &:hover {
-        cursor: pointer;
-        color: #ee662a;
-
-        .mainframe_arrow {
-          background-image: url("../../../../assets/img/arrow_down_hover.png");
-          background-size: cover;
-        }
-      }
-    }
+  .main_frame_caller {
+    font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 30px;
+    width: 120px;
+    left: calc(50% - 60px);
 
     .mainframe_arrow {
       width: 19px;
-      height: 7px;
+      height: 8px;
       background-image: url("../../../../assets/img/arrow_down.png");
       background-size: cover;
       background-repeat: no-repeat;
       margin-top: 20px;
     }
+
+    &:hover {
+      cursor: pointer;
+      color: #ee662a;
+
+      .mainframe_arrow {
+        background-image: url("../../../../assets/img/arrow_down_hover.png");
+        background-size: cover;
+      }
+    }
+  }
+
+  .mainframe_arrow {
+    width: 19px;
+    height: 7px;
+    background-image: url("../../../../assets/img/arrow_down.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 20px;
   }
 }
 
 .deposits_info_frame {
   width: 100%;
-  height: 815px;
-  position: relative;
+  padding-top: 90px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  //height: 815px;
+  //position: relative;
 
   .header_frame {
-    width: 780px;
+    max-width: 780px;
     font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     letter-spacing: 0px;
     font-size: 40px;
     line-height: 55px;
     color: #262222;
-    position: absolute;
-    top: 100px;
-    left: calc(50% - 390px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    //position: absolute;
+    //top: 100px;
+    //left: calc(50% - 390px);
     text-align: center;
+
   }
 
   .cards_container {
-    width: 1220px;
-    position: absolute;
+    max-width: 1220px;
+    //position: absolute;
+    margin-left: auto;
+    margin-right: auto;
     top: 255px;
     left: calc(50% - 610px);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 30px;
+    flex-wrap: wrap;
 
     .arrow_left {
       width: 13px;
@@ -147,6 +188,7 @@
     }
 
     .card_info_frame {
+      margin-bottom: 30px;
       position: relative;
       width: 255px;
       height: 329px;
@@ -233,10 +275,13 @@
     font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 16px;
-    position: absolute;
+    //position: absolute;
     left: calc(50% - 100px);
-    top: 630px;
-    width: 200px;
+    //top: 630px;
+    //width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
     height: 52px;
     background: #F08A5D;
     border-radius: 8px;
@@ -255,9 +300,13 @@
 
   .offer_button_description {
     font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    position: absolute;
-    top: 695px;
-    width: 100%;
+    //position: absolute;
+    //top: 695px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 90px;
     text-align: center;
     font-size: 14px;
     color: #262222;
@@ -267,15 +316,22 @@
 
 .three_steps_frame {
   width: 100%;
-  height: 560px;
+  height: auto;
   background: #F7F7F7;
-  position: relative;
+  //position: relative;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
   .three_steps_header {
-    position: absolute;
+    //position: absolute;
     width: 100%;
     text-align: center;
     top: 90px;
+    line-height: 55px;
+    margin-bottom: 90px;
 
     font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
@@ -284,13 +340,17 @@
   }
 
   .three_steps_cards_container {
-    top: 180px;
-    position: absolute;
-    width: 1220px;
+    //top: 180px;
+    //position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
     left: calc(50% - 610px);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    gap: 100px;
+    flex-wrap: wrap;
 
     .card_single {
       width: 300px;
@@ -350,28 +410,43 @@
 
 .partners_info_frame {
   width: 100%;
-  height: 315px;
-  position: relative;
+  //height: 315px;
+  //position: relative;
+  margin-bottom: 50px;
 
   .partners_info_header {
-    position: absolute;
+    //position: absolute;
     width: 100%;
+    margin-top: 90px;
+    margin-bottom: 50px;
     text-align: center;
     top: 90px;
     font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 40px;
+    line-height: 50px;
     color: #262222;
   }
 
   .partners_info_container {
-    width: 1220px;
-    position: absolute;
-    top: 195px;
-    left: calc(50% - 610px);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1220px;
+    padding-left: 10px;
+    padding-right: 10px;
+    //position: absolute;
+    //top: 195px;
+    //left: calc(50% - 610px);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    img {
+      margin-bottom: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
 
     .arrow_left {
       width: 13px;
@@ -400,21 +475,41 @@
 
 .deposits_board_frame {
   width: 100%;
-  height: 555px;
+  //height: 555px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 
   .deposits_board_content_container {
-    width: 1220px;
+    max-width: 1220px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    @media screen and (max-width: 1160px){
+      flex-direction: column;
+
+     img {
+        width: 450px;
+      }
+    }
+
+    @media screen and (max-width: 468px){
+      flex-direction: column;
+
+      img {
+        width: 350px;
+      }
+    }
   }
 
   .deposits_board_text_container {
-    width: 550px;
+    max-width: 550px;
+    width: auto;
+
     .deposit_board_header {
       font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 700;
@@ -422,6 +517,7 @@
       color: #262222;
     }
   }
+
   .deposit_board_text {
     font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     width: 100%;
@@ -432,20 +528,28 @@
     color: #262222;
     margin-top: 30px;
     opacity: 0.8;
+
+    @media screen and (max-width: 1160px){
+      flex-direction: column;
+      margin-bottom: 50px;
+    }
   }
 }
 
 .helpful_articles_frame {
   width: 100%;
-  height: 745px;
+  //height: 745px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   background: #F7F7F7;
+  padding-top: 90px;
+  padding-bottom: 50px;
 
   .helpful_articles_header {
-    position: absolute;
+    //position: absolute;
     width: 100%;
     text-align: center;
     top: 90px;
@@ -453,18 +557,22 @@
     font-weight: 700;
     font-size: 40px;
     color: #262222;
+    line-height: 50px;
   }
 
   .helpful_articles_cards_container {
-    width: 1220px;
-    top: 180px;
-    left: calc(100% - 610px);
+   max-width: 1220px;
+    //top: 180px;
+    //left: calc(100% - 610px);
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 55px;
+    margin-top: 25px;
+    gap: 30px;
 
     .helpful_articles_card {
+      margin-top: 30px;
       width: 350px;
       height: 462px;
       border-radius: 20px;
@@ -474,6 +582,8 @@
       flex-direction: column;
       align-items: center;
       position: relative;
+      margin-left: 5px;
+      margin-right: 5px;
 
       .helpful_articles_card_image {
         border-radius: 20px;
@@ -517,11 +627,17 @@
 
 .why_articles_frame {
   width: 100%;
-  height: 695px;
+  //height: 695px;
   position: relative;
+  padding-top: 90px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   .why_articles_header {
-    position: absolute;
+    //position: absolute;
     width: 100%;
     text-align: center;
     top: 90px;
@@ -532,15 +648,19 @@
   }
 
   .three_steps_cards_container {
+    margin-top: 50px;
+    margin-bottom: 30px;
     top: 180px;
-    position: absolute;
-    width: 1220px;
+    //position: absolute;
+    max-width: 1220px;
     left: calc(50% - 610px);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
 
     .card_single {
+      margin-top: 30px;
       width: 300px;
       height: 325px;
       display: flex;
@@ -599,7 +719,7 @@
     font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 16px;
-    position: absolute;
+    //position: absolute;
     left: calc(50% - 100px);
     top: 545px;
     width: 200px;
@@ -622,9 +742,11 @@
 
 .any_questions_frame {
   width: 100%;
-  height: 415px;
+  //height: 415px;
   position: relative;
   background: #F7F7F7;
+  padding-top: 100px;
+  padding-bottom: 100px;
 
   .stripes_top {
     position: absolute;
@@ -643,7 +765,7 @@
   }
 
   .any_questions_header {
-    position: absolute;
+    //position: absolute;
     width: 100%;
     text-align: center;
     top: 130px;
@@ -651,10 +773,13 @@
     font-weight: 700;
     font-size: 40px;
     color: #262222;
+    line-height: 50px;
   }
 
   .any_questions_text {
-    position: absolute;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    //position: absolute;
     width: 100%;
     text-align: center;
     top: 190px;
@@ -668,8 +793,10 @@
     font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     font-size: 16px;
-    position: absolute;
+    //position: absolute;
     left: calc(50% - 145px);
+    margin-left: auto;
+    margin-right: auto;
     top: 245px;
     width: 290px;
     height: 52px;
@@ -691,12 +818,18 @@
 
 .google_rev_frame {
   width: 100%;
-  height: 480px;
+  //height: 480px;
   position: relative;
+  padding-top: 90px;
+  padding-bottom: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   .google_rev_header {
-    position: absolute;
-    width: 1220px;
+    //position: absolute;
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
     top: 130px;
     left: calc(50% - 610px);
     font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -741,18 +874,26 @@
   }
 
   .google_content_container {
-    position: absolute;
-    width: 1220px;
+    //position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1220px;
     top: 200px;
     left: calc(50% - 610px);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
 
     .google_container {
+      margin-top: 30px;
       width: 350px;
       height: 120px;
       display: flex;
       flex-direction: row;
+      margin-left: 5px;
+      margin-right: 5px;
 
       img {
         width: 65px;

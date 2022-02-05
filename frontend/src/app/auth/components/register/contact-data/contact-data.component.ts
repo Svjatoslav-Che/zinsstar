@@ -5,6 +5,7 @@ import {InputSuccessErrorClass, ShowHideMatError,} from '../../../utils/error-su
 import {AuthService} from '../../../services/auth.service';
 import {CountryISO, PhoneNumberFormat, SearchCountryField as SearchCountryField,} from 'ngx-intl-tel-input';
 import {CountryMaskList, Mask} from 'src/app/auth/models/phone.mask';
+import { GlobalsService } from "../../../../services/globals.service";
 
 @Component({
   selector: 'app-contact-data',
@@ -24,7 +25,9 @@ export class ContactDataComponent implements OnInit {
   @Input('formGroup') formGroup: FormGroup;
   mask: Mask;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+              public globalsService: GlobalsService
+  ) {
   }
 
   get phoneNumber(): AbstractControl {
@@ -74,6 +77,7 @@ export class ContactDataComponent implements OnInit {
 
 
   ngOnInit(): void {
+    // this.globalsService.stepCounter = 3;
   }
 
   onSubmit(): void {
@@ -85,6 +89,7 @@ export class ContactDataComponent implements OnInit {
       this.authService.registerData.city = this.town.value;
       this.authService.registerData.country = this.defaultCountry.code;
       this.authService.registerData.zip = this.postalCode.value;
+      this.globalsService.stepCounter = 4;
     }
   }
 

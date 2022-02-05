@@ -1,8 +1,19 @@
-<form [formGroup]="formGroup">
+<div class="header_register" [ngStyle]="{'margin-top':'10px'}">
+  Your email
+  <div class="header_register_text" [ngStyle]="{'margin-top':'30px'}">
+    Enter your email to register in the system
+  </div>
+</div>
+
+<form [formGroup]="formGroup" class="text_rules">
+
   <div class="container mx-auto">
-    <div class="row mt-2">
-      <label class="col-sm-12 col-md-4 text-start">{{"register.contact.mobilfunknummer" | translate}}</label>
-      <div class="col-sm-12 col-md-2 text-start p-0">
+    <div [ngStyle]="{'height':'40px'}">
+    </div>
+
+    <div class="row mt-2 align_this">
+      <div class="col-sm-12 col-md-2 p-0 text-start">
+        <div class="some_vol_lab">Cell phone number</div>
         <mat-form-field appearance="outline" style="width: 100%;">
           <mat-label> {{"register.contact.land" | translate}}</mat-label>
           <mat-select [(ngModel)]="mask" [ngModelOptions]="{standalone:true}" [value]="mask">
@@ -12,9 +23,10 @@
           </mat-select>
         </mat-form-field>
       </div>
-      <div class="col-sm-12 col-md-6 text-start p-0">
+      <div class="col-sm-12 col-md-6 text-start pb-0">
+        <div class="some_vol_lab">&nbsp;</div>
         <mat-form-field appearance="outline" class="mx-3" style="width: 100%;">
-          <mat-label> {{"register.contact.mobilfunknummer" | translate}}</mat-label>
+          <mat-label>Enter your number</mat-label>
           <input formControlName="phone_number" matInput required type="text">
         </mat-form-field>
         <mat-error *ngIf="showError(phoneNumber)">
@@ -22,11 +34,12 @@
         </mat-error>
       </div>
     </div>
-    <div class="row mt-2">
-      <label class="col-sm-12 col-md-4 text-start text-sm-start">{{"register.contact.strabe" | translate}}</label>
+
+    <div class="row mt-2 some_relative align_this">
       <div class="col-sm-12 col-md-5 text-start p-0">
+        <div class="some_vol_lab">Street</div>
         <mat-form-field appearance="outline" style="width: 100%">
-          <mat-label> Straße</mat-label>
+          <mat-label>Enter your street</mat-label>
           <input autocomplete="off" formControlName="street" matInput required type="text" />
           <mat-error *ngIf="showError(houseNumber)">
             <div>
@@ -35,9 +48,10 @@
           </mat-error>
         </mat-form-field>
       </div>
-      <div class="col-sm-12 col-md-3 ps-md-1 ps-sm-0">
+      <div class="col-sm-12 col-md-3 ps-md-3 p-0">
+        <div class="some_vol_lab">House no</div>
         <mat-form-field appearance="outline" style="width: 100%">
-          <mat-label> {{"register.contact.haus" | translate}}</mat-label>
+          <mat-label>Enter your house no</mat-label>
           <input autocomplete="off" formControlName="house_number" matInput required type="text" />
           <mat-error *ngIf="showError(street)">
             <div>
@@ -47,36 +61,34 @@
         </mat-form-field>
       </div>
     </div>
-    <div class="row mt-2">
-      <label class="col-sm-12 col-md-4 text-start text-sm-start">{{"register.contact.plz" | translate}}</label>
-      <div class="col-sm-12 col-md-3 text-start p-0">
-        <mat-form-field appearance="outline" style="width: 100%">
-          <mat-label>PLZ</mat-label>
-          <input autocomplete="off" formControlName="postal_code" matInput type="number" value="" />
 
+    <div class="row mt-2 some_relative align_this">
+      <div class="col-sm-12 col-md-3 text-start p-0">
+        <div class="some_vol_lab">Postcode</div>
+        <mat-form-field appearance="outline" style="width: 100%">
+          <mat-label>Enter your postcode</mat-label>
+          <input autocomplete="off" formControlName="postal_code" matInput type="number" value="" />
           <mat-error *ngIf="showError(postalCode)">
-            {{"register.contact.plz_bitte" | translate}}
+            Enter your postcode
           </mat-error>
         </mat-form-field>
       </div>
-      <div class="col-sm-12 col-md-5 ps-md-1 ps-sm-0">
+      <div class="col-sm-12 col-md-5 ps-md-3 p-0">
+        <div class="some_vol_lab">Location</div>
         <mat-form-field appearance="outline" style="width: 100%">
-          <mat-label> Ort</mat-label>
+          <mat-label>Enter your location</mat-label>
           <input autocomplete="off" formControlName="town" matInput type="text" />
           <mat-error *ngIf="showError(town)">
-
-            {{"register.contact.sie_bitte" | translate}}
-
+            Enter your location
           </mat-error>
         </mat-form-field>
       </div>
     </div>
-    <div class="row mt-2">
-      <label class="col-sm-12 col-md-4 text-start text-sm-start">{{"register.contact.land" | translate}}</label>
-      <div class="col-sm-12 col-md-8 p-0">
-        <mat-form-field appearance="outline" style="width: 100%">
-          <mat-label>{{"register.contact.land" | translate}}</mat-label>
 
+    <div class="row mt-2 align_this">
+      <div class="col-sm-12 col-md-8 p-0">
+        <div class="some_vol_lab">Country</div>
+        <mat-form-field appearance="outline" style="width: 100%" class="some_relative">
           <mat-select [value]="defaultCountry.code">
             <mat-option *ngFor="let country of preferredCountries" [value]="country.code">
               {{country.name}}
@@ -85,12 +97,19 @@
         </mat-form-field>
       </div>
     </div>
+
     <div class="row">
       <div class="col">
-        <button (click)="onSubmit()" class="btn btn-primary" matStepperNext type="submit">
+        <button (click)="onSubmit()" class="btn btn-primary das_ist_button" matStepperNext type="submit">
           {{"register.contact.weiter" | translate}}
         </button>
       </div>
+
+      <div class="down_words">
+        <img src="assets/img/lock%201.png">
+        Your details will be transmitted in encrypted form.
+      </div>
+
     </div>
   </div>
 

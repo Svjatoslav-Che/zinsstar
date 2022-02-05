@@ -7,6 +7,7 @@ import {ACADEMIC_TITLES, AcademicTitle,} from '../../../models/academic-title.cl
 import {InputSuccessErrorClass, ShowHideMatError,} from '../../../utils/error-success.helper';
 import {AuthService, RegistrationPhase} from '../../../services/auth.service';
 import {faQuestionCircle as FaQuestionCircle} from '@fortawesome/free-regular-svg-icons';
+import { GlobalsService } from "../../../../services/globals.service";
 
 @Component({
   selector: 'app-additional-data',
@@ -25,7 +26,10 @@ export class AdditionalDataComponent implements OnInit {
   faQuestionCircle = FaQuestionCircle;
   @Input('formGroup') formGroup: FormGroup;
 
-  constructor(private authService: AuthService) {
+  constructor(
+      private authService: AuthService,
+      public globalsService: GlobalsService
+  ) {
   }
 
   get socialStatus(): AbstractControl {
@@ -93,6 +97,7 @@ export class AdditionalDataComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.globalsService.stepCounter = 4;
   }
 
   onSubmit(): void {
@@ -106,6 +111,7 @@ export class AdditionalDataComponent implements OnInit {
     this.authService.registerData.pay_tax_country = this.taxResidencyCountry.value;
     if (this.formGroup.valid) {
       this.authService.phase = RegistrationPhase.PASSWORD;
+      this.globalsService.stepCounter = 5;
     }
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   }

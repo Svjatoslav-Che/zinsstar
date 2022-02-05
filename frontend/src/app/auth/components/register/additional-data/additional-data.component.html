@@ -1,12 +1,20 @@
+<div class="header_register" [ngStyle]="{'margin-top':'10px'}">
+  Your email
+  <div class="header_register_text" [ngStyle]="{'margin-top':'30px'}">
+    Enter your email to register in the system
+  </div>
+</div>
+
 <form (onSubmit)="onSubmit()" [formGroup]="formGroup">
-  <div class="container p-5">
+  <div class="container p-5 font_family">
     <div class="row">
-      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.familienstand" | translate}} *</label>
-      <div class="col-sm-12 col-md-7 my-auto text-sm-start">
+<!--      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.familienstand" | translate}} *</label>-->
+      <div class="col-sm-13 col-md-6 my-auto text-sm-start">
+        <div class="some_hadar">Marital status</div>
         <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
-          <mat-label> {{"register.additional.familienstand" | translate}} *</mat-label>
+<!--          <mat-label> {{"register.additional.familienstand" | translate}} *</mat-label>-->
           <mat-select formControlName="social_status" value="">
-            <mat-option value="">{{"register.additional.bitte" | translate}} *</mat-option>
+            <mat-option value="">Please select</mat-option>
             <mat-option *ngFor="let status of AllSocialStatus" [value]="status.code">
               {{ status.title }}
             </mat-option>
@@ -16,14 +24,12 @@
           </mat-error>
         </mat-form-field>
       </div>
-    </div>
 
-    <div class="row my-1">
-      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.bitte_beruf" | translate}} *</label>
-      <div class="col-sm-12 col-md-7 my-auto text-sm-start">
+      <div class="col-sm-13 col-md-6 my-auto text-sm-start">
+        <div class="some_hadar">Job</div>
         <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
           <mat-select formControlName="profession" id="profession_code" required>
-            <mat-option value="">{{"register.additional.bitte_ausw" | translate}} *</mat-option>
+            <mat-option value="">Please select</mat-option>
             <mat-option *ngFor="let profession of professions" [value]="profession.code">
               {{ profession.title }}
             </mat-option>
@@ -35,24 +41,24 @@
       </div>
     </div>
 
+
     <div class="row my-1">
-      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.geburtsort" | translate}} *</label>
-      <div class="col-sm-12 col-md-7">
+<!--      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.geburtsort" | translate}} *</label>-->
+      <div class="col-sm-13 col-md-6 my-auto text-sm-start">
+        <div class="some_hadar">Place of birth</div>
         <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
           <mat-label>{{"register.additional.geburtsort" | translate}}</mat-label>
           <input autocomplete="off" formControlName="birth_place" matInput required type="text"/>
           <mat-error *ngIf="showError(birthPlace)">
             <div class="help-block">
-              {{"register.additional.gaben" | translate}}
+              Enter your place of birth
             </div>
           </mat-error>
         </mat-form-field>
       </div>
-    </div>
 
-    <div class="row my-1">
-      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.geburtsland" | translate}}</label>
-      <div class="col-sm-12 col-md-7">
+      <div class="col-sm-13 col-md-6 my-auto text-sm-start">
+        <div class="some_hadar">Country of birth</div>
         <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
           <mat-select formControlName="birth_country" required>
             <mat-option *ngFor="let c of countries" [value]="c.code">
@@ -60,15 +66,16 @@
             </mat-option>
           </mat-select>
           <mat-error *ngIf="showError(birthCountry)">
-            <div class="help-block">{{"register.additional.bitte_geburtsland" | translate}}</div>
+            <div class="help-block">Please select</div>
           </mat-error>
         </mat-form-field>
       </div>
     </div>
 
     <div class="row my-1">
-      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.staatsange" | translate}}</label>
-      <div class="col-sm-12 col-md-7">
+<!--      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.staatsange" | translate}}</label>-->
+      <div class="col-sm-13 col-md-6 my-auto text-sm-start">
+        <div class="some_hadar">Nationality</div>
         <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
           <mat-select formControlName="nationality" required>
             <mat-option *ngFor="let c of countries" [value]="c.code">{{
@@ -78,20 +85,18 @@
         </mat-form-field>
         <mat-error *ngIf="showError(nationality)">
           <div class="help-block">
-            {{"register.additional.bitte_staatsan" | translate}}
+            Please select
           </div>
         </mat-error>
       </div>
-    </div>
 
-    <div class="row my-1">
-      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.zweite" | translate}}</label>
-      <div class="col-sm-12 col-md-7 text-sm-start text-start">
+      <div class="col-sm-13 col-md-6 my-auto text-sm-start">
+        <div class="some_hadar">Second nationality</div>
         <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
-          <mat-label> {{"register.additional.zweite" | translate}}</mat-label>
+<!--          <mat-label> {{"register.additional.zweite" | translate}}</mat-label>-->
           <mat-select formControlName="second_nationality">
             <mat-option value="">
-              {{"register.additional.zweite_bitte" | translate}}
+              Please select
             </mat-option>
             <mat-option *ngFor="let c of countries" [value]="c.code">{{
               c.name
@@ -106,11 +111,14 @@
       </div>
     </div>
 
+
+
     <div class="row my-1">
-      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.zweite_bitte_land" | translate}}</label>
-      <div class="col-sm-12 col-md-7 text-start">
+<!--      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.zweite_bitte_land" | translate}}</label>-->
+      <div class="col-sm-12 col-md-12 text-start">
+        <div class="some_hadar">Country of tax residence</div>
         <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
-          <mat-label> Land</mat-label>
+<!--          <mat-label> Land</mat-label>-->
           <mat-select [value]="taxCountry[2].code" disabled formControlName="residency_country">
             <mat-option [value]="taxCountry[2].code">{{
               taxCountry[2].name
@@ -121,10 +129,10 @@
     </div>
 
     <div class="row my-1">
-      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.sind" | translate}}</label>
+<!--      <label class="col-sm-12 col-md-5 my-auto text-sm-start">{{"register.additional.sind" | translate}}</label>-->
       <div class="col-sm-12 col-md-7 text-start">
         <mat-checkbox color="primary">
-          {{"register.additional.person" | translate}}
+          I am not a US person
           <fa-icon [icon]="faQuestionCircle" [matTooltip]="USAPerson" class="ms-1 me-1" matTooltipPosition="above">
           </fa-icon>
         </mat-checkbox>
@@ -132,12 +140,13 @@
     </div>
 
     <div class="row my-1">
-      <label class="col-sm-12 col-md-5 my-auto text-sm-start">
-        {{"register.additional.sie" | translate}} *</label>
-      <div class="col-sm-12 col-md-7 text-start">
+<!--      <label class="col-sm-12 col-md-5 my-auto text-sm-start">-->
+<!--        {{"register.additional.sie" | translate}} *</label>-->
+      <div class="col-sm-12 col-md-12 text-start" [ngStyle]="{'margin-top':'20px'}">
+        <div class="some_hadar">How did you find out about ZinsUnion?</div>
         <mat-form-field appearance="outline" class="my-auto p-0 m-0" style="width: 100%">
           <mat-select formControlName="sie" value="" required>
-            <mat-option value="">{{"register.additional.sie_bitte" | translate}} *</mat-option>
+            <mat-option value="">Please select</mat-option>
             <mat-option value="internet">
               {{"register.additional.sie_bitte_google" | translate}}
             </mat-option>
@@ -153,19 +162,20 @@
     <div class="row">
       <div class="col mt-3 mb-3">
         <div class="text-wrap text-start text-capitalize">
-          <b>{{"register.additional.gesch" | translate}}</b>
-          <p>
-            {{"register.additional.gelten" | translate}}
-            <a rel="noopener noreferrer" routerLink="/about/terms" target="_blank">{{"register.additional.gesch" | translate}}</a> {{"register.additional.und" | translate}} <a
-            rel="noopener noreferrer" routerLink="/about/security" target="_blank">{{"register.additional.datenschutzbestimmungen" | translate}}</a>.
+          <div class="some_hadar_2">Documents for ZinsUnion customers</div>
+          <div class="links_links">
+            The Apply
+            <a rel="noopener noreferrer" routerLink="/about/terms" target="_blank">Terms And Conditions</a> And <a
+            rel="noopener noreferrer" routerLink="/about/security" target="_blank">Privacy Policy</a>.
 
             <br/>
-            {{"register.additional.handle" | translate}}
-          </p>
-          <b>{{"register.additional.verhaltnisse" | translate}}</b>
-          <p>
-            {{"register.additional.den" | translate}}
-          </p>
+            I Act In My Own Economic Interest And Not At The Request Of Others (Especially Not As A Trustee).
+            <br/><br/>
+          </div>
+          <div class="some_hadar_2">Declaration Of Personal And Economic Circumstances</div>
+          <div>
+            I Have Received The Information Sheet For The Depositor About The Statutory Deposit Insurance, Which Is Included In The Terms And Conditions. I Certify That I Am Not A Tax Resident In More Than One Country. (If You Have More Than One Tax Residence, Please Contact Customer Service.)
+          </div>
         </div>
       </div>
     </div>
@@ -173,19 +183,15 @@
     <div class="row">
       <div class="col-md-12 text-center mb-2">
         <div class="form-control-container">
-          <button (click)="onSubmit()" class="btn btn-orange text-white m-1" matStepperNext type="submit">
+          <button (click)="onSubmit()" class="btn btn-orange text-white m-1 das_ist_button" matStepperNext type="submit">
             {{"register.additional.pin" | translate}}
           </button>
         </div>
       </div>
-      <div class="col-md-12 text-center">
-        <div>
-          <em class="fa fa-lock ssl-lock"></em>
-          <span class="fw-normal fs-6">
-            {{"register.additional.ihre" | translate}}
-          </span>
+        <div class="down_words">
+            <img src="assets/img/lock%201.png">
+            Your details will be transmitted in encrypted form.
         </div>
-      </div>
     </div>
   </div>
 </form>

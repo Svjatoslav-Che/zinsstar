@@ -9,13 +9,26 @@
   line-height: 20px;
   position: relative;
 
+  @media screen and (max-width: 1300px){
+    justify-content: left;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
   .navi_placer {
     width: 1220px;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: flex-start;
     gap: 10px;
+
+    @media screen and (max-width: 1300px){
+      margin-left: 20px;
+    }
+
+    @media screen and (max-width: 1299px){
+      margin-left: 0px;
+    }
 
     .arrow_right {
       margin-top: 1px;
@@ -82,32 +95,49 @@
   background-image: url("../../../../assets/img/how_it_wrks.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 100%;
   height: 618px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 
   h1 {
-    width: 906px;
+    max-width: 906px;
     text-align: center;
     font-weight: 700;
     font-size: 70px;
     line-height: 76px;
     color: #FFFFFF;
+
+    @media screen and (max-width: 1000px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    @media screen and (max-width: 800px) {
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 40px;
+      line-height: 46px;
+    }
   }
 
   h2 {
     margin-top: 40px;
-    width: 920px;
+    max-width: 920px;
     text-align: center;
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
     color: #FFFFFF;
+
+    @media screen and (max-width: 1000px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   .main_frame_caller {
@@ -156,15 +186,22 @@
 
 .three_steps_frame {
   width: 100%;
-  height: 560px;
+  height: auto;
   background: #F7F7F7;
-  position: relative;
+  //position: relative;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 
   .three_steps_header {
-    position: absolute;
+    //position: absolute;
     width: 100%;
     text-align: center;
     top: 90px;
+    line-height: 55px;
+    margin-bottom: 90px;
 
     font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
@@ -173,13 +210,17 @@
   }
 
   .three_steps_cards_container {
-    top: 180px;
-    position: absolute;
-    width: 1220px;
+    //top: 180px;
+    //position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
     left: calc(50% - 610px);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    gap: 100px;
+    flex-wrap: wrap;
 
     .card_single {
       width: 300px;
@@ -240,17 +281,22 @@
 .some_wired_squares {
   font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 100%;
-  height: 505px;
+  //height: 505px;
+  padding-bottom: 100px;
 
   .sws_frame {
-    margin-top: 100px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
-    width: 1220px;
+    max-width: 1220px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 
     .sws_sqr {
+      margin-top: 80px;
+      margin-left: 10px;
+      margin-right: 10px;
       width: 353px;
       height: 353px;
       border-radius: 15px;
@@ -301,10 +347,11 @@
 .adv_sheets {
   font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   width: 100%;
-  height: 550px;
+  //height: 550px;
+  padding-bottom: 90px;
 
   .adv_space {
-    width: 1220px;
+    max-width: 1220px;
     height: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -317,7 +364,13 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      margin-left: 20px;
 
+      @media screen and (max-width: 1075px){
+        width: 100%;
+        margin-right: 20px;
+        align-items: center;
+      }
 
       .head {
         margin-top: 30px;
@@ -325,6 +378,10 @@
         line-height: 55px;
         color: #262222;
         font-weight: 700;
+
+        @media screen and (max-width: 1075px){
+          text-align: center;
+        }
       }
 
       .text {
@@ -332,6 +389,9 @@
         font-size: 16px;
         line-height: 22px;
         color: #262222;
+        @media screen and (max-width: 1075px){
+          text-align: center;
+        }
       }
 
       .button {
@@ -360,6 +420,10 @@
       height: 400px;
       position: relative;
 
+      @media screen and (max-width: 1075px){
+        display: none;
+      }
+
       img {
         position: absolute;
       }
@@ -369,13 +433,15 @@
 
 .advantages_sheets {
   width: 100%;
-  height: 565px;
+  //height: 565px;
   background: #F7F7F7;
   font-family: 'Nunito', "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-bottom: 50px;
+  padding-top: 90px;
 
   .head {
     font-weight: 700;
@@ -395,11 +461,14 @@
 
   .card_placer {
     margin-top: 50px;
-    width: 1220px;
-    height: 300px;
+    max-width: 1220px;
+    //height: 300px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    gap: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
 
     .daz_card {
       width: 350px;
@@ -410,6 +479,7 @@
       display: flex;
       align-items: center;
       justify-content: space-around;
+      margin-bottom: 30px;
 
       .texts {
         width: 225px;
@@ -432,12 +502,14 @@
 }
 
 .awards_container {
+  padding-top: 90px;
+  padding-bottom: 50px;
   width: 100%;
-  height: 655px;
-  position: relative;
+  //height: 655px;
+  //position: relative;
 
   .header_awa_cont {
-    position: absolute;
+    //position: absolute;
     width: 100%;
     text-align: center;
     top: 55px;
@@ -448,15 +520,23 @@
   }
 
   .card_holder {
-    position: relative;
-    top: 150px;
-    left: calc(50% - 553px);
-    width: 1115px;
-    margin-top: 60px;
+    //position: relative;
+    //top: 150px;
+    //left: calc(50% - 553px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 1115px;
+    margin-top: 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 
     .single_cad {
+      margin-top: 30px;
+      margin-left: 5px;
+      margin-right: 5px;
       display: flex;
       align-items: center;
       flex-direction: column;

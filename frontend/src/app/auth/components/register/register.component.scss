@@ -363,12 +363,15 @@ mat-card {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-
-
+  box-shadow: none !important;
 }
 
-.mat-card:not([class*=mat-elevation-z]) {
+div.mat-card:not([class*=mat-elevation-z]) {
   box-shadow: none !important;
+}
+
+:host ::ng-deep .mat-horizontal-stepper-header-container {
+  display: none !important;
 }
 
 .mat-card {

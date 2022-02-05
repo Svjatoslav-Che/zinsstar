@@ -1,16 +1,21 @@
 <div>
-  <div class="text-center">
-    <p>{{"register.personal.nur" | translate}}</p>
+  <div class="text-center personal_hadar">
+    <p>Pesonal information</p>
+  </div>
+  <div class="personal_register_text">
+    Enter your personal information to get closer to companies
   </div>
 </div>
-<div class="container text-center mx-auto">
+<div class="container text-center mx-auto" [ngStyle]="{'margin-top':'45px'}">
   <form (onSubmit)="onSubmit()" [formGroup]="formGroup">
-
     <div class="row mx-auto mt-1">
       <div class="col-8 mx-auto">
         <div class="d-flex justify-content-evenly">
           <mat-form-field appearance="outline" class="pe-2">
-            <mat-label>{{"register.personal.anrede" | translate}}</mat-label>
+            <div class="write_over_gr">
+              Salutation
+            </div>
+<!--            <mat-label>{{"register.personal.anrede" | translate}}</mat-label>-->
             <mat-select formControlName="gender" required>
               <mat-option value="">{{"register.personal.anrede_bitte" | translate}}</mat-option>
               <mat-option [value]="titles.male"> {{ titles.male }}</mat-option>
@@ -22,6 +27,10 @@
             </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline" class="ps-2">
+            <div class="write_over_gr">
+              Title
+            </div>
+<!--            TITEL TITEL TITEL-->
             <mat-label>{{"register.personal.titel" | translate}}</mat-label>
             <mat-select formControlName="academic_position">
               <mat-option *ngFor="let title of academicTitles" [value]="title.code">{{ title.title }}</mat-option>
@@ -33,33 +42,41 @@
 
     <div class="row mx-auto mt-1">
       <div class="col-8 mx-auto">
-        <mat-form-field appearance="outline" style="width: 100%">
-          <mat-label> {{"register.personal.vorname" | translate}}</mat-label>
-          <input autocomplete="off" formControlName="first_name" matInput placeholder="Alle Vornamen laut Personalausweis" required type="text"/>
-          <mat-error>
-            <div *ngIf="showError(firstName)">
-              {{"register.personal.vorname_bitte" | translate}}
-            </div>
-          </mat-error>
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="row mx-auto mt-1">
-      <div class="col-8 mx-auto text-start">
-        <mat-form-field appearance="outline" style="width: 100%">
-          <mat-label> {{"register.personal.nachname" | translate}}</mat-label>
-          <input autocomplete="off" formControlName="last_name" matInput required type="text"/>
-          <mat-error *ngIf="showError(lastName)">
-            <div class="help-block">{{"register.personal.nachname_bitte" | translate}}</div>
-          </mat-error>
-        </mat-form-field>
+        <div class="d-flex justify-content-evenly">
+            <mat-form-field appearance="outline" class="pe-2">
+              <div class="write_over_gr">
+                First name(s)*
+              </div>
+              <mat-label>{{"register.personal.vorname" | translate}}</mat-label>
+              <input autocomplete="off" formControlName="first_name" matInput placeholder="Alle Vornamen laut Personalausweis" required type="text"/>
+              <mat-error>
+                <div *ngIf="showError(firstName)">
+                  {{"register.personal.vorname_bitte" | translate}}
+                </div>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="ps-2">
+              <div class="write_over_gr">
+                Last name*
+              </div>
+              <mat-label> {{"register.personal.nachname" | translate}}</mat-label>
+              <input autocomplete="off" formControlName="last_name" matInput required type="text"/>
+              <mat-error *ngIf="showError(lastName)">
+                <div class="help-block">{{"register.personal.nachname_bitte" | translate}}</div>
+              </mat-error>
+            </mat-form-field>
+        </div>
       </div>
     </div>
 
     <div class="row mx-auto mt-1">
       <div class="col-8 mx-auto text-center justify-content-even">
         <mat-form-field appearance="outline" class="p-2" required style="width: 33% !important">
-          <mat-label>{{"register.personal.tag" | translate}}</mat-label>
+          <div class="write_over_gr">
+            Day
+          </div>
+<!--          <mat-label>{{"register.personal.tag" | translate}}</mat-label>-->
           <mat-select formControlName="bDay" value="">
             <mat-option value="">{{"register.personal.tag" | translate}}</mat-option>
             <mat-option value="1">1</mat-option>
@@ -97,7 +114,10 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="p-2" required style="width: 33% !important">
-          <mat-label> {{"register.personal.monat" | translate}}</mat-label>
+          <div class="write_over_gr">
+            Month
+          </div>
+<!--          <mat-label> {{"register.personal.monat" | translate}}</mat-label>-->
           <mat-select formControlName="bMonth">
             <mat-option value="">{{"register.personal.monat" | translate}}</mat-option>
             <mat-option value="1">{{"register.personal.Januar" | translate}}</mat-option>
@@ -116,7 +136,10 @@
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="p-2" required style="width: 33% !important">
-          <mat-label>{{"register.personal.Jahr" | translate}}</mat-label>
+          <div class="write_over_gr">
+            Year
+          </div>
+<!--          <mat-label>{{"register.personal.Jahr" | translate}}</mat-label>-->
           <mat-select formControlName="bYear" value="">
             <mat-option value="">{{"register.personal.Jahr" | translate}}</mat-option>
             <mat-option value="2003">2003</mat-option>
@@ -224,12 +247,16 @@
     </div>
     <div>
       <div class="col-md-12 text-center mb-2">
-        <button (click)="onSubmit()" class="btn btn-primary" mat-button matStepperNext type="submit">
-          {{"register.personal.Weiter" | translate}}
+        <button (click)="onSubmit()" class="btn btn-primary das_ist_button" mat-button matStepperNext type="submit">
+          Next
         </button>
-        <div>
-          <fa-icon [icon]="faLock" class="m-1"></fa-icon>
-          {{"register.personal.Angaben" | translate}}
+<!--        <div>-->
+<!--          <fa-icon [icon]="faLock" class="m-1"></fa-icon>-->
+<!--          {{"register.personal.Angaben" | translate}}-->
+<!--        </div>-->
+        <div class="down_words">
+          <img src="assets/img/lock%201.png">
+          Your details will be transmitted in encrypted form.
         </div>
       </div>
     </div>

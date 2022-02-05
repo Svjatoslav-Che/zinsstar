@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 import {AuthService, RegistrationPhase} from '../../services/auth.service';
 import {faLock as FaLock} from '@fortawesome/free-solid-svg-icons';
+import {GlobalsService} from "../../../services/globals.service";
 
 @Component({
   selector: 'app-register',
@@ -13,10 +14,13 @@ export class RegisterComponent implements OnInit {
   faLock = FaLock;
   currentStep: number = 1;
 
-  constructor(private authService: AuthService) {
+  constructor(
+      private authService: AuthService,
+      public globalsService: GlobalsService) {
   }
 
   get phase() {
+    // console.log(this.globalsService.stepCounter);
     return this.authService.phase;
   }
 
@@ -49,6 +53,6 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('Cur Step: ' + this.currentStep);
+    // console.log('Cur Step: ' + this.currentStep);
   }
 }

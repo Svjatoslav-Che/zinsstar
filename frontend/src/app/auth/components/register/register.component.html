@@ -2,47 +2,51 @@
   <div class="left_log_holda">
     <div class="step_container">
       <div class="step_step">
-        Step 1
+        Step {{globalsService.stepCounter}}
       </div>
       <div class="step_text">
         Enter your email to register in the system
       </div>
       <div class="step_counter_container">
-        <div class="step_active">
+        <div [ngClass]="{'step_active': globalsService.stepCounter >= 0} ">
           <div class="num_cont">
-            1
+            {{globalsService.stepCounter <= 1 ? '1' : '✓' }}
           </div>
           Your email
         </div>
         <div class="strip_step">
         </div>
-        <div class="step_passive">
+        <div [ngClass]="{'step_active': globalsService.stepCounter >= 2,
+                         'step_passive': globalsService.stepCounter < 2}">
           <div class="num_cont">
-            2
+            {{globalsService.stepCounter <= 2 ? '2' : '✓' }}
           </div>
           Personal information
         </div>
         <div class="strip_step">
         </div>
-        <div class="step_passive">
+        <div [ngClass]="{'step_active': globalsService.stepCounter >= 3,
+                         'step_passive': globalsService.stepCounter < 3}">
           <div class="num_cont">
-            3
+            {{globalsService.stepCounter <= 3 ? '3' : '✓' }}
           </div>
           Contact details
         </div>
         <div class="strip_step">
         </div>
-        <div class="step_passive">
+        <div [ngClass]="{'step_active': globalsService.stepCounter >= 4,
+                         'step_passive': globalsService.stepCounter < 4}">
           <div class="num_cont">
-            4
+            {{globalsService.stepCounter <= 4 ? '4' : '✓' }}
           </div>
           More information
         </div>
         <div class="strip_step">
         </div>
-        <div class="step_passive">
+        <div [ngClass]="{'step_active': globalsService.stepCounter >= 5,
+                         'step_passive': globalsService.stepCounter < 5}">
           <div class="num_cont">
-            5
+            {{globalsService.stepCounter <= 5 ? '5' : '✓' }}
           </div>
           Password setting
         </div>
@@ -62,11 +66,16 @@
     <div class="log_log_containa">
 
       <div class="container m-container pt-5 pb-5 add_reg_style">
+
+<!--        CHAHGE !== ON ===-->
+
         <app-email-data *ngIf="phase === Phase.EMAIL"></app-email-data>
         <div class="row">
           <div class="col-12 col-xs-12 mx-auto text-center">
+<!--            !!!-->
             <mat-card [hidden]="phase === Phase.EMAIL" class="mx-auto">
-              <mat-stepper #stepper *ngIf="phase === Phase.DATA" labelPosition="bottom" linear>
+<!--            !!!-->
+              <mat-stepper #stepper *ngIf="phase === Phase.DATA" labelPosition="bottom" linear class="hider_some">
                 <mat-step [stepControl]="personalFormGroup">
                   <ng-template matStepLabel>{{"register.pers" | translate}}</ng-template>
                   <form [formGroup]="personalFormGroup">

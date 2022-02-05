@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AbstractControl, FormGroup} from '@angular/forms';
 import {AuthService, Gender} from '../../../services/auth.service';
-
+import {GlobalsService} from "../../../../services/globals.service";
 import {faLock as FaLock} from '@fortawesome/free-solid-svg-icons';
 
 import {ACADEMIC_TITLES, AcademicTitle,} from '../../../models/academic-title.class';
@@ -20,7 +20,9 @@ export class PersonalDataComponent implements OnInit {
   days: string[] = ['1', '2', '3'];
   @Input('formGroup') formGroup: FormGroup;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService,
+              public globalsService: GlobalsService
+  ) {
     this.minDate.setFullYear(1940, 0, 0);
     this.maxDate.setFullYear(this.nowDate.getFullYear() - 18, 0, 0);
   }
@@ -66,6 +68,7 @@ export class PersonalDataComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.globalsService.stepCounter = 2;
   }
 
   onSubmit(): void {
@@ -75,6 +78,7 @@ export class PersonalDataComponent implements OnInit {
     this.authService.registerData.academic_position = this.academicTitle.value;
     this.authService.registerData.dob = this.dateOfBirth;
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    this.globalsService.stepCounter = 3;
   }
 
   showError(control: AbstractControl): boolean {
